@@ -3,22 +3,35 @@
 /* ***********header */
 header {
   justify-content: space-between;
+  width: 1440px;
 }
 header .header-nav {
   border:var(--border);
   width: 91px; height: 91px;
   background-color: var(--color-white);
+  border-bottom: none;
 }
 header .header-nav img{
   width: 35px; height: 35px;
   display: block;
   margin: 25px auto;
 }
-header .header-nav .global-menu {
+header .menu .global-menu {
   display: none;
+
+  width: 1100px; height: 91px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  justify-content: space-around;
 }
-header .header-nav .global-menu li {}
-header .header-nav .global-menu li a {}
+header .header-nav .global-menu
+header .header-nav .global-menu li:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+header .header-nav .global-menu li a {
+  display: block;
+}
 header .header-contianer-left {
   background-color: var(--color-black);
   width: 211px; height: 91px;
@@ -30,14 +43,15 @@ header .header-contianer-left h1 {
   font-family: var(--font-main-en);
   font-weight: 900;
 }
-header .header-contianer-left img {
-  width: 20px;
+header .header-contianer-left .mini {
+  width: 20px; height: 20px;
 }
 header .header-contianer-right {
   background-color: var(--color-white);
   border: var(--border);
   width: 241px; height: 91px;
   justify-content: center;
+  border-bottom: none;
 }
 header .header-contianer-right h2 {
   color: var(--color-black);
@@ -46,12 +60,14 @@ header .header-contianer-right h2 {
   font-weight: 800;
   
 }
-header .header-contianer-right img {
+header .header-contianer-right .header-deco{
   width: 35px;
 }
 
 /* ***********footer */
-
+footer {
+  width: 1440px;
+}
 footer .contact .contact-left {
   grid-column: 1/2;
   grid-template-columns: 1fr 1fr;
@@ -69,6 +85,7 @@ footer .contact .contact-left p {
   text-align: center;
   line-height: 120px;
   border-right: none;
+  background-color: var(--color-white);
 }
 footer .contact .contact-left p:nth-of-type(1) {
   border-bottom: none;
@@ -99,8 +116,8 @@ footer .contact .contact-right .contact-box p {
   font-weight: 700;
   line-height: 91px;
 }
-footer .contact .contact-right .contact-box img {
-  width: 25px;
+footer .contact .contact-right .contact-box .contact-deco {
+  width: 80px;
 }
 footer .contact .deco-wapper .deco-box {
   border-top: none;

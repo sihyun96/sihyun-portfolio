@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
 <title>sihyun-portfolio</title>
+
 <!-- favicon -->
 
 <!-- og -->
@@ -15,28 +16,38 @@
 <!-- layout: header, footer style -->
  <link rel="stylesheet" href="./assets/styles/layout.css">
  <!-- layout: 현재페이지(index.html) style -->
-  <link rel="stylesheet" href="./index.css">
+ <link rel="stylesheet" href="./index.css">
+
+ <link rel="stylesheet" href="./assets/styles/variableFont.css">
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+ <script src="./assets/scripts/lottie.min.js"></script>
 </head>
 
 <body>
+  
   <!-- header -->
   <header class="flex-container">
     <div class="header-contianer flex-container">
-    <nav class="header-nav">
-       <img src="./images/menu.png" alt="메뉴">
-       <ul class="global-menu">
-        <li><a href="#">about</a></li>
-        <li><a href="#">project</a></li>
-        <li><a href="#">siill&tools</a></li>
-        <li><a href="#">contact</a></li>
-       </ul>
-    </nav>
+      <div class="menu flex-container">
+        <nav class="header-nav">
+          <img src="./images/menu.png" alt="메뉴">
+         </nav>
+          <ul class="global-menu flex-container">
+           <li><a href="#home">home</a></li>
+           <li><a href="#about">about</a></li>
+           <li><a href="#project">project</a></li>
+           <li><a href="#skill">skill&tools</a></li>
+           <li><a href="#contact">contact</a></li>
+          </ul>
+      </div>
+      
+    
     <div class="header-contianer-left flex-container">
-      <h1>HELL</h1> <img src="./images/minismile.png" alt="smile">
+      <h1>HELL</h1> <div class="mini" id="smile1"></div>
     </div>
   </div>
     <div class="header-contianer-right flex-container">
-      <h2> SIHYUN’S <br> PORTFOLIO</h2> <img src="./images/rocket.png" alt="rocket">
+      <h2> SIHYUN’S <br> PORTFOLIO</h2> <div class="header-deco" id="roket"></div>
     </div>
   </header>
 
@@ -44,38 +55,41 @@
   <!-- content -->
   <div class="content">
     <!-- main -->
-    <scetion class="main">
+    <section class="main" id="main">
       <div class="main-wapper flex-container">
         <h2 class="main-title shadow-container">IT’S ME</h2>
-        <div class="keyword-box">
-          <h3>#긍정적인 에너지</h3>
-          <h3>#원활한 의사소통</h3>
-          <h3>#체계적 계획적</h3>
-          <h3>#적응력</h3>
+        <div class="keyword-box" id="keyword_slide2">
         </div>
         <h2 class="main-title shadow-container">DESIGN &<br>PUBLISHER</h2>
     </div>
-    </scetion>
+    </section>
 
     <!-- about -->
-    <section class="about flex-container">
+    <section class="about flex-container" id="about">
       <div class="about-title">
-        <h2 class="title">ABOUT’ ME!</h2>
-        <h3>"긍정적인 에너지로 팀과 협력해<br> 문제를 해결하는"</h3>
+        <div class="title-deco flex-container">
+          <h2 class="title">ABOUT’ ME!</h2> 
+          <div class="deco"id="light1"></div>
+        </div>
+        <div class="title-deco flex-container">
+          <h3>"긍정적인 에너지로 팀과 협력해<br> 문제를 해결하는"</h3>
+          <div class="deco"id="light2"></div>
+        </div>
+        
         <h4>디자이너&퍼블리셔 "이시현"입니다.</h4>
         <ul class="about-title-profile flex-container">
-          <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">Lee Sihyun</li>
-          <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">1996.05.27</li>
-          <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">Suwon, Gyeonggi-do</li>
+          <li><div class="txt-deco miniflower"></div>Lee Sihyun</li>
+          <li><div class="txt-deco miniflower"></div>1996.05.27</li>
+          <li><div class="txt-deco miniflower"></div>Suwon, Gyeonggi-do</li>
         </ul>
       </div>
       <div class="about-img">
-        <img src="./images/about_1.png" alt="캐릭터이미지">
+        <div id="keyword"></div>
       </div>
     </section>
 
     <!-- project -->
-    <section class="project grid-container">
+    <section class="project grid-container" id="project">
      <div class="project1">
         <div class="project-container">
           <h4>2024-09</h4>
@@ -93,15 +107,15 @@
           <h2>PROJECT1</h2>
         </div>
         <div class="project-skill flex-container">
-          <h3><img src="./images/miniflower.png" alt="flower" class="txt-deco">UI Design</h3>
+          <h3><span class="txt-deco miniflower"></span>UI Design</h3>
         </div>
      </div>
      <div class="deco-top flex-container">
-      <div class="deco-box black">
-       <img src="./images/flower1.png" alt="꽃" class="deco" >
+      <div class="deco-box black" >
+        <div class="deco" id="flower1"></div>
       </div>
       <div class="deco-box">
-       <img src="./images/lightbulb.png" alt="전구" class="deco ">
+        <div class="deco" id="lightbulb"></div>
       </div>
     </div>
      <div class="project1 project2">
@@ -120,7 +134,7 @@
         <h2>PROJECT2</h2>
       </div>
       <div class="project-skill flex-container">
-        <h3><img src="./images/miniflower.png" alt="flower" class="txt-deco">Web Design</h3>
+        <h3><span class="txt-deco miniflower"></span>Web Design</h3>
       </div>
    </div>
    <div class="project1 project2 project3">
@@ -139,26 +153,28 @@
       <h2>PROJECT3</h2>
     </div>
     <div class="project-skill flex-container">
-      <h3><img src="./images/miniflower.png" alt="flower" class="txt-deco">Web Design</h3>
+      <h3><span class="txt-deco miniflower"></span>Web Design</h3>
     </div>
  </div>
     </section>
 
     <!-- skill&tool -->
-    <section class="skill-tool grid-container">
+    <section class="skill-tool grid-container" id="skill">
       <div class="deco-left">
         <div class="deco-box">
           <img src="./images/pen.png" alt="펜" class="deco">
         </div>
         <div class="deco-box black">
-          <img src="./images/flower2.png" alt="꽃2" class="deco">
+          <div class="deco" id="flower2"></div>
+          
         </div>
       </div>
       <div class="skill-tool-title">
         <h2 class="title shadow-container">SKILLS TOOLS</h2>
       </div>
       <div class="deco-box deco-right">
-        <img src="./images/smile1.png" alt="스마일" class="deco">
+        <div class="deco" id="smile2"></div>
+        
       </div>
       <div class="skill-list">
         <h3>WHAY CAN I DO</h3>
@@ -252,9 +268,9 @@
         </div>
       </div>
       <ul class="skill flex-container">
-        <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">운전면허 2종 보통</li>
-        <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">항해사5급</li>
-        <li><img src="./images/miniflower.png" alt="flower" class="txt-deco">바리스타 2급</li>
+        <li><div class="txt-deco miniflower"></div>운전면허 2종 보통</li>
+        <li><div class="txt-deco miniflower"></div>항해사5급</li>
+        <li><div class="txt-deco miniflower"></div>바리스타 2급</li>
       </ul>
     </section>
   </div> 
@@ -263,41 +279,164 @@
   <!-- footer -->
    <footer>
     
-    <section class="contact">
+    <section class="contact" id="contact">
       <h2 class="contact-title title">CONTACT</h2>
 
       <div class="contact-wapper flex-container">
         <div class="contact-left grid-container">
           <div class="deco-box">
-            <img src="./images/feedback.png" alt="최고" class="deco">
+            <div class="deco" id="best"></div>
           </div>
-          <p>E-mail</p>
-          <p>github 공부일지</p>
-          <p>포트폴리오 작업일지</p>
+          <p><a href="mailto:sihyun9627@gmail.com" >E-mail</a></p>
+          <p><a href="https://github.com/sihyun96/240723.git" target="_blank">github 공부일지</a></p>
+          <p><a href="https://github.com/sihyun96/241018-portfolio.git" target="_blank">포트폴리오 작업일지</a></p>
           <p></p>
         </div>
         <div class="contact-right">
-          <h2>Thank you!</h2>
+          <h2>Thank you!</h2> 
           <div class="contact-box flex-container">
             <p>sihyun9627@gmail.com</p>
-            <img src="./images/send.png" alt="비행기">
+            <div class="contact-deco" id="send"></div>
           </div>
         </div>
       </div>
       <div class="deco-wapper flex-container">
       <div class="deco-box black">
-        <img src="./images/clover.png" alt="클로버" class="deco ">
+        <div class="deco" id="flower3"></div>
+        
       </div>
       <div class="deco-box">
-        <img src="./images/smile2.png" alt="스마일2" class="deco">
+        <div class="deco" id="smile3"></div>
       </div>
       </div>
       <div class="footer-info">
         <h4>SIHYUN’S</h4>
         <h2 class="shadow-container">PORTFOLIO</h2>
       </div>
-      
     </section>
    </footer>
+
+   <!-- lottie -->
+    <script>
+      const best = lottie.loadAnimation({
+        container: document.getElementById('best'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/best.json' // 경로
+      });
+    
+      const smile1 = lottie.loadAnimation({
+        container: document.getElementById('smile1'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/smile1.json' // 경로
+      });
+    
+      const smile2 = lottie.loadAnimation({
+        container: document.getElementById('smile2'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/smile2.json' // 경로
+      });
+    
+      const smile3 = lottie.loadAnimation({
+        container: document.getElementById('smile3'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/smile3.json' // 경로
+      });
+      const flower3 = lottie.loadAnimation({
+        container: document.getElementById('flower3'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/flower3.json' // 경로
+      });
+
+      const flower2 = lottie.loadAnimation({
+        container: document.getElementById('flower2'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/flower2.json' // 경로
+      });
+    
+      const flower1 = lottie.loadAnimation({
+        container: document.getElementById('flower1'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/flower1.json' // 경로
+      });
+    
+      const lightbulb = lottie.loadAnimation({
+        container: document.getElementById('lightbulb'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/lightbulb.json' // 경로
+      });
+    
+      const roket = lottie.loadAnimation({
+        container: document.getElementById('roket'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/roket.json' // 경로
+      });
+   
+      const send = lottie.loadAnimation({
+        container: document.getElementById('send'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/send.json' // 경로
+      });
+
+      const light1 = lottie.loadAnimation({
+        container: document.getElementById('light1'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/light1.json' // 경로
+      });
+
+      const light2 = lottie.loadAnimation({
+        container: document.getElementById('light2'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/light2.json' // 경로
+      });
+
+      const keyword = lottie.loadAnimation({
+        container: document.getElementById('keyword'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/keyword.json' // 경로
+      });
+
+      const keyword_slide2 = lottie.loadAnimation({
+        container: document.getElementById('keyword_slide2'), // 애니메이션 DOM 요소 (대상)
+        renderer: 'svg', // 렌더링 방식:svg, canvas, html
+        loop: true, // 반복
+        autoplay: true, // 자동재생
+        path: './images/lottie/keyword_slide2.json' // 경로
+      });
+
+      lottie.loadAnimation({
+        container: $('.miniflower'),
+        renderer: 'svg', 
+        loop: true, 
+        autoplay: true, 
+        path: './images/lottie/miniflower.json' 
+      });
+    </script>
+    <link rel="stylesheet" href="./images/lottie/light1.json">
 </body>
 </html>

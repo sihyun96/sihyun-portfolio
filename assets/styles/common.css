@@ -68,9 +68,10 @@ html ::-webkit-scrollbar-thumb {
   box-shadow: 0 1px 10px var(--bg-gray);
   border: 1px solid var(--color-black)
 }
+
 body {
   padding: var(--spacing-xlg) var(--spacing-xxlg);
-  background: url(../../images/bg.png);
+  background: url(../../images/bg.png) 50% / contain;
   font-family: var(--font-main-ko);
   box-sizing: border-box;
 }
@@ -89,7 +90,7 @@ body {
 .deco-box {
   border: var(--border);
   width: 91px; height: 91px;
-  
+  z-index: 9999;
 }
 .deco {
   width: 60px; height: 60px;
@@ -141,7 +142,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: end;
-
 }
 .project-title {
   width: 1083px; height: 91px;
@@ -149,4 +149,29 @@ body {
   border-top: none;
   line-height: 91px;
   padding:0 var(--spacing-sm);
+  background-color: var(--color-white);
+}
+
+@media (max-width:1800px) {
+  body {
+    padding: var(--spacing-xlg) 180px;
+  }
+}
+
+@media (max-width:1700px) {
+  body {
+    padding: var(--spacing-xlg) 100px;
+  }
+}
+
+@media (max-width:1600px) {
+  body {
+    padding: var(--spacing-xlg) var(--spacing-lg);
+  }
+}
+
+@media (max-width:1500px) {
+  body {
+    padding: var(--spacing-xlg) 30px;
+  }
 }
