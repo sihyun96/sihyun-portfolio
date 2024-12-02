@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+/* fonts */
+/* 'archivo Variable' */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+.shadow-container {
+  font-family: 'archivo',sans-serif;
+
+  animation: txt 2s infinite alternate;
+  }
+
+  @keyframes txt {
+    0% {
+      font-weight: 700;
+    } 
+    100% {
+      font-weight: 900;
+    }   
+  }

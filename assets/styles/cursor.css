@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/* .link:hover { curosr : url(../../images/cursor_5.png) 20 30, auto; } */
+
+body{
+cursor: url("../../images/cursor_3.png"), auto;
+}
+
+a:hover:active{
+  cursor: url("../../images/cursor_4.png"), auto;
+  }
+
+a:hover {
+  cursor: url("../../images/cursor_5.png"), auto;
+}
+.shadow-container:hover {
+  cursor: url("../../images/cursor_2.png"), auto;
+}
