@@ -6,8 +6,11 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
   <title>project1</title>
   <!-- favicon -->
-
-  <!-- og -->
+  <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/favicon/site.webmanifest" />
 
   <!-- reset stlye -->
   <link rel="stylesheet" href="../assets/styles/reset.min.css">
@@ -44,11 +47,11 @@
       </ul>
       <h1 class="title-project">project1</h1>
       <div class="next-btn deco-box">
-        <a href="../project2/project-2.html">
+        <a href="../project2/project2.html">
           <span class="next-icon bar1"></span>
-        <span class="next-icon bar2"></span>
+          <span class="next-icon bar2"></span>
         </a>
-        
+
       </div>
     </div>
 
@@ -130,7 +133,7 @@
   <footer>
     <div class="up-btn">
       <a href="#">위로가기</a>
-      </div>
+    </div>
   </footer>
   <script>
     document.querySelectorAll('.miniflower').forEach((element) => {
@@ -161,7 +164,7 @@
     });
 
     // menu
-    $('.menu').on('click', function() {
+    $('.menu').on('click', function () {
       $(this).toggleClass('toggle-btn');
       $('.global-menu').toggleClass('open');
     });

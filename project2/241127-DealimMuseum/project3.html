@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>project3</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+  <link rel="stylesheet" href="./assets/styles/reset.min.css">
+  <link rel="stylesheet" href="./assets/styles/common.css">
+  <link rel="stylesheet" href="./assets/styles/loader.css">
+  <link rel="stylesheet" href="./assets/styles/KHTekaTRIALFont.css">
+  <link rel="stylesheet" href="./assets/styles/pretendard-subset.css">
+  <link rel="stylesheet" href="./project3.css">
+
+  <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+  <script src="./assets/scripts/jquery-ui.min.js"></script>
+  <script src="./assets/scripts/gsap.min.js"></script>
+  <script src="./assets/scripts/ScrollTrigger.min.js"></script>
+  <script src="./project3.js" defer></script>
+</head>
+
+<body>
+  <!-- loader -->
+  <div class="load-wrapper">
+    <div id="load">
+      <div>A</div>
+      <div>R</div>
+      <div>T</div>
+      <div>I</div>
+      <div>N</div>
+      <div>L</div>
+      <div>I</div>
+      <div>F</div>
+      <div>E</div>
+      <video src="./assets/images/DAELIM MUSEUM.mp4" autoplay muted loop></video>
+    </div>
+  </div>
+
+  <header>
+    <h1>
+      <svg xmlns="http://www.w3.org/2000/svg" width="45.002" height="45.001" viewBox="0 0 45.002 45.001">
+        <path
+          d="M4126,75.5A22.5,22.5,0,1,1,4148.5,98,22.529,22.529,0,0,1,4126,75.5Zm5.047,0A17.455,17.455,0,1,0,4148.5,58.05,17.476,17.476,0,0,0,4131.044,75.5Zm10.667,12.144c-.745,0-1.031-.321-1.031-1.065V64.59c0-.716.249-1.069.884-1.069h7.769c6.668,0,9.081,3.019,9.081,6.067V81.579c0,3.049-2.413,6.067-9.081,6.067Zm4.692-4.788h2.929c1.74,0,3.226-.675,3.226-2.307V70.62c0-1.633-1.486-2.305-3.226-2.305H4146.4Z"
+          transform="translate(-4125.997 -52.999)" fill="#141414" />
+      </svg>
+    </h1>
+    <div class="top-ani flex-wrapper">
+      <svg class="ani-d" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="692px" height="420px" viewBox="0 0 692 420"
+        enable-background="new 0 0 692 420" xml:space="preserve">
+        <image id="image0" width="692" height="420" x="0" y="0" fill="#141414" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArQAAAGkCAAAAADla+kAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+    AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAnRSTlMAAHaTzTgAAAACYktH
+    RAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+gLHQ4WIbkPBZ8AAAR7SURBVHja
+    7dRBDYBAEARBjiDh/CtEBBqOz6aTKgXz6MzaF7Tc0wPglGjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+    lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+    tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    cp7pAXPe6QH85GnJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLztrTC+CQpyVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+    tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+    lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiXn
+    A9gZBF3L4EGgAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI0LTExLTI5VDE0OjIyOjMzKzAwOjAwVbcv
+    lwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNC0xMS0yOVQxNDoyMjozMyswMDowMCTqlysAAAAASUVO
+    RK5CYII=" />
+      </svg>
+      <svg class="ani-l" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="692px" height="420px" viewBox="0 0 692 420"
+        enable-background="new 0 0 692 420" xml:space="preserve">
+        <image id="image0" width="692" height="420" x="0" y="0" fill="#141414" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArQAAAGkCAAAAADla+kAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+  AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAnRSTlMAAHaTzTgAAAACYktH
+  RAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+gLHQ0uC3dtzusAAASFSURBVHja
+  7dyxDYBADARBHlHC918hRVADJNaKmQouWDn02ge0nNMD4C3RkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+  ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+  lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+  oiVnTQ/gqz09YIxLS45oyREtOaIlR7TkiJYc0ZIjWnJES45oyREtOaIlR7TkiJYc0ZIjWnJES45o
+  yREtOaIlR7TkiJYc0ZIjWnJES45oyREtOaIlR7TkrP/+3qPKpSVHtOSIlhzRkiNackRLjmjJES05
+  oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+  jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+  ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJuaYHzLmnB/CRS0uOaMkRLTmiJUe05IiWHNGSI1pyREuOaMkRLTmiJUe05IiWHNGSI1py
+  REuOaMkRLTmiJUe05IiWHNGSI1pyREuOaMkRLTmiJUe05Kw9vQBecmnJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+  lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+  oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+  jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNach49QASDSQvZJgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0xMS0yOVQxMzo0Njox
+  MSswMDowMBwgVaIAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMTEtMjlUMTM6NDY6MTErMDA6MDBt
+  fe0eAAAAAElFTkSuQmCC" />
+      </svg>
+    </div>
+    <div class="top-wrapper">
+      <div class="line-wrapper">
+        <div class="black-line"></div>
+      </div>
+      <nav class="nav-main">
+        <div class="global-menu flex-wrapper">
+          <div class="nav-txt">
+            <h3>Art in Life in Art</h3>
+          </div>
+          <div class="nav-link flex-wrapper ">
+            <h3><a href="#">VISIT</a></h3>
+            <p>/</p>
+            <h3><a href="#">EXHIBITION</a></h3>
+            <p>/</p>
+            <h3><a href="#">LEARN EVENT</a></h3>
+            <p>/</p>
+            <h3><a href="#">TICKET</a></h3>
+          </div>
+          <div class="nav-right-wrapper">
+            <div class="nav-link">
+              <h3><a href="#">[SHOP]</a></h3>
+            </div>
+          </div>
+          <div class="nav-content-wrapper">
+            <h3>대림문화재단</h3>
+          </div>
+        </div>
+      </nav>
+    </div>
+    </div>
+  </header>
+  <div class="content">
+    <section class="modernists flex-wrapper">
+      <div class="left-modernists-list flex-wrapper">
+        <div class="list-name-wrapper">
+          <h3>Art in Life in Art:</h3>
+        </div>
+        <div class="content-wrapper">
+          <h3>E01: Keiichi Tanaami: I'M THE ORIGIN</h3>
+          <h3>E02: 취향가옥: Art in Life, Life in Art</h3>
+          <h3>E03: PUBLIC ART SPACE: 이우환</h3>
+        </div>
+      </div>
+      <div class="right-modernists-list flex-wrapper">
+        <div class="title-wrapper">
+          <h2 class="rolled-over-text">AIM—</h2>
+          <h2 class="rolled-over-text">Art in </h2>
+          <h2 class="rolled-over-text">Life in Art</h2>
+        </div>
+        <div class="scroll-wrapper flex-wrapper">
+          <div class="scroll-btn-wrapper">
+            <h3><a href="#">Scroll to Explore</a></h3>
+          </div>
+          <div class="scroll-arrow-wrapper">
+            <svg width="100%" height="100%" viewBox="0 0 11 12" fill="#fffffd" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.875 11.6055L10.875 6.55588L10.875 4.78156L6.50218 9.15438L6.50218 -1.91142e-07L5.24782 -2.45972e-07L5.24782 9.15438L0.875 4.78156L0.87567 6.55588L5.875 11.6055Z"
+                fill="#fffffd"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container">
+        <div class="big-txt-block">
+          <div class="text-title">
+            <div class="title title1 flex-wrapper">
+              <span class="title-bar1"></span>
+              <h4>일상이 예술이 되는 미술관</h4>
+              <span class="text-span">[ * ]</span>
+            </div>
+
+            <h4 class="rolled-over-text">대림문화재단이 운영하는 대림미술관, 디뮤지엄, 구슬모아당구장은 </h4>
+            <h4 class="rolled-over-text">우리 일상에서 예술적 가치를 발견하는 전시와</h4>
+            <h4 class="rolled-over-text">누구나 함께 참여하고 향유할 수 있는</h4>
+            <h4 class="rolled-over-text">다양한 교육 문화 프로그램을 통해 관람객들에게 영감과 경험을 선사함으로써 </h4>
+            <h4 class="rolled-over-text">‘일상이 예술이 되는 미술관’을 실현하고자 합니다.</h4>
+          </div>
+
+          <div class="text-title">
+            <div class="title title2 flex-wrapper">
+              <span class="title-bar2"></span>
+              <h4>디뮤지엄 영감을 디자인하는 복합문화예술센터</h4>
+              <span class="text-span">[ ** ]</span>
+            </div>
+
+            <h4 class="rolled-over-text">대림문화재단 설립 20주년을 맞아 2015년 12월 한남동에 개관한 디뮤지엄은, </h4>
+            <h4 class="rolled-over-text">대림미술관에서 선보여온 다양한 문화예술 콘텐츠들을 더 확장된 공간에서, </h4>
+            <h4 class="rolled-over-text">보다 많은 사람들에게 수준 높은 감성으로 제 시하며 주목을 받아 왔습니다.</h4>
+            <h4 class="rolled-over-text">2021년 성동구 성수동 서울숲으로 이전한 디뮤지엄은, 보다 많은 대중들이 </h4>
+            <h4 class="rolled-over-text">일상에서 예술을 즐길 수 있도록 새로운 라이프스타일을 제안하는 전시는 물론, </h4>
+            <h4 class="rolled-over-text">어린이부터 시니어까지 참여할 수 있는 다채로운 교육, 문화 프로그램을 연중 실행하여</h4>
+            <h4 class="rolled-over-text">누구나 즐겁게 예술을 경험하고 향유하는 영감의 장소, 문화와 예술로 삶을 풍요롭게 하는 </h4>
+            <h4 class="rolled-over-text">서울의 문화·예술 랜드마크로 자리매김할 예정입니다.</h4>
+          </div>
+        </div>
+
+        <div class="additional-wrapper flex-wrapper">
+          <div class="additional-info-wrapper flex-wrapper">
+            <h3>[*] — </h3>
+            <h3>D MUSEUM</h3>
+          </div>
+          <div class="additional-info-wrapper flex-wrapper">
+            <h3>[**] — </h3>
+            <div class="link-line">
+              <h3 class="link bar1">
+                <a href="#">D AELIM MUSEUM</a>
+                <span class="bar-s1"></span>
+              </h3>
+            </div>
+
+          </div>
+          <div class="additional-info-wrapper flex-wrapper">
+            <h3>[***] — </h3>
+            <div class="link-line">
+              <h3 class="link bar2">
+                <a href="#">D PROJECT SPACE</a>
+                <span class="bar-s2"></span>
+              </h3>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="bg1"></div>
+      <div class="bg2"></div>
+    </section>
+
+    <section class="big-img">
+      <div class="Experiment-wrapper flex-wrapper">
+        <div class="left-txt-wrapper flex-wrapper">
+          <div class="top-wrapper">
+            <div class="main-txt txtani">
+              <h2>public <br>
+                art space:</h2>
+            </div>
+            <div class="big-btn flex-wrapper">
+              <div class="content-wrapper">
+                <span class="bar"></span>
+                <h3>view more</h3>
+              </div>
+              <div class="link-arrow-wrapper">
+                <svg class="arrow1" width="100%" height="auto" viewBox="0 0 12 10" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.6055 5L6.55588 0L4.78156 0L9.15438 4.37282L0 4.37282L0 5.62718L9.15438 5.62718L4.78156 10L6.55588 9.99933L11.6055 5Z"
+                    fill="currentColor"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="txt-wrapper txtani">
+            <h3>서울숲 디뮤지엄 M1 오픈 스페이스</h3>
+          </div>
+        </div>
+        <div class="right-txt-wrapper flex-wrapper">
+          <div class="counter-scroll flex-wrapper txtani">
+            <h3>2024.11.13</h3>
+            <h3>—</h3>
+            <h3>2025.06.29</h3>
+          </div>
+          <div class="modernists-list-wrapper flex-wrapper">
+            <div class="content-wrapper txtani">
+              <h3>공공예술 <br>프로젝트:</h3>
+            </div>
+            <div class="list-name-wrapper">
+              <div class="modernist-top-wrapper">
+                <h3>이우한</h3>
+              </div>
+              <div class="modernist-wrapper anim-1">
+                <h3>추상미술의 거장</h3>
+              </div>
+              <div class="modernist-wrapper anim-1">
+                <h3>철학가</h3>
+              </div>
+              <div class="modernist-wrapper anim-1">
+                <h3>미니멀리즘</h3>
+              </div>
+              <div class="modernist-wrapper anim-1">
+                <h3>개념미술</h3>
+              </div>
+              <div class="modernist-wrapper anim-1">
+                <h3>점, 선, 여백</h3>
+              </div>
+            </div>
+          </div>
+          <div class="txt-box">
+            <h3>©2024</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="big-img-wrapper grid-wrapper">
+        <div class="big-img-slider  flex-wrapper">
+          <img class="artspace1" src="./assets/images/artspace1.png" alt="Khvostenko-art-1-2"><img class="artspace2"
+            src="./assets/images/artspace2.png" alt="home-slider-7-p-800"><img class="artspace3"
+            src="./assets/images/artspace3.png" alt="Kosarev-art-1-10">
+        </div>
+      </div>
+    </section>
+
+    <section class="txt-box-wrapper">
+      <div class="txt-box">
+        <span class="word">daelim cultural foundation</span>
+        <span class="word">turns</span>
+        <span class="trigger mov1"> <video src="./assets/images/daelimmuseum1.mp4"autoplay muted loop></video></span> 
+        <span class="word">everyday</span>   
+        <span class="word">life</span>
+        <span class="word">into</span>
+        <span class="word">art</span>
+        <span class="word">sharing</span>
+        <span class="word">contemporary</span>
+        <span class="word">art</span>
+        <span class="trigger mov2"><video src="./assets/images/daelimmuseum2.mp4"autoplay muted loop></video></span>
+        <span class="word">art in life</span>
+        <span class="word">life in art</span>
+        <span class="word">D</span>
+        <span class="word">museum</span>
+        <span class="trigger mov3"><video src="./assets/images/daelimmuseum3.mp4"autoplay muted loop></video></span> 
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-txt flex-wrapper">
+        <h3>Art in Life in Art</h3>
+        <h3>대림문화재단 ©2024</h3>
+      </div>
+      <div class="line-wrapper">
+        <div class="black-line flex-wrapper">
+          <a href="../../index.html">Sihyun's Protfolio View
+            <div class="arrow-warpper">
+              <svg class="arrow2" width="100%" height="auto" viewBox="0 0 12 10" fill="#fffffd"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.6055 5L6.55588 0L4.78156 0L9.15438 4.37282L0 4.37282L0 5.62718L9.15438 5.62718L4.78156 10L6.55588 9.99933L11.6055 5Z"
+                  fill="#fffffd"></path>
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-ani flex-wrapper">
+      <svg class="bottom-ani-d" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="692px" height="420px" viewBox="0 0 692 420"
+        enable-background="new 0 0 692 420" xml:space="preserve">
+        <image id="image0" width="692" height="420" x="0" y="0" fill="#141414" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArQAAAGkCAAAAADla+kAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+    AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAnRSTlMAAHaTzTgAAAACYktH
+    RAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+gLHQ4WIbkPBZ8AAAR7SURBVHja
+    7dRBDYBAEARBjiDh/CtEBBqOz6aTKgXz6MzaF7Tc0wPglGjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+    lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+    tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    cp7pAXPe6QH85GnJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLztrTC+CQpyVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+    tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+    ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+    ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+    lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+    oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+    jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+    kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiXn
+    A9gZBF3L4EGgAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDI0LTExLTI5VDE0OjIyOjMzKzAwOjAwVbcv
+    lwAAACV0RVh0ZGF0ZTptb2RpZnkAMjAyNC0xMS0yOVQxNDoyMjozMyswMDowMCTqlysAAAAASUVO
+    RK5CYII=" />
+      </svg>
+      <svg class="bottom-ani-l" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="692px" height="420px" viewBox="0 0 692 420"
+        enable-background="new 0 0 692 420" xml:space="preserve">
+        <image id="image0" width="692" height="420" x="0" y="0" fill="#141414" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAArQAAAGkCAAAAADla+kAAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+  AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAnRSTlMAAHaTzTgAAAACYktH
+  RAD/h4/MvwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+gLHQ0uC3dtzusAAASFSURBVHja
+  7dyxDYBADARBHlHC918hRVADJNaKmQouWDn02ge0nNMD4C3RkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+  ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+  lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+  oiVnTQ/gqz09YIxLS45oyREtOaIlR7TkiJYc0ZIjWnJES45oyREtOaIlR7TkiJYc0ZIjWnJES45o
+  yREtOaIlR7TkiJYc0ZIjWnJES45oyREtOaIlR7TkrP/+3qPKpSVHtOSIlhzRkiNackRLjmjJES05
+  oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+  jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJ
+  ES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJuaYHzLmnB/CRS0uOaMkRLTmiJUe05IiWHNGSI1pyREuOaMkRLTmiJUe05IiWHNGSI1py
+  REuOaMkRLTmiJUe05IiWHNGSI1pyREuOaMkRLTmiJUe05Kw9vQBecmnJES05oiVHtOSIlhzRkiNa
+  ckRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSI
+  lhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05
+  oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRL
+  jmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzR
+  kiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVHtOSIlhzRkiNackRLjmjJES05oiVH
+  tOSIlhzRkiNach49QASDSQvZJgAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyNC0xMS0yOVQxMzo0Njox
+  MSswMDowMBwgVaIAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjQtMTEtMjlUMTM6NDY6MTErMDA6MDBt
+  fe0eAAAAAElFTkSuQmCC" />
+      </svg>
+    </div>
+  </footer>
+</body>
+
+</html>

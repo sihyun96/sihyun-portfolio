@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>project2</title>
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+  <link rel="stylesheet" href="./assets/styles/reset.min.css">
+  <link rel="stylesheet" href="./assets/styles/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./assets/styles/common.css">
+  <link rel="stylesheet" href="./project2.css">
+
+  <script src="./assets/scripts/jquery-3.7.1.min.js"></script>
+  <script src="./assets/scripts/swiper-bundle.min.js"></script>
+  <script src="./assets/scripts/gsap.min.js"></script>
+  <script src="./assets/scripts/ScrollTrigger.min.js"></script>
+  <script defer src="./assets/scripts/project2.js"></script>
+
+</head>
+
+<body>
+  <main>
+    <!-- header -->
+    <header class="header-wrapper">
+      <div class="header-top">
+        <h1 class="logo logo-box">
+          <a href="#">
+            <img src="./images/logo.png" alt="반응형 웹 로고">
+          </a>
+        </h1>
+        <div class="header-user-menu">
+          <a href="#">로그인</a>
+          <a href="#">회원가입</a>
+        </div>
+        <div class="search img-box-s">
+          <a href="#"><img src="./images/btn_sch.png" alt="검색 아이콘"></a>
+        </div>
+      </div>
+     
+      <div class="menu-wrapper">
+        <div class="btn-wrapper">
+          <div class="mobile-menu">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+            <span class="bar3"></span>
+          </div>
+          <div class="pc-menu flex-container">
+            <h2>menu</h2>
+            <div class="arrow">
+              <span class="bar1"></span>
+              <span class="bar2"></span>
+            </div>
+          </div>
+        </div>
+        <nav class="header-nav">
+          <div class="menu">
+            <div class="menu-content">
+              <div class="close-btn">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+              </div>
+              <div class="menu-top">
+                <img class="logo-box" src="./images/logo.png" alt="로고이미지">
+                <div class="user-menu flex-container">
+                  <a href="#">로그인</a>
+                  <a href="#">회원가입</a>
+                </div>
+              </div>
+              <ul class="menu-list">
+                <li>
+                  <a href="#">about</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">6대 원칙</a></li>
+                    <li><a href="#">올원 리포트</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">store</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">센티드 샤워</a></li>
+                    <li><a href="#">이달의 향</a></li>
+                    <li><a href="#">선물하기</a></li>
+                    <li><a href="#">제품 라인별</a></li>
+                    <li><a href="#">제품 향별</a></li>
+                    <li><a href="#">악세사리</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">review</a></li>
+                <li>
+                  <a href="#">event</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">진행중인 이벤트</a></li>
+                    <li><a href="#">당첨자 발표</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#">campaign</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">캠페인</a></li>
+                    <li><a href="#">사회공헌활동</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">soap&soul</a></li>
+                <li>
+                  <a href="#">community</a>
+                  <ul class="sub-menu">
+                    <li><a href="#">공지사항</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <span class="menu-bg">
+            </span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- main -->
+    <section class="main-slide ">
+      <div class="swiper mainSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="slide-wrapper">
+              <picture>
+                <source media="(max-width: 989px)" srcset="images/main-bg1-m.png" />
+                <img src="images/main_bg1_pc.png" alt="얼그레이솝" />
+              </picture>
+              <div class="slide-content content1">
+                <div class="main-title">
+                  <h4>CITRUS ORANGE</h4>
+                  <h2>시트러스 오렌지</h2>
+                </div>
+                <div class="sub-title">
+                  <h2>저자극 보습 리프레쉬</h2>
+                  <p>비타민 가득 시트러스 오일</p>
+                  <h2>피부 생기 활력 부여</h2>
+                  <p>상큼한 오렌지향</p>
+                  <span class="bg-bar1"></span>
+                  <span class="bg-bar2"></span>
+                </div>
+                <div class="tag">
+                  <h3>#저자극 #보습 #생기 #활력 #비타민</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="slide-wrapper">
+              <picture>
+                <source media="(max-width: 989px)" srcset="images/main-bg2-m.png" />
+                <img src="images/main_bg2_pc.png" alt="ZERO BAR SOAP" />
+              </picture>
+              <!-- <img src="./images/main-bg2-m.png" alt="ZERO BAR SOAP"> -->
+              <div class="slide-content content2">
+                <div class="main-title">
+                  <h4>BABY-MILD</h4>
+                  <h2>베이비 마일드</h2>
+                </div>
+                <div class="sub-title">
+                  <h2>영유아, 민감성 피부</h2>
+                  <p>국내 3대 베스트 셀러</p>
+                  <h2>향 무첨가, 순하게</h2>
+                  <p>유기농 오일 본연의 향</p>
+                  <span class="bg-bar1"></span>
+                  <span class="bg-bar2"></span>
+                </div>
+                <div class="tag">
+                  <h3>#3중_보습 #영유아도_안심 #민감성_피부</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slide-wrapper">
+              <picture>
+                <source media="(max-width: 989px)" srcset="images/main-bg3-m.png" />
+                <img src="images/main_bg3_pc.png" alt="ORGANIC MAJIC BALM" />
+              </picture>
+              <!-- <img src="./images/main-bg3-m.png" alt="ORGANIC MAJIC "> -->
+              <div class="slide-content content3">
+                <div class="main-title">
+                  <h4>ALMOND</h4>
+                  <h2>아몬드</h2>
+                </div>
+                <div class="sub-title">
+                  <h2>강력한 보습감</h2>
+                  <p>건성 모든 피부 추천</p>
+                  <h2>유기농 원료</h2>
+                  <p>미국 농무부 인증 유기농 원료 함유</p>
+                  <span class="bg-bar1"></span>
+                  <span class="bg-bar2"></span>
+                </div>
+                <div class="tag">
+                  <h3>#강력한_보습 #건성피부 #싱그러운_생아몬드향</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- content -->
+  <!-- stoty -->
+  <section class="story">
+    <div class="img-group flex-container rolled-over-text">
+      <img src="./images/story_img1.jpg" alt="유기농 재료">
+      <img src="./images/story_img2.jpg" alt="유기농 오일">
+    </div>
+    <h4>DR.BRONNER’S Story</h4>
+    <div class="story-title flex-container rolled-over-text">
+      <h2>" USDA</h2>
+      <h2>Organic "</h2>
+    </div>
+    <h3>Regenerative Organic Certified®</h3>
+    <p>미국에서 USDA Organic 유기농 인증을 취득한
+      최초의 스킨&바디케어 회사.</p>
+    <div class="btn">
+      <a href="#">VIEW MOER</a>
+    </div>
+  </section>
+
+  <!-- product -->
+  <section class="product">
+    <h2 class="title">New & Best</h2>
+    <div class="product-wrapper">
+      <div class="swiper bestSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/product-best.png" alt="PEPPERMINT">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/product-best2.png" alt="TEA-TREE">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/product-best3.png" alt="LAVENDER">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <div class="swiper productSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="img-wrapper">
+              <img src="./images/product1.png" alt="매직솝 60ml 10종 세트">
+            </div>
+            <div class="slide-content">
+              <h3>매직솝 60ml 10종 세트</h3>
+              <h4>35,550원</h4>
+              <a class="moer-btn" href="#">Show more</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-wrapper">
+              <img src="./images/product2.png" alt="티트리 슈가솜 360ml">
+            </div>
+            <div class="slide-content">
+              <h3>티트리 슈가솜 360ml</h3>
+              <h4>22,000원</h4>
+              <a class="moer-btn" href="#">Show more</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-wrapper">
+              <img src="./images/product3.png" alt="매직솝 240ml 듀오">
+            </div>
+            <div class="slide-content">
+              <h3>매직솝 240ml 듀오</h3>
+              <h4>21,600원</h4>
+              <a class="moer-btn" href="#">Show more</a>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="img-wrapper">
+              <img src="./images/product4.png" alt="60ml 스타터 키트">
+            </div>
+            <div class="slide-content">
+              <h3>60ml 스타터 키트</h3>
+              <h4>15,480원</h4>
+              <a class="moer-btn" href="#">Show more</a>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- youtube -->
+  <div class="youtube">
+    <div class="txt-slide" id="slide">
+      <div class="text">
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+        <span>scented  dr . bronner’s  shower</span>
+      </div>
+    </div>
+
+    <iframe
+      src="https://www.youtube.com/embed/9p8sLXxKu58?si=gBuSHeqpiwlZc6Hu&amp;controls=0&mute=1&loop=1&autoplay=1&playlist=9p8sLXxKu58"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="youtube-wrapper">
+      <div class="youtube-box">
+        <img src="./images/logo-fff.png" alt="로고 흰색 이미지">
+      </div>
+      <a class="moer-btn" href="#">view more</a>
+    </div>
+
+  </div>
+
+  <!-- review -->
+  <section class="review">
+    <h2 class="title">review</h2>
+
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="./images/review1.png" alt="사용자리뷰1">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/review2.png" alt="사용자리뷰2">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/review3.png" alt="사용자리뷰3">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/review4.png" alt="사용자리뷰4">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/review5.png" alt="사용자리뷰5">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/review6.png" alt="사용자리뷰6">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="go-to-up">
+    <a href="#">top</a>
+  </div>
+  <!-- notice -->
+  <div class="notice flex-container">
+    <h3>공지사항</h3>
+    <p>[공지] 닥터 브로너스 2024 NEW MEMBERSHIP</p>
+    <a href="#">more</a>
+  </div>
+
+  <!-- footer -->
+  <footer>
+    <!-- footer-info -->
+    <div class="footer-info">
+      <div class="footer-info-list">
+        <h3>고객센터 02-2226-6110</h3>
+        <p>평일 10:00 - 17:00 (주말/공휴일 휴무)</p>
+        <p>점심시간 12:00 - 14:00</p>
+      </div>
+      <div class="footer-info-list">
+        <p>제안관련문의  help@drbronnerskorea.com</p>
+        <p>대량 구매 문의 <a href="#">문의하기</a></p>
+      </div>
+      <ul class="footer-info-list">
+        <li><a href="#">음원 레포트</a></li>
+        <li><a href="#">사회공헌활동</a></li>
+        <li><a href="#">캠페인</a></li>
+        <li><a href="#">soap$soul</a></li>
+      </ul>
+      <ul class="footer-info-list">
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">자주하는 질문</a></li>
+        <li><a href="#">고객문의</a></li>
+        <li><a href="#">사용후기</a></li>
+      </ul>
+      <div class="footer-info-list  flex-container">
+        <div class="user-menu flex-container">
+          <p class="login"><a href="#">로그인</a></p>
+          <p class="join"><a href="#">회원가입</a></p>
+        </div>
+        <div class="sns-menu flex-container">
+          <a href="#"><img class="insta" src="./images/instagram_fill.png" alt="인스타그램 아이콘"></a>
+          <a href="#"><img src="./images/youtube_fill.png" alt="유투브 아이콘"></a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- footer-bottom -->
+    <div class="footer-bottom">
+      <ul class="footer-bottom-list flex-container">
+        <li><a href="#">회사소개</a></li>
+        <li><a href="#">이용약관</a></li>
+        <li><a href="#">이용안내</a></li>
+        <li><a href="#">개인정보처리방침</a></li>
+        <li><a href="#">고객센터</a></li>
+      </ul>
+      <div class="footer-bottom-list">
+        <p>회사명 : (주)엠아이인터내셔널</p>
+        <p>06302 서울특별시 강남구 논현로26길 14 (도곡동) 2층</p>
+        <p> 대표 : 이정섭</p>
+      </div>
+      <div class="footer-bottom-list">
+        <p>사업자 등록번호 120-87-48667</p>
+        <p>통신판매업 신고번호 : 제 2010-서울강남-00006 호</p>
+        <p><a href="#"> [사업자정보확인]</a></p>
+      </div>
+      <div class="footer-bottom-list">
+        <p>구매안전(에스크로)서비스<a href="#">서비스가입사실확인</a></p>
+        <p>고객님의 안전거래를 위해 현금 등으로 5만원이상 결제시 저희 쇼핑몰에서 가입한 구매안전(에스크로) 서비스를 이용하실 수 있습니다.</p>
+      </div>
+    </div>
+
+    <!-- footer-copy -->
+    <div class="footer-copyright">
+      <p>Copyright ©닥터 브로너스 코리아 All rights reserved. Hosting by (주)카페24</p>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,207 @@
+@charset "utf-8";
+
+/************** fonts */
+/* 'Pretendard Variable' */
+@import url(../assets/styles/pretendard-subset.css);
+
+/*
+  font-family: "Poltawski Nowy", serif;
+
+  font-family: "Prata", serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&family=Prata&display=swap');
+
+/*
+.poller-one-regular {
+  font-family: "Poller One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
+/************* css 변수 */
+:root {
+  --font-main-ko: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,Helvetica, sans-serif;
+
+  --font-main-en: "Prata",'Times New Roman', Times, serif;
+  --font-sub-en: "Poltawski Nowy",'Times New Roman', Times, serif;
+  --font-title-en: "Poller One",'Times New Roman', Times, serif;
+
+  --font-xxxl: 4.0625rem;
+  /*65px*/
+  --font-xxl: 3.125rem;
+  /*50px*/
+  --font-xlg: 2.5rem;
+  /*40px*/
+  --font-lg: 1.875rem;
+  /*30px*/
+  --font-md: 1.25rem;
+  /*20px*/
+  --font-sm: 0.9375rem;
+  /*15px*/
+  --font-s: 0.875rem;
+  /*14px*/
+  --font-ss: 0.75rem;
+  /*12px*/
+  --font-xs: 0.625rem;
+  /*10px*/
+
+  --main: #0F2046;
+  --main-color1: #F29B25;
+  --main-color2: #85B2CB;
+  --main-color3: #3A8244;
+
+  --main-bg1: rgba(242, 157, 37, 0.2);
+  --main-bg2: rgba(133, 178, 203, 0.2);
+  --main-bg3: rgba(58, 130, 68, 0.2);
+
+  --sub-blue: #00358E;
+  --sub-black: #1E1E1E;
+
+  --bg-gray: #F3F3F3;
+  --border-line: #E7E7E7;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --spacing-xlg: 3.125em;
+  /*50px;*/
+  --spacing-lg: 2.5rem;
+  /*40px;*/
+  --spacing-md: 1.875rem;
+  /*30px;*/
+  --spacing-sm: 1.5625rem;
+  /*25px;*/
+  --spacing-s: 1.25rem;
+  /*20px;*/
+  --spacing-ss: 1rem;
+  /*16px;*/
+  --spacing-xs: 0.625rem;
+  /*10px;*/
+
+  --section-xlg: 6.25rem;
+  /*100px;*/
+  --section-lg: 5rem;
+  /*80px;*/
+  --section-md: 3.75rem;
+  /*60px;*/
+}
+
+body {
+  font-family: var(--font-main-ko);
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+}
+
+.gride-container {
+  display: grid;
+  align-items: center;
+}
+
+.img-box-s {
+  width: 20px;
+  height: 20px;
+}
+
+.img-box-m {
+  width: 30px;
+  height: 30px;
+}
+
+.btn {
+  background-color: var(--sub-blue);
+  color: var(--color-white);
+  font-size: var(--font-s);
+  width: 160px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  text-align: center;
+  border-color: var(--main);
+  border-radius: 0;
+  color: var(--color-wihte);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 150ms ease-in-out;
+  margin: 0 auto;
+}
+.btn a {
+  color: var(--color-white);
+}
+.btn:after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background: var(--main-color2);
+    z-index: -1;
+    transition: width 150ms ease-in-out;
+  }
+  
+  .btn:hover {
+    &:after {
+      width: 110%;
+    }
+  }
+  .btn:hover a{
+    color: var(--main);
+  }
+
+.title {
+  font-family: var(--font-sub-en);
+  font-size: var(--font-xxl);
+  font-weight: 800;
+  letter-spacing: -5px;
+  font-style: italic;
+  color: var(--sub-blue);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.moer-btn {
+  font-family: var(--font-sub-en);
+  font-weight: 800;
+  font-size: var(--font-sm);
+  color: var(--sub-blue);
+  font-style: italic;
+  text-decoration: underline;
+  text-transform: capitalize;
+  transition: 0.3s;
+  padding: 6px;
+}
+
+@media (min-width: 990px) {
+  .btn {
+    padding: var(--font-sm) var(--spacing-lg);
+    font-size: var(--font-md);
+    width: 210px;
+  }
+
+  .title {
+    font-family: var(--font-sub-en);
+    font-size: 90px;
+    font-weight: 800;
+    letter-spacing: -7px;
+    font-style: italic;
+    color: var(--sub-blue);
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  .moer-btn {
+    font-family: var(--font-sub-en);
+    font-weight: 800;
+    font-size: var(--font-md);
+    color: var(--sub-blue);
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: capitalize;
+  }
+}

@@ -51,7 +51,6 @@ header {
   transform: scale(0);
 }
 
-/* scale대신 opacity도 사용가능*/
 .menu.toggle-btn .bar3 {
   transform: translate(24px, 43px) rotate(-45deg);
 }
@@ -112,7 +111,10 @@ header {
   background-color: #000;
   border-radius: 10px;
 }
-
+.next-btn a {
+  display: block;
+  width: 100%; height: 100%;
+}
 .next-btn .bar1 {
  transform: translate(30px, 34px) rotate(45deg);
 }
@@ -380,69 +382,6 @@ header {
   padding: 14px 0;
 }
 
-/* 버튼이벤트 
-.txt-box .link-view {
-  color: #fff;
-transition: all 0.3s ease;
-position: relative;
-background-color: #00358e;
-border: none;
-margin-bottom: 10px;
-}
-.txt-box .link-view .btn-evt {
-position: relative;
-}
-.txt-box .link-view:before,
-.txt-box .link-view:after {
-position: absolute;
-content: "";
-right: 0;
-bottom: 0;
-background: #00358E;
-transition: all 0.3s ease;
-}
-.txt-box .link-view:before{
- height: 0%;
- width: 2px;
-}
-.txt-box .link-view:after {
-width: 0%;
-height: 2px;
-}
-.txt-box .link-view:hover{
-color: #00358E;
-background: transparent;
-}
-.txt-box .link-view:hover:before {
-height: 100%;
-}
-.txt-box .link-view:hover:after {
-width: 100%;
-}
-.txt-box .link-view .btn-evt:before,
-.txt-box .link-view .btn-evt:after {
-position: absolute;
-content: "";
-left: 0;
-top: 0;
-background: #00358E;
-transition: all 0.3s ease;
-}
-.txt-box .link-view .btn-evt:before {
-width: 2px;
-height: 0%;
-}
-.txt-box .link-view .btn-evt:after {
-height: 2px;
-width: 0%;
-}
-.txt-box .link-view .btn-evt:hover:before {
-height: 100%;
-}
-.txt-box .link-view .btn-evt:hover:after {
-width: 100%;
-}
-*/
 /************ footer */
 footer .up-btn {
   right: 4px;
