@@ -219,7 +219,10 @@
 .project .project2 .project-container .project-title-keyword li {
   border: var(--border);
 }
-
+.project .project-warpper .project-container .project-title-keyword li:hover {
+  background-color: var(--bg-color);
+  color: #fff;
+}
 .project .project2 .project-title,
 .project .project3 .project-title {
   width: 721px;
@@ -396,14 +399,26 @@
 }
 
 .check-box .bar1 {
-  transform: translate(4px, 16px) rotate(45deg);
+  transform: translate(6px, 18px) rotate(45deg);
   width: 8px;
 }
 
 .check-box .bar2 {
-  transform: translate(8px, 12px) rotate(-45deg);
+  transform: translate(10px, 14px) rotate(-45deg);
 }
 
 .check-box.active span {
   background-color: #000;
 }
+.JS-JQ p {
+  width: 760px;
+}
+/* 
+.miniflower {
+  background-color: transparent;
+  transition: background-color 0.1s ease; 
+}
+.miniflower:hover {
+  background-color: #5CB338;
+  border-radius: 50%;
+} */

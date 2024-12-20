@@ -7,6 +7,7 @@ body {
 .bg {
   position: relative;
   width: 1440px;
+  z-index: -999;
 }
 .line2 {
   position: absolute;

@@ -25,7 +25,7 @@
   --font-main-title-sm: 1.25rem; /*20px*/
   --font-main-title-xsm: 0.875rem; /*14px*/
 
-
+  --bg-color: #000;
   --bg-color1: #FDE7C6;
   --bg-color2: #E7E4DF;
   --bg-color3: #E6EEF5;
@@ -114,7 +114,7 @@ body ::selection {
 }
 .check-box {
   border: var(--border);
-  width: 30px; height: 30px;
+  width: 35px; height: 35px;
   display: block;
   margin-right: var(--spacing-xsm);
 }

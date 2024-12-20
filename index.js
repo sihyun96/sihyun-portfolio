@@ -296,7 +296,7 @@ $('.list-box-txt.HTML-CSS').show();
 $('.list-box-txt.Figma').show();
 
 // 각 체크박스 클릭 이벤트 처리
-$('.check-list').each(function (index) {
+$('.check-box').each(function (index) {
   $(this).on('click', function () {
     // 모든 list-box-txt 숨기기
     $('.list-box-txt').hide();
@@ -323,7 +323,6 @@ const movingTxt = function (e) {
 
 // 이벤트 핸들러 등록
 $(document).on('mousemove', movingTxt);
-
 
 
 
