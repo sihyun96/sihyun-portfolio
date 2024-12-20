@@ -327,9 +327,8 @@ header {
   margin-left: 60px;
 }
 .result .result-wrapper .left-result-list p {
-  display: list-item;
-  list-style-type: disc;
-  line-height: 2;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 /******** right */
 .p4-content .right {

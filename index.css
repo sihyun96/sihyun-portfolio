@@ -254,17 +254,20 @@
   transform: translateX(-50%);
   width: 100%;
 }
-.project .project2 .project-container h4, .project .project2 .project-container h3, .project .project2 .project-container ul {
+.project .project-warpper h4, .project .project-warpper h3, .project .project-warpper ul {
   z-index: 9;
 }
-.project .project3 .project-container h4, .project .project3 .project-container h3, .project .project3 .project-container ul {
-  z-index: 9;
-}
+
 .project .project3 .project-container img {
   position: absolute;
   top: 30px;
   right: 50px;
   width: 60%;
+}
+.project .project4 .project-container img {
+  position: absolute;
+  top: 40px; right: 50px;
+  width: 65%;
 }
 
 /* skill */

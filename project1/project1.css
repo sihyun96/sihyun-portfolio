@@ -108,8 +108,8 @@ header {
   border: var(--border);
   height: 600px;
 }
-.header-main .youtube {
-  width: 50%;
+.header-main video {
+  width: 100%;
   height: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;

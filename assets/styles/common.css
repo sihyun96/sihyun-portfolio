@@ -26,11 +26,10 @@
   --font-main-title-xsm: 0.875rem; /*14px*/
 
 
-
   --bg-color1: #FDE7C6;
   --bg-color2: #E7E4DF;
   --bg-color3: #E6EEF5;
-  --bg-color4: #fad2be;
+  --bg-color4: #f8e5dd;
 
 
   --color-white: #fff;
@@ -65,7 +64,7 @@ html ::-webkit-scrollbar-thumb {
 }
 
 body {
-  margin: 150px auto;
+  margin: 150px auto 0;
   /* padding: var(--spacing-xlg) 0 0; */
   font-family: var(--font-main-ko);
   box-sizing: border-box;
