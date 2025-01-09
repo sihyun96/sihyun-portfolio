@@ -213,3 +213,32 @@ body ::selection {
 .left-box:last-child {
   border-bottom: 1px solid #000;
 }
+/***** Ani */
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.txt-deco .ani {
+  width: 30px; height: 30px;
+  will-change: transform;
+  animation: rotate360 4s linear infinite;
+}
+
+@media (min-width: 1900px) {
+  .link {
+    padding: 20px 12px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 1800px) {
+  .link {
+    padding: 16px 10px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+  }
+}

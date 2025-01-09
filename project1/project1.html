@@ -25,7 +25,7 @@
   <script src="../assets/scripts/swiper-bundle.min.js"></script>
   <!-- lottie -->
   <script src="../assets/scripts/lottie.min.js"></script>
-
+  <script src="../index.js" defer></script>
 
 </head>
 
@@ -127,33 +127,6 @@
     </div>
   </footer>
   <script>
-    document.querySelectorAll('.miniflower').forEach((element) => {
-      lottie.loadAnimation({
-        container: element,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../images/lottie/miniflower.json'
-      });
-    });
-
-    // up btn
-    $(window).on('scroll', function () {
-      if (scrollY > 800) {
-        $('.up-btn').css({ opacity: 1, pointerEvents: 'auto' });
-      } else {
-        $('.up-btn').css({ opacity: 0, pointerEvents: 'none' });
-      };
-    });
-
-    $('.up-btn').on('click', function (e) {
-      e.preventDefault();
-      scrollTo({
-        behavior: 'smooth',
-        top: 0
-      });
-    });
-
     // menu
     $('.menu').on('click', function () {
       $(this).toggleClass('toggle-btn');

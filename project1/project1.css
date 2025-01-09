@@ -208,6 +208,10 @@ header {
   justify-content: space-between;
   margin-top: var(--spacing-md);
 }
+.p1-content .right .txt-box .txt-file a:first-child {
+  background-color: #F1C312;
+  color: #000;
+}
 
 footer .up-btn {
   right: 4px;

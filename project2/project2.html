@@ -25,7 +25,7 @@
   <script src="../assets/scripts/swiper-bundle.min.js"></script>
   <!-- lottie -->
   <script src="../assets/scripts/lottie.min.js"></script>
-
+  <script src="../index.js" defer></script>
 
 </head>
 
@@ -71,7 +71,9 @@
           <h2>01 <strong>GOALS</strong></h2>
         </div>
         <div class="left-sub-title deco-list">
-          <div class="txt-deco miniflower"></div>
+          <div class="txt-deco">
+            <img src="../images/miniflower.png" alt="miniflower">
+          </div>
           <h3>프로젝트 목표</h3>
         </div>
         <ul class="left-txt grid-container">
@@ -86,7 +88,9 @@
         </div>
         <div class="left-keyword">
           <div class="left-sub-list deco-list">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h3>KEYWORD</h3>
           </div>
           <p>미술관의 분위기와 전시에 집중할 수 있도록 심플하고 미니멀한 디자인을 적용하며, 대림미술관의 모던함을 바탕으로 예술과 일상의 조화를 강조 </p>
@@ -99,7 +103,9 @@
 
         <div class="left-color">
           <div class="left-sub-list deco-list">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h3>COLOR</h3>
           </div>
           <div class="left-color-list flex-container">
@@ -112,7 +118,9 @@
 
         <div class="left-font">
           <div class="left-sub-list deco-list">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h3>FONT</h3>
           </div>
           <div class="left-font-list flex-container">
@@ -140,23 +148,20 @@
               <div class="txt-deco">
                 <img src="../images/miniflower.png" alt="miniflower">
               </div>
-              <p>GSAP ScrollTrigger를 사용해 메인 화면 스크롤 시 애니메이션이 동작하는 스크롤 효과를 구현.</p>
+              <p>GSAP ScrollTrigger를 사용해 메인 화면 스크롤 시 애니메이션이 동작하는 스크롤 효과를 구현</p>
             </div>
             <div class="left-sub-list publising-list">
               <div class="txt-deco">
                 <img src="../images/miniflower.png" alt="miniflower">
               </div>
-              <p>GSAP ScrollTrigger를 사용해 이미지가 뷰포트에 진입하면 순차적으로 위로 올라오고, 상단에 닿으면 오른쪽으로 이동하는 애니메이션 구현.</p>
+              <p>GSAP ScrollTrigger를 사용해 이미지가 뷰포트에 진입하면 순차적으로 y축 이동, 상단에 닿으면 x축 이동</p>
             </div>
             <div class="left-sub-list publising-list">
               <div class="txt-deco">
                 <img src="../images/miniflower.png" alt="miniflower">
               </div>
-              <p>GSAP를 사용해 스크롤이 페이지 끝에 닿으면 애니메이션이 실행되도록 구현.</p>
+              <p>GSAP를 사용해 스크롤이 페이지 끝에 닿으면 애니메이션이 실행되도록 구현</p>
             </div>
-          </div>
-
-          <div class="right-publising-list">
             <div class="left-sub-list publising-list">
               <div class="txt-deco">
                 <img src="../images/miniflower.png" alt="miniflower">
@@ -186,7 +191,9 @@
         <div class="problems-solutions-wrapper">
           <div class="left-problems">
             <div class="left-sub-list deco-list">
-              <div class="txt-deco miniflower"></div>
+              <div class="txt-deco">
+                <img src="../images/miniflower.png" alt="miniflower">
+              </div>
               <h3>footer 애니메이션이 뷰포트를 벗어나면 처음부터 재시작 하고 싶은데..</h3>
             </div>
           </div>
@@ -210,7 +217,7 @@
         <div class="problems-solutions-wrapper">
           <div class="left-problems">
             <div class="left-sub-list deco-list">
-              <div class="txt-deco miniflower"></div>
+              <div class="txt-deco"><img src="../images/miniflower.png" alt=""></div>
               <h3>이미지가 오른쪽으로 이동하면 이미지 뒤에있는 텍스트가 보여야하는데..?</h3>
             </div>
           </div>
@@ -236,7 +243,9 @@
         <div class="problems-solutions-wrapper">
           <div class="left-problems">
             <div class="left-sub-list deco-list">
-              <div class="txt-deco miniflower"></div>
+              <div class="txt-deco">
+                <img src="../images/miniflower.png" alt="miniflower">
+              </div>
               <h3>main-ani 스크롤 이동시 다른요소에 가려지네?</h3>
             </div>
           </div>
@@ -263,16 +272,23 @@
         </div>
         <div class="result-wrapper">
           <div class="left-sub-list deco-list">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h3>review</h3>
           </div>
           <div class="left-result-list">
-            <p>이미지 애니메이션 구현시 y축이동과 x축이동 후 x축이동이 한번더 있는 동작을 구현하고 싶었지만,시간을 너무 많이 소모하여 모든 동작을 구현하지 못했지만, 두 가지 동작을 완성하며 성취감을
+            <p>
+              GSAP를 이용하여 복잡한 애니메이션을 구현하는 과정에서 예상보다 많은 시간이 소모되었지만, 이를 <strong>스스로 완성하며 </strong>큰 만족감을 느꼈다. 또한 <strong>GSAP</strong>를 활용한 경험은 <strong>애니메이션 구현 역량을 강화</strong>하는 데 큰 도움이 되었다.
+              </p>
+              <p>특히, 화려한 효과를 가진 페이지를 완성하면서 <strong>시각적 완성도</strong>에 대한 자신감을 얻을 수 있었다. <br> 
+                이러한 과정을 통해 GSAP를 활용한 애니메이션 제작은 나의 <strong>기술적인 역량을 한층 성장</strong>시키는 계기가 되었다.</p>
+            <!-- <p>이미지 애니메이션 구현시 y축이동과 x축이동 후 x축이동이 한번더 있는 동작을 구현하고 싶었지만,시간을 너무 많이 소모하여 모든 동작을 구현하지 못했지만, 두 가지 동작을 완성하며 성취감을
               얻음</p>
             <p>복잡한 애니메이션을 스스로 구현해내며 큰 만족감을 느낌</p>
             <p>GSAP를 적용한 페이지 제작 경험이 애니메이션 구현 역량을 강화하는 계기가됨</p>
             <p>화려한 효과를 가진 페이지를 완성하며 시각적 완성도에 자신감을 얻음</p>
-            <p>GSAP를 활용한 애니메이션을 제작하며 기술적인 역량이 한층 성장함</p>
+            <p>GSAP를 활용한 애니메이션을 제작하며 기술적인 역량이 한층 성장함</p> -->
           </div>
         </div>
       </div>
@@ -280,7 +296,9 @@
 
     <div class="right">
       <div class="title-box flex-container">
-        <div class="txt-deco miniflower"></div>
+        <div class="txt-deco">
+          <img class="ani" src="../images/miniflower.png" alt="miniflower">
+        </div>
         <h2>WEB Design</h2>
       </div>
 
@@ -291,22 +309,26 @@
         </div>
         <div class="txt-list">
           <div class="list-box flex-container">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img class="ani" src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h2>개인 프로젝트</h2>
           </div>
           <div class="list-box flex-container">
             <div class="txt-deco">
-              <img src="../images/miniflower.png" alt="miniflower">
+              <img class="ani" src="../images/miniflower.png" alt="miniflower">
             </div>
             <h2>GSAP의 ScrollTrigger와 Java Scriptt를 이용한 애니메이션 구현</h2>
           </div>
           <div class="list-box flex-container">
-            <div class="txt-deco miniflower"></div>
+            <div class="txt-deco">
+              <img class="ani" src="../images/miniflower.png" alt="miniflower">
+            </div>
             <h2>웹 리디자인, 퍼블리싱</h2>
           </div>
         </div>
         <div class="link-view">
-          <a href="./241127-DealimMuseum/project3.html" target="_blank" class="link btn-evt">daelim museum VIEW</a>
+          <a href="./241127-DealimMuseum/project3.html" target="_blank" class="link btn-evt">사이트 보러가기</a>
         </div>
         <div class="link-view-github">
           <a href="https://github.com/sihyun96/sihyun-portfolio.git" target="_blank" class="link">GITHUB 보러가기</a>
@@ -324,36 +346,6 @@
   </footer>
 
   <script>
-    $('a[href="#"]').on('click', function (e) {
-      e.preventDefault();
-    });
-    document.querySelectorAll('.miniflower').forEach((element) => {
-      lottie.loadAnimation({
-        container: element,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../images/lottie/miniflower.json'
-      });
-    });
-
-    // up btn
-    $(window).on('scroll', function () {
-      if (scrollY > 800) {
-        $('.up-btn').css({ opacity: 1, pointerEvents: 'auto' });
-      } else {
-        $('.up-btn').css({ opacity: 0, pointerEvents: 'none' });
-      };
-    });
-
-    $('.up-btn').on('click', function (e) {
-      e.preventDefault();
-      scrollTo({
-        behavior: 'smooth',
-        top: 0
-      });
-    });
-
     // menu
     $('.menu').on('click', function () {
       $(this).toggleClass('toggle-btn');

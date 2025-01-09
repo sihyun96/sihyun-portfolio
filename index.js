@@ -106,17 +106,6 @@ const light_fff = lottie.loadAnimation({
   path: './images/lottie/light_fff.json' // 경로
 });
 
-// 모든 '.miniflower' 요소에 애니메이션을 적용
-document.querySelectorAll('.miniflower').forEach((element) => {
-  lottie.loadAnimation({
-    container: element,
-    renderer: 'svg',
-    loop: true,
-    autoplay: true,
-    path: './images/lottie/miniflower.json'
-  });
-});
-
 document.querySelectorAll('.light1').forEach((element) => {
   lottie.loadAnimation({
     container: element,
@@ -214,8 +203,7 @@ const topHt = function () {
   } else if (prevScroll > currentScroll) {
     // 스크롤을 올렸을 때 header가 나타나며 top: 0
     $('header').css({
-      transform: 'translateY(0)',
-      transform: 'translateX(-50%)',
+      transform: 'translateY(0) translateX(-50%)',
       'top': '0',  // top을 0으로 설정
       height: '50px',
       opacity:1,
@@ -244,9 +232,9 @@ const topHt = function () {
   } else {
     // 스크롤을 내렸을 때 header를 숨김
     $('header').css({
-      transform: `translateY(-${hTopHt}px)`,
-      transform: 'translateX(-50%)',
-      opacity: 0
+      transform: `translateY(-${hTopHt}px) translateX(-50%)`,
+      opacity: 0,
+      userSelect: 'none'
        // header 숨기기
     });
   }
@@ -269,7 +257,6 @@ $('.global-menu li a').each(function (idx, elem) {
     })
   });
 });
-
 
 // skill 
 

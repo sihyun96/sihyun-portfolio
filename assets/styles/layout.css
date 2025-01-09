@@ -45,7 +45,7 @@ header .header-container .menu {
   justify-content: space-between;
 }
 header .header-container .menu .deco-wrapper{
-  width: 92px; height: 93px;
+  width: 92px; height: 92px;
   border: 1px solid #000;
 }
 header .header-container .menu .global-menu {
@@ -60,8 +60,8 @@ header .header-container .menu .global-menu.open {
   opacity: 1;
 }
 header .header-container .menu .global-menu li:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-black);
 }
 header .header-container .menu .global-menu li {
   width: 20%;
@@ -78,7 +78,7 @@ header .header-container-left .mini {
 header .header-container-right {
   background-color: var(--color-white);
   border: var(--border);
-  width: 241px; height: 93px;
+  width: 241px; height: 91px;
   justify-content: center;
   z-index: 99;
 }
