@@ -85,14 +85,8 @@
 
 .about .about-title .title-deco .light1 {
   position: absolute;
-  top: 0;
-  right: -30px;
-}
-
-.about .about-title .title-deco .light2 {
-  position: absolute;
-  top: 0;
-  left: 50px;
+  top: -30px;
+  left: 36px;
 }
 
 .about .about-title .about-title-profile {
@@ -111,7 +105,7 @@
 }
 
 .about .about-img {
-  width: 721px;
+  width: 718px;
   height: 500px;
   background: url(./images/about-img.png) no-repeat 50% / contain, #fff;
   position: relative;
@@ -120,16 +114,9 @@
 .about .about-img #keyword {
   position: absolute;
   top: -60px;
-  left: 14px;
-  width: 100%;
-}
-
-.about .about-img img {
-  width: 445px;
-  height: 415px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  left: 40px;
+  width: 90%;
+  animation: rotate360 14s linear infinite;
 }
 
 /* project */
@@ -304,6 +291,12 @@
   background-color: var(--color-white);
   line-height: 541px;
   grid-column: 5/17;
+
+  transition: transform 0.1s ease;
+  display: inline-block;
+  will-change: transform;
+  position: relative;
+  -webkit-text-stroke: 1px #000;
 }
 
 .skill-tool .skill-list {
@@ -332,10 +325,6 @@
 
 .skill-tool .skill-list .skill-check .check-list {
   margin-bottom: var(--spacing-sm);
-}
-
-.skill-tool .skill-list .list-box .list-box-txt {
-  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .skill-tool .skill-list .tool-list-box {
@@ -412,6 +401,15 @@
 }
 .JS-JQ p {
   width: 760px;
+}
+.check-list p {
+  transition: 0.3s;
+}
+.check-list:first-child p {
+  background-color: #ffcd38;
+}
+.check-list:nth-child(7) p {
+  background-color: #ffcd38;
 }
 /* 
 .miniflower {

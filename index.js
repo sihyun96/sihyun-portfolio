@@ -207,8 +207,7 @@ const topHt = function () {
       'top': '0',  // top을 0으로 설정
       height: '50px',
       opacity:1,
-      backgroundColor: 'var(--color-white)',
-      color: 'var(--color-black)'
+      border: '1px solid #000',
     });
     $('.deco-wrapper').css({
       height: '50px', backgroundColor: 'var(--color-black)'
@@ -267,10 +266,12 @@ $('.check-box').on('click', function () {
 
   // 모든 check-box와 list-box-txt 비활성화
   $('.check-box').removeClass('active');
+  $('.check-list p').css({ backgroundColor: 'transparent'})
 
   // 현재 클릭된 요소만 활성화 (토글 동작 가능)
   if (!isActive) {
     $(this).addClass('active');
+    $(this).siblings('p').css({backgroundColor: '#ffcd38'});
   }
 });
 
@@ -293,13 +294,12 @@ $('.check-box').each(function (index) {
 });
 
 // 마우스 이벤트
-
 const movingTxt = function (e) {
   let txtX = e.clientX;
   let txtY = e.clientY;
 
   // 마우스 위치에 따라 텍스트 위치와 그림자 설정
-  $('.main-title, .footer-title').css({
+  $('.main-title, .footer-title, .skill-tool-title .title').css({
     left: 0 - txtX / 50,
     top: 0 - txtY / 200,
     textShadow: `${-22 + txtX / 100}px ${txtY / 100}px 0px #000`,

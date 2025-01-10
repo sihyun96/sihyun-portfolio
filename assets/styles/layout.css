@@ -115,9 +115,22 @@ footer .contact .contact-left p {
   line-height: 120px;
   border-right: none;
   background-color: var(--color-white);
+  position: relative;
 }
 footer .contact .contact-left p a {
   display: block;
+}
+footer .contact .contact-left p a:hover {
+  background-color: #ffcd38;
+}
+footer .contact .contact-left p:last-child::after {
+content: "";
+position: absolute;
+top: 58px; left: -11px;
+rotate: 18deg;
+width: 106%; height: 0.5px;
+background-color: #000;
+
 }
 footer .contact .contact-left p:nth-of-type(1) {
   border-bottom: none;
