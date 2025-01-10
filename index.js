@@ -167,10 +167,9 @@ gsap.utils.toArray('.rolled-over-text').forEach((txt) => {
 
 // header 사라지고 내려오고
 let prevScroll = window.scrollY;
-
 const topHt = function () {
-  let currentScroll = window.scrollY;
-  const hTopHt = 400;
+let currentScroll = window.scrollY;
+const hTopHt = 400;
 
   if (currentScroll === 0) {
     // 첫 화면으로 돌아갈 때, header를 원래 위치로 복구
@@ -179,54 +178,27 @@ const topHt = function () {
       transform: 'translateX(-50%)',
       'top': '',  // 원래 위치로 복구
       'height': '',  // 원래 높이로 복구
-       backgroundColor: 'var(--color-black)',
-       color: 'var(--color-white)'
     });
-    $('.deco-wrapper').css({
-      height: ''
-    });
-    $('.deco-wrapper svg').css({
-      height: '60px'
-    });
-    $('.menu').css({
-      height: ''
-    });
-    $('header .header-container .menu .global-menu li a').css({
-      height: '', lineHeight: ''
-    });
-    $('header .header-container-right').css({
-       height: ''
-    });
-    $('header .header-container-right h2').css({
-      fontSize:''
-   });
+    $('.deco-wrapper').css({ height: '' });
+    $('.deco-wrapper svg').css({ height: '60px' });
+    $('.menu').css({ height: '' });
+    $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '', lineHeight: '' });
+    $('header .header-container-right').css({ height: '' });
+    $('header .header-container-right h2').css({ fontSize: '' });
   } else if (prevScroll > currentScroll) {
     // 스크롤을 올렸을 때 header가 나타나며 top: 0
     $('header').css({
       transform: 'translateY(0) translateX(-50%)',
       'top': '0',  // top을 0으로 설정
-      height: '50px',
-      opacity:1,
-      border: '1px solid #000',
+      height: '52px',
+      opacity: 1,
     });
-    $('.deco-wrapper').css({
-      height: '50px', backgroundColor: 'var(--color-black)'
-    });
-    $('.deco-wrapper svg').css({
-      height: '25px'
-    });
-    $('.menu').css({
-      height: '50px'
-    });
-    $('header .header-container .menu .global-menu li a').css({
-      height: '50px', lineHeight: '50px'
-    });
-    $('header .header-container-right').css({
-       height: '50px'
-    });
-    $('header .header-container-right h2').css({
-      fontSize:'18px'
-   });
+    $('.deco-wrapper').css({ height: '50px' });
+    $('.deco-wrapper svg').css({ height: '25px' });
+    $('.menu').css({ height: '50px' });
+    $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '50px', lineHeight: '50px' });
+    $('header .header-container-right').css({ height: '50px' });
+    $('header .header-container-right h2').css({ fontSize: '18px' });
 
   } else {
     // 스크롤을 내렸을 때 header를 숨김
@@ -234,7 +206,7 @@ const topHt = function () {
       transform: `translateY(-${hTopHt}px) translateX(-50%)`,
       opacity: 0,
       userSelect: 'none'
-       // header 숨기기
+      // header 숨기기
     });
   }
   prevScroll = currentScroll;
@@ -266,12 +238,12 @@ $('.check-box').on('click', function () {
 
   // 모든 check-box와 list-box-txt 비활성화
   $('.check-box').removeClass('active');
-  $('.check-list p').css({ backgroundColor: 'transparent'})
+  $('.check-list p').css({ backgroundColor: 'transparent' })
 
   // 현재 클릭된 요소만 활성화 (토글 동작 가능)
   if (!isActive) {
     $(this).addClass('active');
-    $(this).siblings('p').css({backgroundColor: '#ffcd38'});
+    $(this).siblings('p').css({ backgroundColor: '#ffcd38' });
   }
 });
 
