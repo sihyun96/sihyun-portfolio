@@ -26,6 +26,73 @@ body {
 }
 
 /* ***********header */
+/* #header {
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1440px;
+  min-width: 1200px;
+  position: fixed;
+  top: calc(150px - 91px); left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  height: 91px;
+  transition: 0.2s;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+header .header-container .menu {
+  width: 1200px; height: 100%;
+  justify-content: space-between;
+}
+header .header-container .menu .deco-wrapper{
+  width: 92px; height: 93px;
+  border: 1px solid #000;
+}
+header .header-container .menu .global-menu {
+  width: 100%; height: 100%;
+  min-width: 50%;
+  justify-content: space-around;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border: 1px solid #000;
+}
+header .header-container .menu .global-menu.open {
+  opacity: 1;
+}
+header .header-container .menu .global-menu li:hover {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+header .header-container .menu .global-menu li {
+  width: 20%;
+}
+header .header-container .menu .global-menu li a {
+  display: block;
+  height: 100%; 
+  line-height: 91px;
+  text-align: center;
+}
+header .header-container-left .mini {
+  width: 20px; height: 20px;
+}
+header .header-container-right {
+  background-color: var(--color-white);
+  border: var(--border);
+  width: 241px; height: 93px;
+  justify-content: center;
+  z-index: 99;
+}
+header .header-container-right h2 {
+  color: var(--color-black);
+  font-size: var(--font-main-title-sm);
+  font-family: var(--font-main-en);
+  font-weight: 800;
+  
+}
+header .header-container-right .header-deco{
+  width: 35px;
+} */
+
 #header {
   justify-content: space-between;
   align-items: flex-start;
@@ -114,22 +181,9 @@ footer .contact .contact-left p {
   line-height: 120px;
   border-right: none;
   background-color: var(--color-white);
-  position: relative;
 }
 footer .contact .contact-left p a {
   display: block;
-}
-footer .contact .contact-left p a:hover {
-  background-color: #ffcd38;
-}
-footer .contact .contact-left p:last-child::after {
-content: "";
-position: absolute;
-top: 58px; left: -11px;
-rotate: 18deg;
-width: 106%; height: 0.5px;
-background-color: #000;
-
 }
 footer .contact .contact-left p:nth-of-type(1) {
   border-bottom: none;

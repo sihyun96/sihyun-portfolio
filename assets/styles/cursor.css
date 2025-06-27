@@ -5,14 +5,12 @@
 body{
 cursor: url("../../images/cursor_3.png"), auto;
 }
-.menu {
 
-}
-a:hover:active, .check-box:hover:active, .menu:hover:active{
+a:hover:active, .check-box:hover:active{
   cursor: url("../../images/cursor_4.png"), auto;
   }
 
-a:hover, .check-box:hover, .menu:hover {
+a:hover, .check-box:hover {
   cursor: url("../../images/cursor_5.png"), auto;
 }
 .shadow-container:hover {

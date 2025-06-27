@@ -142,7 +142,7 @@ header {
   border-right: none;
 }
 .left-title h2 {
-  font-size: 300;
+  font-family: 300;
   margin-bottom: 60px;
 }
 .left-title h2 strong {
@@ -325,8 +325,9 @@ header {
   margin-left: 60px;
 }
 .result .result-wrapper .left-result-list p {
-  line-height: 1.5;
-  margin-bottom: 20px;
+  display: list-item;
+  list-style-type: disc;
+  line-height: 2;
 }
 /******** right */
 .p3-content .right {
@@ -376,7 +377,10 @@ header {
   width: 360px;
   margin: var(--spacing-md) 0;
 }
-
+.p3-content .right .txt-box .txt-file a {
+  margin-bottom: 20px;
+  padding: 14px 0;
+}
 .p3-content .right .txt-box .link-view a:first-child {
   background-color: #00358E;
   color: #fff;

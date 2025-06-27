@@ -25,7 +25,7 @@
   <script src="../assets/scripts/swiper-bundle.min.js"></script>
   <!-- lottie -->
   <script src="../assets/scripts/lottie.min.js"></script>
-  <script src="../index.js" defer></script>
+
 
 </head>
 
@@ -71,9 +71,7 @@
 
     <div class="right">
       <div class="title-box flex-container">
-        <div class="txt-deco">
-          <img class="ani" src="../images/miniflower.png" alt="miniflower">
-        </div>
+        <div class="txt-deco miniflower"></div>
         <h2>UI Design</h2>
       </div>
 
@@ -85,24 +83,21 @@
         </div>
         <div class="txt-list">
           <div class="list-box flex-container">
-            <div class="txt-deco">
-              <img class="ani" src="../images/miniflower.png" alt="miniflower">
-            </div>
+            <div class="txt-deco miniflower"></div>
             <h2>24/09/10 ~ 24/10/15</h2>
           </div>
           <div class="list-box flex-container">
-            <div class="txt-deco">
-              <img class="ani" src="../images/miniflower.png" alt="miniflower">
-            </div>
-            <h2>팀프로젝트, 팀리더</h2>
+            <div class="txt-deco miniflower"></div>
+            <h2>팀프로젝트</h2>
           </div>
           <div class="list-box flex-container">
-            <div class="txt-deco">
-              <img class="ani" src="../images/miniflower.png" alt="miniflower">
-            </div>
+            <div class="txt-deco miniflower"></div>
             <h2>모바일 UX/UI 리디자인</h2>
           </div>
-
+          <div class="list-box flex-container">
+            <div class="txt-deco miniflower"></div>
+            <h2>팀리더</h2>
+          </div>
         </div>
         <div class="txt-skill">
           <h2>SKILL & TOOL</h2>
@@ -131,6 +126,33 @@
     </div>
   </footer>
   <script>
+    document.querySelectorAll('.miniflower').forEach((element) => {
+      lottie.loadAnimation({
+        container: element,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: '../images/lottie/miniflower.json'
+      });
+    });
+
+    // up btn
+    $(window).on('scroll', function () {
+      if (scrollY > 800) {
+        $('.up-btn').css({ opacity: 1, pointerEvents: 'auto' });
+      } else {
+        $('.up-btn').css({ opacity: 0, pointerEvents: 'none' });
+      };
+    });
+
+    $('.up-btn').on('click', function (e) {
+      e.preventDefault();
+      scrollTo({
+        behavior: 'smooth',
+        top: 0
+      });
+    });
+
     // menu
     $('.menu').on('click', function () {
       $(this).toggleClass('toggle-btn');

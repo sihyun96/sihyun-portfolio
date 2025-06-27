@@ -133,12 +133,12 @@ body ::selection {
   align-items: center;
   margin-bottom: var(--spacing-sm);
 }
-.project-container{
-  color: var(--color-black);
+.project-container {
+  color: var(--color-white);
   font-family: var(--font-main-en);
   width: 1083px; height: 546px;
   border: var(--border);
-  background-color: var(--bg-color1);
+  /* background-color: var(--bg-color1); */
   padding: var(--spacing-Xlg) 0 90px 70px;
   position: relative;
   overflow: hidden;
@@ -147,6 +147,7 @@ body ::selection {
   flex-direction: column;
   justify-content: end;
 }
+
 .project-title {
   width: 1083px; height: 91px;
   border: var(--border);
@@ -212,33 +213,4 @@ body ::selection {
 }
 .left-box:last-child {
   border-bottom: 1px solid #000;
-}
-/***** Ani */
-@keyframes rotate360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.txt-deco .ani {
-  width: 30px; height: 30px;
-  will-change: transform;
-  animation: rotate360 4s linear infinite;
-}
-
-@media (min-width: 1900px) {
-  .link {
-    padding: 20px 12px;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
-}
-@media (min-width: 1800px) {
-  .link {
-    padding: 16px 10px;
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-  }
 }

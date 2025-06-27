@@ -136,7 +136,7 @@ header {
   border-right: none;
 }
 .left-title h2 {
-  font-size: 300;
+  font-family: 300;
   margin-bottom: 60px;
 }
 .left-title h2 strong {
@@ -164,6 +164,11 @@ header {
   text-align: center; line-height: 40px;
   margin: 30px;
 }
+.txt-deco img {
+  width: 30px; height: 30px;
+  will-change: transform;
+  animation: rotate360 4s linear infinite;
+}
 
 /***** goals */
 .goals .left-txt {
@@ -175,7 +180,15 @@ header {
   margin-bottom: 30px;
 }
 
-
+/***** Ani */
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 /***** design */
 /* keyword */
@@ -243,7 +256,12 @@ header {
   align-items: flex-start;
   width: 100%;
 }
-
+.publising-list-wrapper .left-publising-list {
+  width: 60%;
+}
+.publising-list-wrapper .right-publising-list {
+  width: 40%;
+}
 .publising-list-wrapper p {
   font-size: 18px;
 }
@@ -307,8 +325,9 @@ header {
   margin-left: 60px;
 }
 .result .result-wrapper .left-result-list p {
-  line-height: 1.5;
-  margin-bottom: 20px;
+  display: list-item;
+  list-style-type: disc;
+  line-height: 2;
 }
 
 /******** right */
@@ -360,7 +379,10 @@ header {
   width: 360px;
   margin: var(--spacing-md) 0;
 }
-
+.p2-content .right .txt-box .txt-file a {
+  margin-bottom: 20px;
+  padding: 14px 0;
+}
 .p2-content .right .txt-box .link-view a {
   text-transform: uppercase;
 }

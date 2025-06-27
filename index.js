@@ -106,6 +106,17 @@ const light_fff = lottie.loadAnimation({
   path: './images/lottie/light_fff.json' // 경로
 });
 
+// 모든 '.miniflower' 요소에 애니메이션을 적용
+document.querySelectorAll('.miniflower').forEach((element) => {
+  lottie.loadAnimation({
+    container: element,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: './images/lottie/miniflower.json'
+  });
+});
+
 document.querySelectorAll('.light1').forEach((element) => {
   lottie.loadAnimation({
     container: element,
@@ -166,6 +177,82 @@ gsap.utils.toArray('.rolled-over-text').forEach((txt) => {
 });
 
 // header 사라지고 내려오고
+// let prevScroll = window.scrollY;
+
+// const topHt = function () {
+//   let currentScroll = window.scrollY;
+//   const hTopHt = 400;
+
+//   if (currentScroll === 0) {
+//     // 첫 화면으로 돌아갈 때, header를 원래 위치로 복구
+//     $('header').css({
+//       transform: 'translateY(0)',  // 위치 초기화
+//       transform: 'translateX(-50%)',
+//       'top': '',  // 원래 위치로 복구
+//       'height': '',  // 원래 높이로 복구
+//        backgroundColor: 'var(--color-black)',
+//        color: 'var(--color-white)'
+//     });
+//     $('.deco-wrapper').css({
+//       height: ''
+//     });
+//     $('.deco-wrapper svg').css({
+//       height: '60px'
+//     });
+//     $('.menu').css({
+//       height: ''
+//     });
+//     $('header .header-container .menu .global-menu li a').css({
+//       height: '', lineHeight: ''
+//     });
+//     $('header .header-container-right').css({
+//        height: ''
+//     });
+//     $('header .header-container-right h2').css({
+//       fontSize:''
+//    });
+//   } else if (prevScroll > currentScroll) {
+//     // 스크롤을 올렸을 때 header가 나타나며 top: 0
+//     $('header').css({
+//       transform: 'translateY(0)',
+//       transform: 'translateX(-50%)',
+//       'top': '0',  // top을 0으로 설정
+//       height: '50px',
+//       opacity:1,
+//       backgroundColor: 'var(--color-white)',
+//       color: 'var(--color-black)'
+//     });
+//     $('.deco-wrapper').css({
+//       height: '50px', backgroundColor: 'var(--color-black)'
+//     });
+//     $('.deco-wrapper svg').css({
+//       height: '25px'
+//     });
+//     $('.menu').css({
+//       height: '50px'
+//     });
+//     $('header .header-container .menu .global-menu li a').css({
+//       height: '50px', lineHeight: '50px'
+//     });
+//     $('header .header-container-right').css({
+//        height: '50px'
+//     });
+//     $('header .header-container-right h2').css({
+//       fontSize:'18px'
+//    });
+
+//   } else {
+//     // 스크롤을 내렸을 때 header를 숨김
+//     $('header').css({
+//       transform: `translateY(-${hTopHt}px)`,
+//       transform: 'translateX(-50%)',
+//       opacity: 0
+//        // header 숨기기
+//     });
+//   }
+//   prevScroll = currentScroll;
+// };
+
 let prevScroll = window.scrollY;
 const topHt = function () {
 let currentScroll = window.scrollY;
@@ -213,6 +300,7 @@ const hTopHt = 400;
 };
 
 
+
 // 메뉴 이동 이벤트
 $(window).on('scroll', topHt);
 // 메뉴 클릭시 섹션이동
@@ -229,6 +317,7 @@ $('.global-menu li a').each(function (idx, elem) {
   });
 });
 
+
 // skill 
 
 // check-box 클릭 이벤트
@@ -238,12 +327,10 @@ $('.check-box').on('click', function () {
 
   // 모든 check-box와 list-box-txt 비활성화
   $('.check-box').removeClass('active');
-  $('.check-list p').css({ backgroundColor: 'transparent' })
 
   // 현재 클릭된 요소만 활성화 (토글 동작 가능)
   if (!isActive) {
     $(this).addClass('active');
-    $(this).siblings('p').css({ backgroundColor: '#ffcd38' });
   }
 });
 
@@ -260,18 +347,21 @@ $('.check-box').each(function (index) {
   $(this).on('click', function () {
     // 모든 list-box-txt 숨기기
     $('.list-box-txt').hide();
+    $('.check-list p').css({ backgroundColor: 'transparent' });
     // 현재 클릭한 항목의 list-box-txt만 표시
     $('.list-box-txt').eq(index).toggle();
+    $(this).siblings('p').css({ backgroundColor: '#ffcd38' });
   });
 });
 
 // 마우스 이벤트
+
 const movingTxt = function (e) {
   let txtX = e.clientX;
   let txtY = e.clientY;
 
   // 마우스 위치에 따라 텍스트 위치와 그림자 설정
-  $('.main-title, .footer-title, .skill-tool-title .title').css({
+  $('.main-title,.skill-tool-title .title, .footer-title').css({
     left: 0 - txtX / 50,
     top: 0 - txtY / 200,
     textShadow: `${-22 + txtX / 100}px ${txtY / 100}px 0px #000`,

@@ -378,7 +378,10 @@ header {
   width: 360px;
   margin: var(--spacing-md) 0;
 }
-
+.p4-content .right .txt-box .txt-file a {
+  margin-bottom: 20px;
+  padding: 14px 0;
+}
 .p4-content .right .txt-box .link-view a:first-child {
   background-color: #FFC700;
 }
