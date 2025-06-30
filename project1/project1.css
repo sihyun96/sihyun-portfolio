@@ -210,12 +210,8 @@ header {
 }
 .p1-content .right .txt-box .txt-file a:first-child {
   background-color: #F1C312;
-    color: #000;
 }
-.p1-content .right .txt-box .txt-file a:first-child:hover {
-  background-color: #000;
-  color: #fff;
-}
+
 footer .up-btn {
   right: 4px;
   bottom: 15px;

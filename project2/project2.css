@@ -383,15 +383,14 @@ header {
   margin-bottom: 20px;
   padding: 14px 0;
 }
-.p2-content .right .txt-box .link-view a {
-  text-transform: uppercase;
+.p2-content .right .txt-box a {
+  border-color: #2f5caa;
 }
 .p2-content .right .txt-box .link-view a:first-child {
-  background-color: #00358E;
-  color: #fff;
+  background-color: #2f5caa;
 }
-.p2-content .right .txt-box .link-view a:first-child:hover {
-  background-color: #000;
+.p2-content .right .txt-box a:hover {
+  background-color: #2f5caa;
 }
 /************ footer */
 footer .up-btn {

@@ -385,10 +385,7 @@ header {
 .p4-content .right .txt-box .link-view a:first-child {
   background-color: #FFC700;
 }
-.p4-content .right .txt-box .link-view a:first-child:hover {
-  background-color: #000;
-  color: #fff;
-}
+
 /************ footer */
 footer .up-btn {
   right: 4px;

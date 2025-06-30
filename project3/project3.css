@@ -381,12 +381,16 @@ header {
   margin-bottom: 20px;
   padding: 14px 0;
 }
-.p3-content .right .txt-box .link-view a:first-child {
-  background-color: #00358E;
-  color: #fff;
+.p3-content .right .txt-box .link {
+  border-color: #2f5caa;
 }
-.p3-content .right .txt-box .link-view a:first-child:hover {
-  background-color: #000;
+.p3-content .right .txt-box .link-view a:first-child {
+  background-color: #2f5caa;
+  
+}
+.p3-content .right .txt-box a:hover {
+  background-color: #2f5caa;
+
 }
 /************ footer */
 footer .up-btn {

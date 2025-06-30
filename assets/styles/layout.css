@@ -181,9 +181,32 @@ footer .contact .contact-left p {
   line-height: 120px;
   border-right: none;
   background-color: var(--color-white);
+  position: relative;
 }
 footer .contact .contact-left p a {
   display: block;
+}
+footer .contact .contact-left p a::after{
+  content: "";
+  position: absolute;
+  bottom: 36%;
+  left: 42%;
+  background-color: #000;
+  width: 58px;
+  height: 2px;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+footer .contact .contact-left p:nth-child(3)  a::after {
+  width: 134px;
+  left: 31.5%;
+}
+footer .contact .contact-left p:nth-child(4)  a::after {
+  width: 161px;
+  left: 27.5%;
+}
+footer .contact .contact-left p a:hover::after {
+  transform: scale(1);
 }
 footer .contact .contact-left p:nth-of-type(1) {
   border-bottom: none;
@@ -218,6 +241,21 @@ footer .contact .contact-right .contact-box {
 footer .contact .contact-right .contact-box p {
   font-weight: 700;
   line-height: 91px;
+  position: relative;
+}
+footer .contact .contact-right .contact-box p::after {
+  content: "";
+  position: absolute;
+  bottom: 36%;
+  left: 0;
+  background-color: #000;
+  width: 182px;
+  height: 2px;
+  transform: scale(0);
+  transition: transform 0.5s;
+}
+footer .contact .contact-right .contact-box:hover p::after {
+  transform: scale(1);
 }
 footer .contact .contact-right .contact-box .contact-deco {
   width: 80px;
