@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <title>sihyun-portfolio</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+
+  <!-- og -->
+  <meta property="og:url" content="https://sihyun96.github.io/sihyun-portfolio/">
+  <meta property="og:title" content="sihyun's portfolio">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./images/og.png">
+  <meta property="og:description" content="Design & Publisher &quot;이시현&quot; 입니다. ">
+
+  <link rel="stylesheet" href="../assets/styles/reset.min.css">
+  <link rel="stylesheet" href="../assets/styles/common.css">
+  <link rel="stylesheet" href="../assets/styles/layout.css">
+  <link rel="stylesheet" href="../assets/styles/cursor.css">
+  <link rel="stylesheet" href="../assets/styles/variableFont.css">
+  <link rel="stylesheet" href="./ourWork.css">
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="../assets/scripts/gsap.min.js"></script>
+  <script src="../assets/scripts/ScrollTrigger.min.js"></script>
+  <script src="../assets/scripts/lottie.min.js"></script>
+  <script src="../index.js" defer></script>
+  <script src="./ourWork.js" defer></script>
+
+</head>
+
+<body>
+  <!-- background -->
+  <div class="bg flex-container">
+    <div class="bg-line line1"></div>
+    <div class="bg-line line2"></div>
+    <div class="bg-line line3"></div>
+    <div class="bg-line line4"></div>
+  </div>
+  <div class="up-btn">
+    <a href="#"></a>
+  </div>
+
+  <!-- header -->
+  <header class="flex-container" id="header">
+    <div class="header-container flex-container">
+      <div class="menu flex-container">
+        <div class="deco-wrapper">
+          <div class="deco" id="smile1"></div>
+        </div>
+
+        <ul class="global-menu flex-container">
+          <li><a href="#">home</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">project</a></li>
+          <li><a href="#">skill&tools</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="header-container-right flex-container">
+      <h2> SIHYUN’S <br> PORTFOLIO</h2>
+      <div class="header-deco" id="roket"></div>
+    </div>
+  </header>
+
+
+  <!-- content -->
+  <div class="content">
+    <!-- main -->
+    <section class="main" id="main">
+      <div class="main-wapper flex-container">
+        <h2 class="sub-title">PROJECT SHOWCASE</h2>
+        <h2 class="main-title shadow-container">OUR WORK</h2>
+      </div>
+    </section>
+
+    <section class="work">
+      <ul class="work-menu flex-container">
+        <li data-filter="all" class="active">all</li>
+        <li data-filter="web">Web Design</li>
+        <li data-filter="uiux">UI/UX Design</li>
+        <li data-filter="react">React</li>
+      </ul>
+
+      <div class="work-project flex-container">
+
+        <ul class="project-list">
+          <a href="#">
+            <li class="project project1" data-category="react">LYT APP PROJECT</li>
+          </a>
+          <a href="#">
+            <li class="project project2" data-category="uiux">COMPOSE REDESIGN</li>
+          </a>
+          <a href="#">
+            <li class="project project3" data-category="web">COLAGENCY WEB</li>
+          </a>
+          <a href="#">
+            <li class="project project4" data-category="web">COLNPARTNERS WEB</li>
+          </a>
+          <a href="#">
+            <li class="project project5" data-category="web">Dealim REDesign</li>
+          </a>
+          <a href="#">
+            <li class="project project6" data-category="react">HBAF REACT</li>
+          </a>
+          <a href="#">
+            <li class="project project7" data-category="web">DR.BROUNNER’S WEB</li>
+          </a>
+        </ul>
+
+        <ul class="project-card">
+          <li class="project-inner project-inner1 active" data-category="react">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2025-10</h4>
+                  <h3>라잇 App UI/UX DESIGN</h3>
+                  <h4>라잇 Web App 개발</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#팀프로젝트</li>
+                    <li>#Web App</li>
+                    <li>#UI/UX DESING</li>
+                    <li>#PUBLISING</li>
+                    <li>#REACT NATIVE</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT1</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>Web App</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner2" data-category="uiux">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2024-09</h4>
+                  <h3>COMPOS COFFEE UI/UX DESIGN</h3>
+                  <h4>컴포즈커피 앱 리디자인</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#팀프로젝트</li>
+                    <li>#UI/UX</li>
+                    <li>#DESIGN</li>
+                    <li>#FIGMA</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT2</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>UI Design</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner3" data-category="web">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2025-09</h4>
+                  <h3>콜에이전시 반응형 WEB</h3>
+                  <h4>반응형 웹 제작</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#개인프로젝트</li>
+                    <li>#반응형</li>
+                    <li>#WEB</li>
+                    <li>#PUBLISING</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT3</h2>
+            </div>
+            <div class="project-skill flex-container" data-category="web">
+              <h3><span class="txt-deco miniflower"></span>Web Design</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner4" data-category="web">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2025-10</h4>
+                  <h3>콜앤파트너스 반응형 WEB</h3>
+                  <h4>반응형 웹 제작</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#개인프로젝트</li>
+                    <li>#반응형</li>
+                    <li>#PUBLISING</li>
+                    <li>#워드프레스</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT4</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>Web Design</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner5" data-category="web">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2024-12</h4>
+                  <h3>대림 미술관 WEB DESIGN</h3>
+                  <h4>웹 디자인</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#개인프로젝트</li>
+                    <li>#WEB</li>
+                    <li>#REDESING</li>
+                    <li>#PUBLISING</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT2</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>Web Design</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner6" data-category="react">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2024-12</h4>
+                  <h3>HBAF REACT</h3>
+                  <h4>바프 리액트 모바일 페이지</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#개인프로젝트</li>
+                    <li>#MOBILE</li>
+                    <li>#REACT</li>
+                    <li>#PUBLISING</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT6</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>React Mobile</h3>
+            </div>
+          </li>
+
+          <li class="project-inner project-inner7" data-category="web">
+            <a href="./project2/project2.html">
+              <div class="project-container">
+                <div class="txt-box">
+                  <h4>2024-11</h4>
+                  <h3>DR.BRONNER'S WEB DESIGN</h3>
+                  <h4>닥터브로너스 반응형 웹 디자인</h4>
+                  <ul class="project-title-keyword flex-container">
+                    <li>#개인프로젝트</li>
+                    <li>#WEB</li>
+                    <li>#REDESING</li>
+                    <li>#PUBLISING</li>
+                  </ul>
+                </div>
+              </div>
+            </a>
+            <div class="project-title">
+              <h2>PROJECT7</h2>
+            </div>
+            <div class="project-skill flex-container">
+              <h3><span class="txt-deco miniflower"></span>Web Design</h3>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+
+
+    </section>
+  </div>
+
+
+  <!-- footer -->
+  <footer>
+
+    <section class="contact" id="contact">
+      <h2 class="contact-title title rolled-over-text">CONTACT</h2>
+
+      <div class="contact-wapper flex-container">
+        <div class="contact-left grid-container">
+          <div class="deco-box">
+            <div class="deco" id="best"></div>
+          </div>
+          <p><a href="/cdn-cgi/l/email-protection#7003191809051e4946424730171d11191c5e131f1d">E-mail</a></p>
+          <p><a href="https://github.com/sihyun96/240723-.git" target="_blank">Github 공부일지</a></p>
+          <p><a href="https://github.com/sihyun96/241018-portfolio.git" target="_blank">포트폴리오 작업일지</a></p>
+          <p></p>
+        </div>
+        <div class="contact-right">
+          <h2 class="rolled-over-text">Thank you!</h2>
+          <div class="deco" id="light_fff"></div>
+          <div class="contact-box flex-container">
+            <p><a href="#">sihyun9627@gmail.com</a></p>
+            <div class="contact-deco" id="send"></div>
+          </div>
+        </div>
+      </div>
+      <div class="deco-wapper flex-container">
+        <div class="deco-box black">
+          <div class="deco" id="flower3"></div>
+
+        </div>
+        <div class="deco-box">
+          <div class="deco" id="smile3"></div>
+        </div>
+      </div>
+      <div class="foote

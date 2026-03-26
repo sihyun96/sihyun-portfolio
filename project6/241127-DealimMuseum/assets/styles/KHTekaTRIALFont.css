@@ -1,0 +1,16 @@
+
+
+@font-face {
+	font-family: 'KHTekaTRIAL';
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+	src: url(../fonts/6543bff036f6d0e39e6f3402_KHTekaTRIAL-Regular.woff) format('woff2');
+}
+@font-face {
+	font-family: 'KHTekaTRIAL';
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+	src: url(../fonts/6543bff01f0d36db2117a101_KHTekaTRIAL-Medium.woff) format('woff2');
+}

@@ -1,0 +1,845 @@
+/* 공통 섹션 설정 */
+.onboarding-container {
+  padding: 80px 20px;
+  background-color: #fff;
+  font-family: 'Pretendard', sans-serif; /* 폰트는 상황에 맞게 변경 */
+}
+
+/* 상단 타이틀 스타일 */
+.onboarding-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.category-name { color: #007AFF; font-weight: bold; font-size: 18px; }
+.step-badge {
+  background: #007AFF; color: white; width: 30px; height: 30px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin: 20px auto 10px; font-weight: bold;
+}
+.step-title { color: #007AFF; font-size: 20px; margin-bottom: 20px; }
+.main-headline { font-size: 32px; font-weight: 800; color: #333; margin-bottom: 10px; }
+.sub-headline { font-size: 18px; color: #666; font-weight: 500; }
+.en-headline { font-size: 12px; color: #ccc; margin-top: 10px; line-height: 1.4; }
+
+/* 이미지 및 설명 박스 레이아웃 (PC 기준) */
+.image-container {
+  position: relative;
+  width: 400px; /* PC에서의 이미지 너비 */
+  margin: 0 auto;
+}
+
+.image-container {
+  position: relative;
+  width: 380px; /* 모바일 프레임 너비 */
+  margin: 0 auto;
+}
+
+.main-image { width: 100%; height: auto; display: block; }
+
+.info-box {
+  position: absolute;
+  width: 280px;
+  transition: all 0.5s ease;
+}
+
+/* PC에서 점(dot)과 선 효과를 위한 스타일 */
+.info-box.left { right: 115%; text-align: right; }
+.info-box.right { left: 115%; text-align: left; }
+.info-box h3 { color: #007AFF; font-size: 18px; margin-bottom: 8px; font-weight: bold; }
+.info-box p { font-size: 14px; color: #777; line-height: 1.5; word-break: keep-all; }
+
+/* 모바일 대응 (768px 이하) */
+@media (max-width: 767px) {
+  .main-headline { font-size: 24px; }
+  .image-container { width: 100%; } /* 모바일에서 이미지는 화면 꽉 차게 */
+
+  .info-box {
+    left: 50% !important;
+    right: auto !important;
+    width: 85%;
+    transform: translate(-50%, 30px);
+    opacity: 0;
+    pointer-events: none;
+    /* 글래스모피즘 스타일 */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center !important;
+    border: 2px solid #007AFF;
+  }
+
+  /* 스크롤 시 등장 효과 */
+  .info-box.active {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  .main-image { width: 100%; height: auto; display: block; }
+}
+
+/* --- 섹션 1 전용 (Home) --- */
+
+/* PC 기본 상태: 숨김 처리 */
+@media (min-width: 768px) {
+  .info-box {
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    pointer-events: none;
+  }
+
+  /* 왼쪽 박스는 왼쪽에서 오른쪽으로 슥 */
+  .info-box.left {
+    right: 115%;
+    transform: translateX(-30px);
+    text-align: right;
+  }
+
+  /* 오른쪽 박스는 오른쪽에서 왼쪽으로 슥 */
+  .info-box.right {
+    left: 115%;
+    transform: translateX(30px);
+    text-align: left;
+  }
+
+  /* 활성화 시 나타남 */
+  .info-box.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+}
+
+/* 모바일은 기존 코드 유지 (그대로 두시면 됩니다) */
+@media (max-width: 767px) {
+  .info-box {
+    left: 50% !important;
+    right: auto !important;
+    width: 85%;
+    transform: translate(-50%, 30px);
+    opacity: 0;
+    /* ... 이하 기존 글래스모피즘 스타일 유지 ... */
+  }
+  
+  .info-box.active {
+    opacity: 1 !important;
+    transform: translate(-50%, 0) !important;
+  }
+}
+
+
+/* ********************************************************************** */
+
+/* PC에서는 기존처럼 가로 배치 (생략, 필요시 flex-direction: row) */
+
+/* 전체 섹션 레이아웃 */
+.create-section {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 80px 0;
+}
+
+/* 슬라이더를 감싸는 메인 컨테이너 */
+.create-content-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 50px; /* 화살표 버튼 공간 */
+}
+
+/* 가로 슬라이더 본체 */
+.mobile-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 40px 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 스크롤바 숨기기 */
+.mobile-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 슬라이드 아이템 하나하나 */
+.step-item {
+  min-width: 100%; /* PC/모바일 공통으로 한 화면에 하나 */
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-item img {
+    width: 300px; /* 휴대폰 이미지 너비 고정 */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    /* box-shadow: 0 20px 40px rgba(0,0,0,0.1); */
+    border-radius: 40px;
+}
+
+/* 텍스트 상자 (글래스모피즘) */
+
+
+/* 중앙에 온 아이템만 진하게 */
+
+/* 화살표 버튼 센스있게 배치 */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50%;
+    border: 1px solid #eee;
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 15px rgba(0,0,0,0.1); */
+    transition: 0.3s;
+}
+
+.nav-btn:hover { background-color: #f8f9fa; }
+.prev-btn { left: 0; }
+.next-btn { right: 0; }
+
+.nav-btn svg { width: 30px; fill: #007AFF; }
+
+/* 인디케이터 */
+.step-indicator-mobile {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #ddd;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #007AFF;
+    width: 24px; /* 활성화 시 길어지는 효과 */
+    border-radius: 4px;
+}
+
+/* 모바일 대응 */
+@media (max-width: 767px) {
+    .create-content-wrapper { padding: 0 20px; }
+    .nav-btn { width: 40px; height: 40px; }
+    .step-item img { width: 80%; }
+}
+
+@media (max-width: 767px) {
+  .create-content-wrapper {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  .mobile-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* 스크롤이 딱딱 끊기게 */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .step-item {
+    min-width: 100vw;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 120px; /* 글래스 박스 공간 */
+  }
+
+  .step-item img {
+    width: 80%; /* 휴대폰 이미지가 너무 커지지 않게 조절 */
+    height: auto;
+  }
+
+  /* 글래스 박스 - 하단 고정 느낌 */
+  .create-section .info-box {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    opacity: 0;
+    transition: 0.3s;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  }
+
+  /* 현재 보고 있는 스텝의 박스만 노출 */
+  .step-item.is-visible .info-box {
+    opacity: 1;
+    transform: translate(-50%, -10px);
+  }
+}
+
+/* --- 스크롤 유도 및 화살표 애니메이션 --- */
+.scroll-guide {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.scroll-guide p { font-size: 13px; color: #aaa; }
+
+.arrow-container { display: flex; align-items: center; gap: 4px; }
+.arrow-dash, .arrow-head {
+  display: inline-block;
+  width: 8px; height: 2px;
+  background-color: #eee;
+  animation: arrow-flow 1.5s infinite;
+}
+.arrow-head {
+  width: 6px; height: 6px;
+  border-top: 2px solid #eee;
+  border-right: 2px solid #eee;
+  transform: rotate(45deg);
+  background: none;
+}
+
+/* 화살표 색상이 연하게 이동하는 효과 */
+.arrow-container span:nth-child(1) { animation-delay: 0s; }
+.arrow-container span:nth-child(2) { animation-delay: 0.2s; }
+.arrow-container span:nth-child(3) { animation-delay: 0.4s; }
+.arrow-container span:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes arrow-flow {
+  0% { background-color: #eee; border-color: #eee; }
+  50% { background-color: #007AFF; border-color: #007AFF; }
+  100% { background-color: #eee; border-color: #eee; }
+}
+
+/* --- 모바일 중앙 정렬 핵심 --- */
+@media (max-width: 767px) {
+  .create-content-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  .mobile-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 40px; /* 양옆에 여백을 주어 다음 이미지가 살짝 보이게 설정 */
+    gap: 20px;
+  }
+  .step-item {
+    min-width: calc(100vw - 80px); /* 패딩만큼 제외하여 정확히 중앙 배치 */
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .step-item img {
+    width: 100%; /* 이미지가 잘린 상태라면 100%, 아니면 적절한 너비 */
+    max-width: 280px; 
+    height: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  /* ... 기존 코드 ... */
+
+  .create-section .info-box {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    
+    /* 텍스트 중앙 정렬 핵심 코드 */
+    width: 100% !important;     /* 부모(step-item) 너비를 가득 채워야 중앙 정렬이 먹힙니다 */
+    max-width: 500px;           /* 텍스트가 너무 길어지지 않게 상한선만 지정 */
+    text-align: center !important; /* 내부 텍스트 및 인라인 요소 중앙 정렬 */
+    margin: 30px auto 0 !important; /* 상단 여백을 주고, 박스 자체도 중앙에 배치 */
+    
+    background: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+  }
+
+  /* 내부 제목과 설명도 명시적으로 정렬 */
+  .create-section .info-box h3,
+  .create-section .info-box p {
+    text-align: center !important;
+  }
+}
+
+
+.create-content-wrapper {
+  position: relative; /* 버튼 배치를 위해 relative */
+}
+
+/* 화살표 버튼 스타일 */
+.nav-btn {
+  position: absolute;
+  top: 40%; /* 이미지 중간 높이 */
+  transform: translateY(-50%);
+  width: 40px; height: 40px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  border: none;
+  z-index: 2000;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.prev-btn { left: 10px; }
+.next-btn { right: 10px; }
+.nav-btn svg { width: 24px; fill: #007AFF; }
+
+/* 모바일 스크롤 감도 조절 */
+@media (max-width: 767px) {
+  .mobile-scroll-container {
+    scroll-snap-type: x mandatory;
+    /* 한 번의 스와이프에 무조건 한 칸씩만 걸리도록 설정 */
+    scroll-snap-stop: always; 
+    -ms-overflow-style: none; /* 스크롤바 숨기기 */
+    scrollbar-width: none;
+  }
+  .mobile-scroll-container::-webkit-scrollbar { display: none; }
+  
+  .step-item {
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+}
+
+/* PC 버전 디테일 보정 */
+@media (min-width: 768px) {
+  .create-section {
+    padding: 100px 0;
+  }
+
+  /* 슬라이더 컨테이너가 마우스 드래그 시에도 부드럽게 반응하도록 설정 */
+  .mobile-scroll-container {
+    cursor: grab; /* 드래그 가능 아이콘 */
+    user-select: none; /* 드래그 시 텍스트 선택 방지 */
+    overflow-x: hidden; /* PC에서는 스크롤바 완전 숨김 */
+  }
+
+  .mobile-scroll-container:active {
+    cursor: grabbing;
+  }
+
+  .step-item {
+    position: relative;
+    padding-bottom: 50px; /* 아래 인디케이터와의 간격 */
+  }
+
+  /* PC에서 info-box 위치 고정 */
+  .create-section .info-box {
+    position: relative !important; /* 절대 위치 해제 */
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    opacity: 1 !important; /* PC에선 항상 노출 */
+    margin-top: 30px;
+    width: 100%;
+    max-width: 450px;
+    background: none !important; /* 배경 제거 (깔끔하게) */
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    pointer-events: auto !important;
+  }
+
+  .create-section .info-box h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+
+  .create-section .info-box p {
+    font-size: 16px;
+    color: #666;
+  }
+
+  /* PC에서 인디케이터 클릭 방지 해제 */
+  .step-indicator-mobile {
+    margin-top: 50px;
+    pointer-events: auto;
+  }
+}
+
+/* Create 섹션 내부의 info-box만 타겟팅 */
+.create-section .info-box {
+  border: none !important;      /* 테두리 제거 */
+}
+
+
+/* ************************************************************ */
+/* 공통 헤더 스타일 */
+/* Manage 섹션 전체 컨테이너 */
+.manage-section-final {
+  padding: 100px 0;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* 이미지들을 감싸는 영역 */
+.manage-custom-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.manage-card {
+  position: relative;
+  width: 300px;
+  text-align: center;
+}
+
+/* PC에서 비대칭 효과 */
+.main-card { transform: translateY(0); }
+.sub-card { transform: translateY(60px); }
+
+.manage-img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.manage-caption {
+  margin-top: 20px;
+  padding: 15px;
+}
+.manage-caption h3 { color: #007AFF; font-size: 18px; margin-bottom: 5px; }
+.manage-caption p { color: #666; font-size: 14px; }
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 767px) {
+  .manage-custom-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 80px; /* 이미지 사이 세로 간격 */
+  }
+
+  .manage-card {
+    width: 85%;
+    transform: translateY(0) !important; /* 모바일선 비대칭 해제 */
+  }
+
+  /* 모바일에서 글래스 박스 효과 */
+  .manage-caption {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+    
+    /* 스크롤 전에는 살짝 투명하게 하려면 아래 추가 (선택사항) */
+    opacity: 0.2;
+    transition: 0.5s;
+  }
+
+  /* 활성화 되었을 때 나타남 */
+  .manage-card.active .manage-caption {
+    opacity: 1;
+    bottom: -15px;
+  }
+}
+/* ************************************************************* */
+
+/* Workspace 섹션 전용 스타일 */
+.ws-section {
+  background-color: #ffffff;
+  padding: 100px 20px;
+}
+
+.ws-category { color: #007AFF; font-weight: bold; }
+.ws-badge {
+  background: #007AFF; color: white; width: 30px; height: 30px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin: 15px auto; font-weight: bold;
+}
+.ws-main-headline { font-size: 28px; line-height: 1.3; margin-bottom: 15px; word-break: keep-all; }
+.ws-sub-headline { font-size: 16px; color: #888; margin-bottom: 50px; }
+
+/* 카드 스택 컨테이너 */
+.ws-stack-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px; /* 카드 사이 간격 */
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ws-card {
+  width: 100%;
+  background: white;
+  border-radius: 30px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 카드 내 이미지 스타일 */
+.ws-img-wrapper {
+  width: 100%;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.ws-img-wrapper img {
+  width: 80%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* 카드 내 텍스트 스타일 */
+.ws-text-content h3 {
+  font-size: 20px;
+  color: #007AFF;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.ws-text-content p {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* 활성화 시 효과 (Intersection Observer 연동) */
+.ws-card.ws-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 모바일 전용 미세조정 */
+@media (max-width: 767px) {
+  .ws-main-headline { font-size: 22px; }
+  .ws-card { padding: 40px 15px; }
+  .ws-img-wrapper img { width: 90%; }
+}
+
+
+
+/* *********************************************************** */
+
+
+/* Profile 섹션 전용 */
+.pf-section {
+  background-color: #fff;
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.pf-category { color: #007AFF; font-weight: bold; }
+.pf-badge {
+  background: #007AFF; color: white; width: 30px; height: 30px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin: 15px auto; font-weight: bold;
+}
+.pf-main-headline { font-size: 28px; line-height: 1.3; margin-bottom: 15px; }
+.pf-sub-headline { font-size: 16px; color: #888; margin-bottom: 60px; padding: 0 20px; }
+
+/* 비주얼 레이아웃 */
+.pf-visual-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* 중앙 폰 이미지 확대 효과 */
+.pf-main-phone {
+  width: 320px;
+  z-index: 5;
+  transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform: scale(0.9); /* 기본 상태 살짝 작게 */
+}
+.pf-main-phone.pf-active { transform: scale(1.05); }
+
+.pf-phone-img { width: 100%; height: auto; border-radius: 40px; }
+
+/* 사이드 아이템 (배지, 설정) */
+.pf-side-item {
+  width: 260px;
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+.pf-left { transform: translateX(50px); }
+.pf-right { transform: translateX(-50px); }
+
+/* 활성화 시 제자리로 */
+.pf-side-item.pf-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pf-glass-box {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.pf-tag { color: #007AFF; font-weight: bold; font-size: 14px; display: block; margin-bottom: 8px; }
+.pf-glass-box p { font-size: 14px; color: #555; line-height: 1.4; }
+.pf-side-img { width: 100%; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 767px) {
+  .pf-visual-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .pf-main-phone { width: 75%; order: 1; } /* 폰이 먼저 보임 */
+  .pf-side-item { width: 85%; order: 2; }
+  
+  .pf-left, .pf-right { transform: translateY(30px); }
+  .pf-side-item.pf-active { transform: translateY(0); }
+  
+  .pf-glass-box { text-align: center; }
+}
+
+
+/* ************************************************** */
+
+
+/* Lounge 섹션 전용 스타일 */
+.lg-section {
+ background: linear-gradient(180deg, white 0%, #f2f7ff 100%);
+  padding: 100px 20px;
+  overflow: hidden;
+}
+
+.lg-category { color: #007AFF; font-weight: bold; }
+.lg-badge {
+  background: #007AFF; color: white; width: 30px; height: 30px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  margin: 15px auto; font-weight: bold;
+}
+.lg-main-headline { font-size: 28px; line-height: 1.3; margin-bottom: 15px; }
+.lg-sub-headline { font-size: 16px; color: #667085; margin-bottom: 60px; }
+
+/* 레이아웃 컨테이너 */
+.lg-content-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.lg-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 왼쪽 아이템은 왼쪽에서, 오른쪽은 오른쪽에서 슬라이드 */
+.lg-left-entry { transform: translateX(-60px); }
+.lg-right-entry { transform: translateX(60px); flex-direction: row-reverse; }
+
+/* 활성화 시 제자리 */
+.lg-item.lg-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.lg-img-box {
+  flex: 1;
+  max-width: 280px;
+}
+.lg-img-box img {
+  width: 100%;
+  border-radius: 35px;
+  /* box-shadow: 0 20px 40px rgba(0,122,255,0.15); */
+}
+
+.lg-text-box {
+  flex: 1.2;
+}
+.lg-dot-indicator {
+  display: inline-block;
+  width: 12px; height: 12px;
+  background: #007AFF;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+.lg-dot-indicator.blue { background: #007AFF; }
+
+.lg-text-box h3 { font-size: 22px; color: #1D1D1F; margin-bottom: 12px; }
+.lg-text-box p { font-size: 15px; color: #86868b; line-height: 1.6; word-break: keep-all; }
+
+/* --- 모바일 반응형 --- */
+@media (max-width: 767px) {
+  .lg-content-container { gap: 80px; }
+  
+  .lg-item, .lg-right-entry { 
+    flex-direction: column; 
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .lg-left-entry { transform: translateX(-40px); }
+  .lg-right-entry { transform: translateX(40px); }
+  
+  .lg-img-box { width: 70%; max-width: 240px; }
+  .lg-text-box { order: 2; }
+  .lg-img-box { order: 1; }
+}
+
