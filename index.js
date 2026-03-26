@@ -304,19 +304,21 @@ const hTopHt = 400;
 // 메뉴 이동 이벤트
 $(window).on('scroll', topHt);
 // 메뉴 클릭시 섹션이동
-$('.global-menu li a').each(function (idx, elem) {
-  // console.log(`index: ${idx}, value: ${elem}`);
-  $(elem).on('click', function (e) {
+$('.global-menu li a').on('click', function (e) {
+
+  const href = $(this).attr('href');
+
+  if (href.startsWith('#')) {
     e.preventDefault();
 
-    const getbox = $('section').eq(idx).offset().top - 200;
-    scrollTo({
-      top: getbox,
-      behavior: 'smooth'
-    })
-  });
-});
+    const target = $(href);
+    const headerHeight = $('header').outerHeight();
 
+    $('html, body').animate({
+      scrollTop: target.offset().top - headerHeight
+    }, 500);
+  }
+});
 
 // skill 
 

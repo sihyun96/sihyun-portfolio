@@ -216,11 +216,19 @@ header {
   font-weight: 300;
 }
 .design .left-color .left-color-list h4:first-child {
-  background-color: #0F2046;
+  background-color: #0042BC;
   color: #fff;
 }
 .design .left-color .left-color-list h4:nth-child(2) {
-  background-color: #00358E;
+  background-color: #FFFFFF;
+  color: #000;
+}
+.design .left-color .left-color-list h4:nth-child(3) {
+  background-color: #000000;
+  color: #fff;
+}
+.design .left-color .left-color-list h4:nth-child(4) {
+  background-color: #AEAEB1;
   color: #fff;
 }
 /* font */
@@ -257,13 +265,22 @@ header {
   width: 100%;
 }
 .publising-list-wrapper .left-publising-list {
-  width: 60%;
-}
-.publising-list-wrapper .right-publising-list {
-  width: 40%;
+  width: 100%;
 }
 .publising-list-wrapper p {
   font-size: 18px;
+}
+.left-publising-list .title-box {
+  margin-bottom: 40px;
+}
+.title-box ul {
+  margin-left: 56px;
+}
+.title-box ul li {
+  list-style-type: disc;
+}
+.title-box .publising-list  {
+  margin-bottom: 10px;
 }
 
 
@@ -325,9 +342,8 @@ header {
   margin-left: 60px;
 }
 .result .result-wrapper .left-result-list p {
-  display: list-item;
-  list-style-type: disc;
   line-height: 2;
+  margin-bottom: 16px;
 }
 
 /******** right */
@@ -367,6 +383,7 @@ header {
 
 .p2-content .right .txt-box .txt-title p {
   line-height: 24px;
+  word-break: keep-all;
 }
 
 .p2-content .right .txt-box .txt-list {
@@ -384,13 +401,15 @@ header {
   padding: 14px 0;
 }
 .p2-content .right .txt-box a {
-  border-color: #2f5caa;
+  border-color: #0042BC;
+  color: #fff;
 }
 .p2-content .right .txt-box .link-view a:first-child {
-  background-color: #2f5caa;
+  background-color: #0042BC;
 }
 .p2-content .right .txt-box a:hover {
-  background-color: #2f5caa;
+  background-color: #0042BC;
+  color: #ddd;
 }
 /************ footer */
 footer .up-btn {
