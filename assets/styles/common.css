@@ -215,3 +215,26 @@ body ::selection {
 .left-box:last-child {
   border-bottom: 1px solid #000;
 }
+.ani-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFC700;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+  z-index: -1;
+}
+
+.ani-fill:hover::before {
+  transform: scaleX(1);
+}
+
+.ani-fill:hover {
+  background-color:#fff ;
+transform: scaleX(1);
+}
