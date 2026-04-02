@@ -2,108 +2,115 @@ $('a[href="#"]').on('click', function (e) {
   e.preventDefault();
 });
 
+
 // lottie
+// 현재 페이지가 하위 폴더에 있으면 '../', 루트면 './'
+const scriptSrc = document.querySelector('script[src*="index.js"]').src;
+const scriptDir = scriptSrc.substring(0, scriptSrc.lastIndexOf('/') + 1);
+const lottieBase = scriptDir + 'images/lottie/';
+
 const best = lottie.loadAnimation({
-  container: document.getElementById('best'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/best.json' // 경로
+  container: document.getElementById('best'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'best.json'
 });
 
 const smile1 = lottie.loadAnimation({
-  container: document.getElementById('smile1'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/smile1.json' // 경로
+  container: document.getElementById('smile1'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'smile1.json'
 });
 
 const smile2 = lottie.loadAnimation({
-  container: document.getElementById('smile2'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/smile2.json' // 경로
+  container: document.getElementById('smile2'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'smile2.json'
 });
 
 const smile3 = lottie.loadAnimation({
-  container: document.getElementById('smile3'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/smile3.json' // 경로
+  container: document.getElementById('smile3'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'smile3.json'
 });
+
 const flower3 = lottie.loadAnimation({
-  container: document.getElementById('flower3'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/flower3.json' // 경로
+  container: document.getElementById('flower3'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'flower3.json'
 });
 
 const flower2 = lottie.loadAnimation({
-  container: document.getElementById('flower2'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/flower2.json' // 경로
+  container: document.getElementById('flower2'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'flower2.json'
 });
 
 const flower1 = lottie.loadAnimation({
-  container: document.getElementById('flower1'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/flower1.json' // 경로
+  container: document.getElementById('flower1'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'flower1.json'
 });
 
 const lightbulb = lottie.loadAnimation({
-  container: document.getElementById('lightbulb'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/lightbulb.json' // 경로
+  container: document.getElementById('lightbulb'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'lightbulb.json'
 });
 
 const roket = lottie.loadAnimation({
-  container: document.getElementById('roket'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/roket.json' // 경로
+  container: document.getElementById('roket'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'roket.json'
 });
 
 const send = lottie.loadAnimation({
-  container: document.getElementById('send'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/send.json' // 경로
+  container: document.getElementById('send'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'send.json'
 });
 
 const keyword = lottie.loadAnimation({
-  container: document.getElementById('keyword'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/keyword.json' // 경로
+  container: document.getElementById('keyword'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'keyword.json'
 });
 
 const keyword_slide = lottie.loadAnimation({
-  container: document.getElementById('keyword_slide'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/keyword_slide.json' // 경로
+  container: document.getElementById('keyword_slide'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'keyword_slide.json'
 });
 
 const light_fff = lottie.loadAnimation({
-  container: document.getElementById('light_fff'), // 애니메이션 DOM 요소 (대상)
-  renderer: 'svg', // 렌더링 방식:svg, canvas, html
-  loop: true, // 반복
-  autoplay: true, // 자동재생
-  path: '/images/lottie/light_fff.json' // 경로
+  container: document.getElementById('light_fff'),
+  renderer: 'svg',
+  loop: true,
+  autoplay: true,
+  path: lottieBase + 'light_fff.json'
 });
 
 // 모든 '.miniflower' 요소에 애니메이션을 적용
@@ -113,7 +120,7 @@ document.querySelectorAll('.miniflower').forEach((element) => {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '/images/lottie/miniflower.json'
+    path: lottieBase + 'miniflower.json'
   });
 });
 
@@ -123,7 +130,7 @@ document.querySelectorAll('.light1').forEach((element) => {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '/images/lottie/light1.json'
+    path: lottieBase + 'light1.json'
   });
 });
 
@@ -133,7 +140,7 @@ document.querySelectorAll('.light2').forEach((element) => {
     renderer: 'svg',
     loop: true,
     autoplay: true,
-    path: '/images/lottie/light2.json'
+    path: lottieBase + 'light2.json'
   });
 });
 
