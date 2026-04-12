@@ -89,14 +89,13 @@
   font-weight: 900;
   padding: 20px 10px;
   text-transform: uppercase;
-  background-color: #fff;
+  /* background-color: #fff; */
   transition: opacity 0.3s;
 }
-.project-list .project:hover {
-  background-color: bisque;
+
+.project-list .ani-fill::before {
+background-color: antiquewhite;
 }
-
-
 /* 리스트 내용 */
 .project-inner {
   opacity: 0;
