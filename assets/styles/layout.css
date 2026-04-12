@@ -115,6 +115,9 @@ header .header-container .menu {
 header .header-container .menu .deco-wrapper{
   width: 87px; height: 87px;
 }
+header .header-container .menu .deco-wrapper .deco {
+  margin: 12px auto;
+}
 header .header-container .menu .global-menu {
   width: 100%; height: 87px;
   min-width: 50%;
