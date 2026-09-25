@@ -273,8 +273,8 @@ const hTopHt = 400;
       'top': '',  // 원래 위치로 복구
       'height': '',  // 원래 높이로 복구
     });
-    $('.deco-wrapper').css({ height: '' });
-    $('.deco-wrapper svg').css({ height: '60px' });
+    $('header .deco-wrapper').css({ height: '' });
+    $('header .deco-wrapper svg').css({ height: '60px' });
     $('.menu').css({ height: '' });
     $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '', lineHeight: '' });
     $('header .header-container-right').css({ height: '' });
@@ -287,8 +287,8 @@ const hTopHt = 400;
       height: '52px',
       opacity: 1,
     });
-    $('.deco-wrapper').css({ height: '50px' });
-    $('.deco-wrapper svg').css({ height: '25px' });
+    $('header .deco-wrapper').css({ height: '50px' });
+    $('header .deco-wrapper svg').css({ height: '25px' });
     $('.menu').css({ height: '50px' });
     $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '50px', lineHeight: '50px' });
     $('header .header-container-right').css({ height: '50px' });

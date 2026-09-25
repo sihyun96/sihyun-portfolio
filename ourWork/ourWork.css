@@ -19,14 +19,14 @@
   min-width: 1200px;
 }
 
-.main .main-wapper {
+.main .main-wrapper {
   width: 1000px;
   margin: 180px auto;
   flex-direction: column;
   position: relative;
 }
 
-.main .main-wapper .main-title {
+.main .main-wrapper .main-title {
   font-family: var(--font-main-en);
   font-size: var(--font-main-title-xxlg);
   font-weight: 800;
@@ -38,7 +38,7 @@
   -webkit-text-stroke: 1px #000;
 }
 
-.main .main-wapper .sub-title {
+.main .main-wrapper .sub-title {
   font-family: var(--font-main-en);
   font-size: 20px;
   font-weight: 300;

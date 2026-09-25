@@ -1,4 +1,4 @@
-# PROTFOLIO
+# PORTFOLIO
 https://sihyun96.github.io/sihyun-portfolio/
 ## 🛠 Tech Stack
 
@@ -39,7 +39,7 @@ React를 활용한 인터랙티브 웹 개발까지 확장하고 있습니다.
 	- 와이어프레임&프로토타입 제작 / 공동 작업
 - Git / GitHub
 	- GitHub를 통한 팀 프로젝트 / 실시간 공유 및 협업
-- Phothoshop & Illustratior
+- Photoshop & Illustrator
 	- 기본적인 툴 사용 가능
 
 ### 💡 Experience

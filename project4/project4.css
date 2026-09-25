@@ -249,17 +249,17 @@ header {
   font-family: "Bowlby One SC", serif;
 }
 
-/***** publising */
-.publising .publising-list-wrapper {
+/***** publishing */
+.publishing .publishing-list-wrapper {
   align-items: start;
 }
-.publising-list-wrapper .left-publising-list {
+.publishing-list-wrapper .left-publishing-list {
   margin-right: 150px;
 }
-.publising-list-wrapper p {
+.publishing-list-wrapper p {
   font-size: 20px;
 }
-.publising-list-wrapper p strong {
+.publishing-list-wrapper p strong {
   font-weight: 800;
 }
 

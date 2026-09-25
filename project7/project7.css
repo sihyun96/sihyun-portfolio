@@ -258,17 +258,17 @@ header {
 
 
 /***** publisin */
-.publising .publising-list-wrapper {
+.publishing .publishing-list-wrapper {
   align-items: flex-start;
   width: 100%;
 }
-.publising-list-wrapper .left-publising-list {
+.publishing-list-wrapper .left-publishing-list {
   width: 100%;
 }
-.publising-list-wrapper p {
+.publishing-list-wrapper p {
   font-size: 18px;
 }
-.left-publising-list .title-box {
+.left-publishing-list .title-box {
   margin-bottom: 40px;
 }
 .title-box ul {
@@ -277,7 +277,7 @@ header {
 .title-box ul li {
   list-style-type: disc;
 }
-.title-box .publising-list  {
+.title-box .publishing-list  {
   margin-bottom: 10px;
 }
 

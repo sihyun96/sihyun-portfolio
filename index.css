@@ -16,14 +16,14 @@
   min-width: 1200px;
 }
 
-.main .main-wapper {
+.main .main-wrapper {
   width: 1000px;
   margin: 20px auto;
   flex-direction: column;
   position: relative;
 }
 
-.main .main-wapper .main-title {
+.main .main-wrapper .main-title {
   font-family: var(--font-main-en);
   font-size: var(--font-main-title-xxlg);
   font-weight: 800;
@@ -35,24 +35,24 @@
   -webkit-text-stroke: 1px #000;
 }
 
-.main .main-wapper .deco {
+.main .main-wrapper .deco {
   width: 40px;
   height: 40px;
 }
 
-.main .main-wapper .top {
+.main .main-wrapper .top {
   position: absolute;
   top: 100px;
   right: 285px;
 }
 
-.main .main-wapper .bottom {
+.main .main-wrapper .bottom {
   position: absolute;
   top: 200px;
   left: 285px;
 }
 
-.main .main-wapper .keyword-box {
+.main .main-wrapper .keyword-box {
   border: var(--border);
   width: 330px;
   height: 87px;
@@ -61,7 +61,7 @@
   background-color: var(--color-white);
 }
 
-.main .main-wapper .keyword-box h3 {
+.main .main-wrapper .keyword-box h3 {
   font-size: var(--font-main-title-lg);
   font-weight: 300;
   text-align: center;
@@ -237,16 +237,16 @@ font-weight: 500;
   background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(./images/content4-1.png) no-repeat 50% / cover
   ;
 }
-.project .project-warpper .project-container:hover > .txt-box {
+.project .project-wrapper .project-container:hover > .txt-box {
   opacity: 0;
 } 
-.project .project-warpper .project-container h4 {
+.project .project-wrapper .project-container h4 {
   margin: var(--spacing-sm) 0;
   font-weight: 600;
   font-family: var(--font-main-ko);
 }
 
-.project .project-warpper .project-container h3 {
+.project .project-wrapper .project-container h3 {
   font-size: var(--font-main-title-sm);
   font-weight: 800;
 }
@@ -258,12 +258,12 @@ font-weight: 500;
   bottom: 0px;
 }
 
-.project .project-warpper .project-container .project-title-keyword {
+.project .project-wrapper .project-container .project-title-keyword {
   font-size: var(--font-main-title-xsm);
   font-weight: 800;
 }
 
-.project .project-warpper .project-container .project-title-keyword li {
+.project .project-wrapper .project-container .project-title-keyword li {
   border: var(--border-box);
   border-radius: 10px;
   padding: var(--spacing-xsm) var(--spacing-sm);
@@ -274,7 +274,7 @@ font-weight: 500;
 /* .project .project2 .project-container .project-title-keyword li {
   border: var(--border);
 } */
-/* .project .project-warpper .project-container .project-title-keyword li:hover {
+/* .project .project-wrapper .project-container .project-title-keyword li:hover {
   background-color: var(--color-white);
   color: #000;
 } */
@@ -283,12 +283,12 @@ font-weight: 500;
   width: 721px;
 }
 
-.project .project-warpper .project-title h2 {
+.project .project-wrapper .project-title h2 {
   font-size: var(--font-main-title-md);
   font-weight: 700;
 }
 
-.project .project-warpper .project-skill {
+.project .project-wrapper .project-skill {
   width: 212px;
   height: 91px;
   border: var(--border);
@@ -297,7 +297,7 @@ font-weight: 500;
   background-color: var(--color-white);
 }
 
-.project .project-warpper .project-skill h3 {
+.project .project-wrapper .project-skill h3 {
   display: flex;
   align-items: center;
 }
@@ -313,7 +313,7 @@ font-weight: 500;
   transform: translateX(-50%);
   width: 100%;
 }
-.project .project-warpper h4, .project .project-warpper h3, .project .project-warpper ul {
+.project .project-wrapper h4, .project .project-wrapper h3, .project .project-wrapper ul {
   z-index: 9;
 }
 
