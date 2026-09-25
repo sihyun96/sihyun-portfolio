@@ -262,49 +262,32 @@ gsap.utils.toArray('.rolled-over-text').forEach((txt) => {
 
 let prevScroll = window.scrollY;
 const topHt = function () {
-let currentScroll = window.scrollY;
-const hTopHt = 400;
+  let currentScroll = window.scrollY;
 
   if (currentScroll === 0) {
     // 첫 화면으로 돌아갈 때, header를 원래 위치로 복구
-    $('header').css({
-      transform: 'translateY(0)',  // 위치 초기화
-      transform: 'translateX(-50%)',
-      'top': '',  // 원래 위치로 복구
-      'height': '',  // 원래 높이로 복구
-    });
-    $('header .deco-wrapper').css({ height: '' });
-    $('header .deco-wrapper svg').css({ height: '60px' });
-    $('.menu').css({ height: '' });
-    $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '', lineHeight: '' });
-    $('header .header-container-right').css({ height: '' });
-    $('header .header-container-right h2').css({ fontSize: '' });
+    $('#header').removeClass('is-compact is-hidden');
   } else if (prevScroll > currentScroll) {
-    // 스크롤을 올렸을 때 header가 나타나며 top: 0
-    $('header').css({
-      transform: 'translateY(0) translateX(-50%)',
-      'top': '0',  // top을 0으로 설정
-      height: '52px',
-      opacity: 1,
-    });
-    $('header .deco-wrapper').css({ height: '50px' });
-    $('header .deco-wrapper svg').css({ height: '25px' });
-    $('.menu').css({ height: '50px' });
-    $('header .header-container .menu .global-menu li a, .global-menu').css({ height: '50px', lineHeight: '50px' });
-    $('header .header-container-right').css({ height: '50px' });
-    $('header .header-container-right h2').css({ fontSize: '18px' });
-
+    // 스크롤을 올렸을 때 header가 작아진 채로 top: 0에 나타남 (크기는 layout.css .is-compact)
+    $('#header').addClass('is-compact').removeClass('is-hidden');
   } else {
     // 스크롤을 내렸을 때 header를 숨김
-    $('header').css({
-      transform: `translateY(-${hTopHt}px) translateX(-50%)`,
-      opacity: 0,
-      userSelect: 'none'
-      // header 숨기기
-    });
+    $('#header').addClass('is-hidden');
+    closeMenu();
   }
   prevScroll = currentScroll;
 };
+
+// 햄버거 메뉴 (1359px 이하)
+const closeMenu = function () {
+  $('#header').removeClass('is-open');
+  $('.menu-btn').attr({ 'aria-expanded': 'false', 'aria-label': '메뉴 열기' });
+};
+
+$('.menu-btn').on('click', function () {
+  const isOpen = $('#header').toggleClass('is-open').hasClass('is-open');
+  $(this).attr({ 'aria-expanded': String(isOpen), 'aria-label': isOpen ? '메뉴 닫기' : '메뉴 열기' });
+});
 
 
 
@@ -314,6 +297,7 @@ $(window).on('scroll', topHt);
 $('.global-menu li a').on('click', function (e) {
 
   const href = $(this).attr('href');
+  closeMenu();
 
   if (href.startsWith('#')) {
     e.preventDefault();
@@ -364,23 +348,41 @@ $('.check-box').each(function (index) {
 });
 
 // 마우스 이벤트
+// 태블릿·모바일(979px 이하)은 마우스 효과 없이 CSS 고정 그림자 사용
+const noMouseMq = window.matchMedia('(max-width: 979px)');
+const $movingTitles = $('.main-title,.skill-tool-title .title, .footer-title');
 
 const movingTxt = function (e) {
+  if (noMouseMq.matches) return;
+
   let txtX = e.clientX;
   let txtY = e.clientY;
 
   // 마우스 위치에 따라 텍스트 위치와 그림자 설정
-  $('.main-title,.skill-tool-title .title, .footer-title').css({
+  $movingTitles.css({
     left: 0 - txtX / 50,
     top: 0 - txtY / 200,
     textShadow: `${-22 + txtX / 100}px ${txtY / 100}px 0px #000`,
   });
-
-  requestAnimationFrame(movingTxt); // 애니메이션 반복
 };
+
+// 태블릿 이하로 바뀌면 마우스로 바뀐 값 초기화
+noMouseMq.addEventListener('change', function () {
+  if (noMouseMq.matches) {
+    $movingTitles.css({ left: '', top: '', textShadow: '' });
+  }
+});
 
 // 이벤트 핸들러 등록
 $(document).on('mousemove', movingTxt);
+
+// SKILLS TOOLS 박스 높이를 메인 카드 높이와 같게 (979px 이하에서 --main-card-h 사용)
+const mainCard = document.querySelector('.main');
+if (mainCard && document.querySelector('.skill-tool-title')) {
+  new ResizeObserver(function () {
+    document.documentElement.style.setProperty('--main-card-h', mainCard.offsetHeight + 'px');
+  }).observe(mainCard);
+}
 
 
 

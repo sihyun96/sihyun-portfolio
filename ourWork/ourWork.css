@@ -16,11 +16,11 @@
   text-align: center;
   margin-bottom: var(--spacing-xxxxlg);
   max-width: 1440px;
-  min-width: 1200px;
 }
 
 .main .main-wrapper {
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   margin: 180px auto;
   flex-direction: column;
   position: relative;
@@ -78,7 +78,7 @@
 }
 
 .project-list {
-  width: calc(360px*2);
+  width: 50%;
 }
 
 .project-list .project {
@@ -97,9 +97,15 @@
 background-color: antiquewhite;
 }
 /* 리스트 내용 */
+.project-card {
+  width: 50%;
+  position: relative;
+}
 .project-inner {
   opacity: 0;
   position: absolute;
+  top: 0; left: 0;
+  width: 100%;
   transition: 0.3s;
 }
 
@@ -109,7 +115,7 @@ background-color: antiquewhite;
 
 
 .project-card .project-inner .project-container {
-  width: calc(360px*2);
+  width: 100%;
   height: 637px;
   border-left: none;
 }
@@ -168,7 +174,7 @@ background-color: antiquewhite;
 } 
 
 .project-card .project-inner .project-title {
-  width: calc(360px*2);
+  width: 100%;
   border-left: none;
 } 
 
@@ -219,4 +225,115 @@ background-color: antiquewhite;
 .project-card .project-inner .project-skill h3 {
   display: flex;
   align-items: center;
+}
+
+
+/* ***********반응형 (Desktop First) */
+/* 데스크톱 1360~ / 스몰데스크톱 ~1359 / 태블릿 ~979 / 모바일 ~767 / 스몰모바일 ~479 */
+
+/* 스몰데스크톱 */
+@media (max-width: 1359px) {
+  .bg .bg-line {
+    height: 100%;
+  }
+  .main .main-wrapper {
+    margin: 140px auto;
+  }
+
+  /* 필터 메뉴 */
+  .work .work-menu li {
+    font-size: 20px;
+    padding: 30px 40px;
+    white-space: nowrap;
+  }
+
+  /* 프로젝트 이름 목록 */
+  .project-list .project {
+    font-size: 3.6vw;
+  }
+}
+
+/* 태블릿: 이름 목록 대신 카드 전체 펼침 (hover 없는 터치 환경) */
+@media (max-width: 979px) {
+  .main .main-wrapper {
+    margin: 100px auto;
+  }
+  .work {
+    padding: var(--spacing-xlg) 0;
+  }
+  .work .work-menu li {
+    font-size: 18px;
+    padding: 24px 30px;
+  }
+
+  .work-project {
+    min-height: 0;
+  }
+  .project-list {
+    display: none;
+  }
+  .project-card {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: var(--spacing-lg);
+  }
+  .project-inner {
+    position: static;
+    opacity: 1;
+    margin-right: -1px; /* 옆 카드와 보더 겹침 */
+  }
+  .project-card .project-inner .project-container {
+    height: auto;
+    min-height: 380px; /* 내용이 많아도 잘리지 않게 */
+    padding: var(--spacing-md) var(--spacing-sm);
+    border-left: var(--border);
+  }
+  .project-card .project-inner .project-title {
+    height: auto;
+    line-height: normal;
+    padding: var(--spacing-sm);
+    border-left: var(--border);
+  }
+  .project-card .project-inner .project-skill {
+    width: 50%; /* 카드 반 = 그리드 한 칸 */
+    border-left: var(--border);
+  }
+  .project-card .project-inner .project-container .project-title-keyword li {
+    height: auto;
+    padding: 6px var(--spacing-xsm);
+    margin-right: var(--spacing-xsm);
+    white-space: nowrap;
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  .main .main-wrapper {
+    margin: 60px auto;
+    padding: 0 var(--spacing-sm);
+  }
+  .main .main-wrapper .sub-title {
+    font-size: 14px;
+    letter-spacing: 6px;
+  }
+
+  /* 필터 메뉴 */
+  .work .work-menu li {
+    flex: 1 1 auto;
+    font-size: 13px;
+    padding: 16px 8px;
+    text-align: center;
+  }
+
+  /* 카드 1열 */
+  .project-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .project-inner {
+    margin-right: 0;
+  }
+  .project-card .project-inner .project-container {
+    min-height: 360px;
+  }
 }

@@ -184,6 +184,9 @@ body ::selection {
 }
 .up-btn {
   background: url(../../images/up.png) no-repeat 50% /cover;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px); /* 뒤 콘텐츠 블러 */
   border: var(--border);
   width: 60px; height: 60px;
   position: fixed;
@@ -237,4 +240,14 @@ body ::selection {
 .ani-fill:hover {
   background-color:#fff ;
 transform: scaleX(1);
+}
+
+/* ***********반응형: 모바일 */
+@media (max-width: 767px) {
+  /* 위로가기 버튼 작게 */
+  .up-btn,
+  footer .up-btn {
+    width: 40px; height: 40px;
+    right: 20px; bottom: 20px;
+  }
 }

@@ -13,11 +13,13 @@
   text-align: center;
   margin-bottom: var(--spacing-xxxxlg);
   max-width: 1440px;
-  min-width: 1200px;
 }
 
 .main .main-wrapper {
-  width: 1000px;
+  --kw-w: 330px; /* keyword-box 너비 (deco 위치 계산용) */
+  --deco-gap: 50px;
+  width: 100%;
+  max-width: 1000px;
   margin: 20px auto;
   flex-direction: column;
   position: relative;
@@ -42,19 +44,19 @@
 
 .main .main-wrapper .top {
   position: absolute;
-  top: 100px;
-  right: 285px;
+  top: var(--font-main-title-xxlg);
+  right: calc(50% - var(--kw-w) / 2 - var(--deco-gap));
 }
 
 .main .main-wrapper .bottom {
   position: absolute;
-  top: 200px;
-  left: 285px;
+  top: calc(var(--font-main-title-xxlg) * 2);
+  left: calc(50% - var(--kw-w) / 2 - var(--deco-gap));
 }
 
 .main .main-wrapper .keyword-box {
   border: var(--border);
-  width: 330px;
+  width: var(--kw-w);
   height: 87px;
   margin: var(--spacing-md) auto;
   overflow: hidden;
@@ -71,17 +73,18 @@
 .view-work .view-work-btn {
   border: 1px solid #000;
   border-top: none;
-  width: 360px;
+  width: 25%;
   height: 87px;
   position: relative;
   top: 0px;
-  left: 360px;
+  left: 25%;
   padding: 0 20px;
   justify-content: space-between;
+  background-color: #fff;
 }
 .view-work .view-work-btn2 {
   top: 0;
-  left: calc(360*3px);
+  left: 75%;
   border: 1px solid #000;
 }
 .view-work .view-work-btn p {
@@ -102,7 +105,7 @@ font-weight: 500;
 
 .about .about-title {
   text-align: center;
-  width: 721px;
+  width: calc(50% + 1px);
 }
 
 .about .about-title h3 {
@@ -130,7 +133,7 @@ font-weight: 500;
 
 .about .about-title .about-title-profile {
   border: var(--border);
-  width: 719px;
+  width: calc(100% - 2px);
   height: 90px;
   justify-content: space-between;
   padding: 0 var(--spacing-sm);
@@ -144,15 +147,15 @@ font-weight: 500;
 }
 
 .about .about-img {
-  width: 717px;
-  height: 500px;
+  width: calc(50% - 3px);
+  aspect-ratio: 717 / 500;
   background: url(./images/about-img.png) no-repeat 50% / contain, #fff;
   position: relative;
 }
 
 .about .about-img #keyword {
   position: absolute;
-  top: -102px;
+  top: -20.4%; /* 500px 기준 -102px */
   width: 100%;
 }
 
@@ -166,9 +169,9 @@ font-weight: 500;
 
 /* project */
 .project {
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 내용 때문에 칸이 벌어지지 않게 */
   grid-template-rows: repeat(30, 1fr);
-  width: 1440px;
+  width: 100%;
 }
 
 .project .project1 {
@@ -179,7 +182,7 @@ font-weight: 500;
 .project .project2 {
   grid-column: 3/5;
   grid-row: 8/17;
-  place-self: start;
+  align-self: start;
 }
 
 /* .project .project2 h3,
@@ -200,9 +203,19 @@ font-weight: 500;
   position: relative;
 }
 
+.project .project1 .project-container {
+  width: calc(100% + 3px); /* 3칸 + 보더 = 1083px */
+}
+.project .project3 .project-container {
+  width: calc(100% + 1px); /* 2칸 + 보더 = 721px */
+}
+/* 오른쪽 끝에 붙는 카드는 화면 밖으로 나가지 않게 100% */
+.project .project4 .project-container,
+.project .project2 .project-container {
+  width: 100%;
+}
 .project .project2 .project-container,
 .project .project3 .project-container  {
-  width: 721px;
   height: 637px;
 }
 .project .project1 .project-container {
@@ -278,9 +291,15 @@ font-weight: 500;
   background-color: var(--color-white);
   color: #000;
 } */
-.project .project2 .project-title,
+.project .project1 .project-title {
+  width: calc(100% + 3px);
+}
 .project .project3 .project-title {
-  width: 721px;
+  width: calc(100% + 1px);
+}
+.project .project2 .project-title,
+.project .project4 .project-title {
+  width: 100%;
 }
 
 .project .project-wrapper .project-title h2 {
@@ -332,7 +351,7 @@ font-weight: 500;
 /* skill */
 .skill-tool {
   margin-top: var(--spacing-xxlg);
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-columns: repeat(16, minmax(0, 1fr)); /* 데코 박스 때문에 칸이 벌어지지 않게 */
 }
 
 .skill-tool .deco-left {
@@ -354,7 +373,7 @@ font-weight: 500;
 
 .skill-tool .skill-tool-title {
   border: var(--border);
-  width: 1081px;
+  width: 100%;
   height: 541px;
   text-align: center;
   background-color: var(--color-white);
@@ -364,7 +383,7 @@ font-weight: 500;
 }
 
 .skill-tool .skill-list {
-  width: 1080px;
+  width: 100%;
   border: var(--border);
   background-color: var(--color-white);
   padding: var(--spacing-xlg);
@@ -485,3 +504,311 @@ font-weight: 500;
   background-color: #5CB338;
   border-radius: 50%;
 } */
+
+
+/* ***********반응형 (Desktop First) */
+/* 데스크톱 1360~ / 스몰데스크톱 ~1359 / 태블릿 ~979 / 모바일 ~767 / 스몰모바일 ~479 */
+
+/* 스몰데스크톱 */
+@media (max-width: 1359px) {
+  /* skill 데코 박스: 16칸 그리드 한 칸 크기 */
+  .skill-tool .deco-left {
+    justify-self: stretch;
+  }
+  .skill-tool .deco-left .deco-box,
+  .skill-tool .deco-right {
+    width: calc(100% + 1px);
+    height: auto;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-tool .deco-left .deco,
+  .skill-tool .deco-right .deco {
+    margin: 0;
+  }
+
+  /* project */
+  .project .project-wrapper .project-container .project-title-keyword {
+    flex-wrap: wrap;
+    gap: var(--spacing-xsm) 0;
+  }
+  .project .project-wrapper .project-container .project-title-keyword li {
+    white-space: nowrap;
+  }
+
+  /* skill */
+  .skill-tool .skill-tool-title {
+    height: 420px;
+    line-height: normal; /* 두 줄로 바뀌어도 줄 간격이 벌어지지 않게 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-tool .skill-tool-title .title {
+    line-height: 1.1;
+  }
+  .skill-tool .skill-list {
+    padding: var(--spacing-xlg) 80px;
+  }
+  .skill-tool .skill-list .skill-check,
+  .skill-tool .skill-list .list-box,
+  .skill-tool .skill-list .list-box-txt {
+    width: 100%;
+  }
+  .skill-tool .skill-list .list-box-txt p {
+    max-width: 100%;
+  }
+  .skill-tool .skill-list .skill-check {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* 좁아지면 3열 → 2열 */
+    height: auto;
+  }
+  .check-box {
+    flex-shrink: 0;
+  }
+  /* 자격증 목록: 좁으면 항목 단위로 줄바꿈 */
+  .skill-tool .skill {
+    height: auto;
+    min-height: 91px;
+    flex-wrap: wrap;
+    gap: var(--spacing-xsm) var(--spacing-sm);
+  }
+  .skill-tool .skill li {
+    white-space: nowrap;
+  }
+}
+
+/* 태블릿 */
+@media (max-width: 979px) {
+  /* about */
+  .about {
+    flex-direction: column;
+    gap: calc(var(--spacing-xxlg) * 0.8);
+  }
+  .about .about-title {
+    width: 100%;
+  }
+  .about .about-title .about-title-profile {
+    width: 100%;
+  }
+  .about .about-img {
+    width: min(717px, 100%);
+  }
+
+  /* project: 1열 */
+  .project {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    row-gap: var(--spacing-lg);
+  }
+  .project .project-wrapper {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .project .deco-top {
+    grid-column: 1 / -1;
+    justify-self: end;
+    margin: calc(var(--spacing-lg) * -1) 0 0;
+  }
+  .project .project-wrapper .project-container,
+  .project .project-wrapper .project-title {
+    width: 100%;
+  }
+  .project .project-wrapper .project-container {
+    height: auto;
+    aspect-ratio: 16 / 10;
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  /* view work 버튼 */
+  .view-work .view-work-btn,
+  .view-work .view-work-btn2 {
+    width: 50%;
+    left: 50%;
+  }
+
+  /* 데코·스킬 박스: 배경 그리드 한 칸(25%)에 데코 박스 2개 */
+  .project .deco-top,
+  .skill-tool .deco-left {
+    width: 25%;
+  }
+  .project .deco-top .deco-box,
+  .skill-tool .deco-left .deco-box {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .project .deco-top .deco,
+  .skill-tool .deco-left .deco {
+    margin: 0;
+  }
+  .project .project-wrapper .project-skill {
+    width: 25%;
+  }
+
+  /* skill: 1열 */
+  .skill-tool {
+    grid-template-columns: 1fr;
+  }
+  .skill-tool .deco-left,
+  .skill-tool .deco-right,
+  .skill-tool .skill-tool-title,
+  .skill-tool .skill-list,
+  .skill-tool .skill {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .skill-tool .deco-left {
+    display: flex;
+    justify-self: start;
+  }
+  .skill-tool .deco-left .deco-box {
+    border-right: var(--border);
+    border-bottom: none;
+  }
+  .skill-tool .deco-left .deco-box + .deco-box {
+    border-left: none;
+  }
+  .skill-tool .deco-right {
+    display: none;
+  }
+  .skill-tool .skill-tool-title {
+    width: 100%;
+    height: var(--main-card-h, 260px); /* 메인 카드와 같은 높이 (index.js) */
+    line-height: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .skill-tool .skill-list {
+    border-top: none;
+    padding: var(--spacing-xlg) var(--spacing-md);
+  }
+  .skill-tool .skill-list .skill-check {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-xsm) 0;
+  }
+  .skill-tool .skill-list .list-box,
+  .skill-tool .skill-list .list-box-txt,
+  .skill-tool .skill-list .tool-list-box,
+  .skill-tool .skill-list .tool-list-box .list-box-txt {
+    height: auto;
+  }
+  .skill-tool .skill-list .list-box-txt p {
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+    padding: var(--spacing-xsm) var(--spacing-sm);
+  }
+  .skill-tool .skill {
+    height: auto;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: var(--spacing-xsm) var(--spacing-sm);
+  }
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  /* main */
+  .main .main-wrapper {
+    --kw-w: 280px;
+    --deco-gap: 36px;
+    padding: 0 var(--spacing-sm);
+  }
+  .main .main-wrapper .deco {
+    width: 30px;
+    height: 30px;
+  }
+  .main .main-wrapper .keyword-box {
+    height: 74px;
+  }
+
+  /* about */
+  .about .about-title .title-deco .light1 {
+    right: 0;
+  }
+
+  /* project */
+  .project .project-wrapper .project-container {
+    aspect-ratio: auto;
+    min-height: 360px;
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+  .project .project-wrapper .project-container .project-title-keyword li {
+    margin-right: var(--spacing-xsm);
+    padding: 6px var(--spacing-xsm);
+  }
+  .project .deco-top .deco,
+  .skill-tool .deco-left .deco {
+    width: 26px;
+    height: 26px;
+  }
+  .project .project-wrapper .project-skill {
+    width: 50%;
+  }
+
+  /* skill */
+  .skill-tool .skill-tool-title .title {
+    font-size: 9vw;
+  }
+  .skill-tool .skill-list .skill-check {
+    font-size: 14px;
+  }
+  .check-box {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+  }
+  .check-box .bar1 {
+    transform: translate(4px, 14px) rotate(45deg);
+  }
+  .check-box .bar2 {
+    transform: translate(8px, 10px) rotate(-45deg);
+  }
+}
+
+/* 스몰모바일 */
+@media (max-width: 479px) {
+  /* main */
+  .main .main-wrapper {
+    --kw-w: 240px;
+    --deco-gap: 32px;
+  }
+  .main .main-wrapper .keyword-box {
+    height: 64px;
+  }
+
+  /* about */
+  .about .about-title .about-title-profile {
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xsm) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-xsm);
+    font-size: 0.875rem;
+  }
+  .txt-deco {
+    width: 24px;
+    height: 24px;
+    margin-right: 6px;
+  }
+
+  /* view work 버튼 */
+  .view-work .view-work-btn,
+  .view-work .view-work-btn2 {
+    width: 100%;
+    left: 0;
+  }
+
+  /* skill */
+  .skill-tool .skill-list .skill-check {
+    grid-template-columns: 1fr;
+  }
+}
