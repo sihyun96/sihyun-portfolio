@@ -144,9 +144,9 @@ const workCard = document.querySelector('.work .project-card');
 if (workList && workCard) {
   workList.innerHTML = PROJECTS.map(function (p, i) {
     return `
-    <a href="${projectLink(p)}">
-      <li class="project project${i + 1} ani-fill" data-category="${p.category}">${p.listName}</li>
-    </a>`;
+    <li class="project project${i + 1} ani-fill" data-category="${p.category}">
+      <a href="${projectLink(p)}">${p.listName}</a>
+    </li>`;
   }).join('');
 
   workCard.innerHTML = PROJECTS.map(function (p, i) {

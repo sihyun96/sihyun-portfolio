@@ -87,12 +87,19 @@
   font-size: 60px;
   font-family: var(--font-main-en);
   font-weight: 900;
-  padding: 20px 10px;
   text-transform: uppercase;
   /* background-color: #fff; */
   transition: opacity 0.3s;
 }
 
+.project-list .project a {
+  display: block;
+  padding: 20px 10px; /* li → a 로 옮겨 칸 전체가 클릭 영역 */
+}
+.project-list .project a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -4px;
+}
 .project-list .ani-fill::before {
 background-color: antiquewhite;
 }

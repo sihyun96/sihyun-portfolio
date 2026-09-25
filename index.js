@@ -344,6 +344,10 @@ $('.check-box').each(function (index) {
     // 현재 클릭한 항목의 list-box-txt만 표시
     $('.list-box-txt').eq(index).toggle();
     $(this).siblings('p').css({ backgroundColor: '#ffcd38' });
+
+    // 접근성: 선택 상태를 스크린리더에 알림
+    $('.check-box').attr('aria-pressed', 'false');
+    $(this).attr('aria-pressed', String($(this).hasClass('active')));
   });
 });
 

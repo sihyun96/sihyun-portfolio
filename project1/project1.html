@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>project1</title>
   <!-- favicon -->
   <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -34,13 +34,13 @@
   <!-- header -->
   <header>
     <div class="header-p1 flex-container">
-      <div class="menu deco-box">
+      <button type="button" class="menu deco-box" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">
         <span class="menu-icon bar1"></span>
         <span class="menu-icon bar2"></span>
         <span class="menu-icon bar3"></span>
-      </div>
-      <ul class="global-menu flex-container">
-        <li><a href="../index.html#home">home</a></li>
+      </button>
+      <ul class="global-menu flex-container" id="gnb">
+        <li><a href="../index.html#main">home</a></li>
         <li><a href="../index.html#about">about</a></li>
         <li><a href="../index.html#project">project</a></li>
         <li><a href="../index.html#skill">skill&tools</a></li>
@@ -48,7 +48,7 @@
       </ul>
       <h1 class="title-project">project1</h1>
       <div class="next-btn deco-box">
-        <a href="../project2/project2.html">
+        <a href="../project2/project2.html" aria-label="다음 프로젝트 (PROJECT2)">
           <span class="next-icon bar1"></span>
           <span class="next-icon bar2"></span>
         </a>
@@ -156,8 +156,9 @@
 
     // menu
     $('.menu').on('click', function () {
-      $(this).toggleClass('toggle-btn');
-      $('.global-menu').toggleClass('open');
+      const isOpen = $(this).toggleClass('toggle-btn').hasClass('toggle-btn');
+      $('.global-menu').toggleClass('open', isOpen);
+      $(this).attr({ 'aria-expanded': String(isOpen), 'aria-label': isOpen ? '메뉴 닫기' : '메뉴 열기' });
     });
   </script>
 </body>

@@ -14,6 +14,23 @@ body {
   overflow-x: hidden;
 }
 
+/* 접근성: 메뉴를 div → button 으로 바꾸면서 기본 버튼 스타일 초기화 (모양은 기존과 동일) */
+.menu.deco-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  background-color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+/* 키보드 포커스 표시 */
+.menu.deco-box:focus-visible,
+.next-btn a:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: -6px;
+}
+
 /* 스몰데스크톱 */
 @media (max-width: 1359px) {
   :root {

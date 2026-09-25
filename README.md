@@ -77,7 +77,11 @@
 - **5단계 반응형 (Desktop First)**: 1360 / 980 / 768 / 480 기준. 격자·데코 박스를 배경 그리드 선에 맞추고, 터치 환경에서는 hover 대신 카드를 펼쳐 보이는 방식으로 레이아웃 전환
 - **데이터 기반 렌더링**: 프로젝트 정보를 `projects.js` 한 곳에서 관리하고 메인과 목록 페이지가 같은 데이터로 카드를 그림. 메인 노출 프로젝트는 번호로 지정
 - **인터랙션**: GSAP ScrollTrigger 텍스트 모션, Lottie 아이콘, 마우스를 따라 움직이는 그림자 효과 (데스크톱 전용)
-- **접근성**: 햄버거 메뉴 `aria-expanded` / `aria-controls` 적용
+- **Web Accessibility**
+  - Semantic HTML
+  - Keyboard Operable 
+  - Name, Role, Value 
+  - Resize Text 
 
 <br>
 

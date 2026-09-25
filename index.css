@@ -437,9 +437,20 @@ white-space: nowrap;
 }
 
 .check-box {
-  display: inline-block;
   position: relative;
   cursor: pointer;
+  /* 접근성: span → button 기본 스타일 초기화 (모양은 기존과 동일) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  padding: 0;
+  background: none;
+  font: inherit;
+}
+.check-box:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
 }
 
 .check-box span {
