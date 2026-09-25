@@ -90,6 +90,7 @@
 .view-work .view-work-btn p {
 font-family: var(--font-main-en);
 font-weight: 500;
+white-space: nowrap;
 }
 .view-work .view-work-btn div {
   width: 40px;
@@ -218,37 +219,12 @@ font-weight: 500;
 .project .project3 .project-container  {
   height: 637px;
 }
-.project .project1 .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(./images/content1-1.png) no-repeat 50% / cover
-  ;
+/* 카드 배경: projects.js 가 카드마다 --card-img 로 이미지 지정 */
+.project .project-wrapper .project-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), var(--card-img) no-repeat 50% / cover;
 }
-.project .project1 .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(./images/content1-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project2 .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(./images/content2-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project2 .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(./images/content2-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project3 .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(./images/content3-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project3 .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(./images/content3-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project4 .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(./images/content4-1.png) no-repeat 50% / cover
-  ;
-}
-.project .project4 .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(./images/content4-1.png) no-repeat 50% / cover
-  ;
+.project .project-wrapper .project-container:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), var(--card-img) no-repeat 50% / cover;
 }
 .project .project-wrapper .project-container:hover > .txt-box {
   opacity: 0;
@@ -548,6 +524,9 @@ font-weight: 500;
   }
   .skill-tool .skill-tool-title .title {
     line-height: 1.1;
+    /* GSAP(rolled-over-text)이 overflow:hidden을 걸어서 그림자가 잘리지 않게 박스 전체 폭 + 위아래 여유 */
+    width: 100%;
+    padding: 10px 0;
   }
   .skill-tool .skill-list {
     padding: var(--spacing-xlg) 80px;

@@ -119,55 +119,12 @@ background-color: antiquewhite;
   height: 637px;
   border-left: none;
 }
-.project-card .project-inner1  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content7-1.png) no-repeat 50% / cover
-  ;
+/* 카드 배경: projects.js 가 카드마다 --card-img 로 이미지 지정 */
+.project-card .project-inner .project-container {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), var(--card-img) no-repeat 50% / cover;
 }
-.project-card .project-inner1  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content7-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner2  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content1-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner2  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content1-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner3  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content5-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner3  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content5-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner4  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content6-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner4  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content6-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner5  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content2-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner5  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content2-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner6  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content4-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner6  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content4-1.png) no-repeat 50% / cover
-  ;
-}.project-card .project-inner7  .project-container {
-  background:linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.5)),url(../images/content3-1.png) no-repeat 50% / cover
-  ;
-}
-.project-card .project-inner7  .project-container:hover {
-  background:linear-gradient(rgba(0, 0, 0, 0.0),rgba(0, 0, 0, 0.0)),url(../images/content3-1.png) no-repeat 50% / cover
-  ;
+.project-card .project-inner .project-container:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), var(--card-img) no-repeat 50% / cover;
 }
 .project-card .project-inner .project-container:hover > .txt-box {
   opacity: 0;

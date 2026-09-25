@@ -33,6 +33,7 @@
   <script src="./assets/scripts/gsap.min.js"></script>
   <script src="./assets/scripts/ScrollTrigger.min.js"></script>
   <script src="./assets/scripts/lottie.min.js"></script>
+  <script src="./assets/scripts/projects.js" defer></script>
   <script src="./index.js" defer></script>
 
 </head>
@@ -130,31 +131,9 @@
     </section>
 
     <!-- project -->
-    <section class="project grid-container" id="project">
-      <div class="project-wrapper project1">
-        <a href="./project1/project1.html">
-          <div class="project-container">
-            <div class="txt-box">
-               <h4>2024-09</h4>
-            <h3>COMPOSE COFFEE UI/UX DESIGN</h3>
-            <h4>컴포즈커피 앱 리디자인</h4>
-            <ul class="project-title-keyword flex-container">
-              <li>#팀프로젝트</li>
-              <li>#UI/UX</li>
-              <li>#DESIGN</li>
-              <li>#FIGMA</li>
-            </ul>
-            </div>
-            <!-- <img src="./images/project1.png" alt="project1목업사진"> -->
-          </div>
-          </a>
-          <div class="project-title">
-            <h2>PROJECT1</h2>
-          </div>
-          <div class="project-skill flex-container">
-            <h3><span class="txt-deco miniflower"></span>UI Design</h3>
-          </div>
-      </div>
+    <!-- 메인에 보일 프로젝트 번호 (순서대로 4칸). 데이터: assets/scripts/projects.js -->
+    <section class="project grid-container" id="project" data-projects="7,2,5,1">
+      <div class="project-wrapper project1"></div>
       <div class="deco-top flex-container">
         <div class="deco-box black">
           <div class="deco" id="flower1"></div>
@@ -163,80 +142,9 @@
           <div class="deco" id="lightbulb"></div>
         </div>
       </div>
-      <div class="project-wrapper project2">
-        <a href="./project2/project2.html">
-          <div class="project-container">
-            <div class="txt-box">
-            <h4>2024-12</h4>
-            <h3>대림 미술관 WEB DESIGN</h3>
-            <h4>웹 디자인</h4>
-            <ul class="project-title-keyword flex-container">
-              <li>#개인프로젝트</li>
-              <li>#WEB</li>
-              <li>#REDESIGN</li>
-              <li>#PUBLISHING</li>
-            </ul>
-            <!-- <img src="./images/project3 mockup.png" alt="노트북 목업"> -->
-             </div>
-          </div>
-          </a>
-          <div class="project-title">
-            <h2>PROJECT2</h2>
-          </div>
-          <div class="project-skill flex-container">
-            <h3><span class="txt-deco miniflower"></span>Web Design</h3>
-          </div>
-        
-      </div>
-      <div class="project-wrapper project3">
-        <a href="./project3/project3.html">
-          <div class="project-container">
-            <div class="txt-box">
-            <h4>2024-11</h4>
-            <h3>DR.BRONNER'S WEB DESIGN</h3>
-            <h4>닥터브로너스 반응형 웹 디자인</h4>
-            <ul class="project-title-keyword flex-container">
-              <li>#개인프로젝트</li>
-              <li>#WEB</li>
-              <li>#REDESIGN</li>
-              <li>#PUBLISHING</li>
-            </ul>
-            <!-- <img src="./images/project2_Iphone mockup1.png" alt="아이폰 목업"> -->
-             </div>
-          </div>
-          </a>
-          <div class="project-title">
-            <h2>PROJECT3</h2>
-          </div>
-          <div class="project-skill flex-container">
-            <h3><span class="txt-deco miniflower"></span>Web Design</h3>
-          </div>
-        
-      </div>
-      <div class="project-wrapper project4">
-        <a href="./project4/project4.html">
-          <div class="project-container">
-            <div class="txt-box">
-            <h4>2024-12</h4>
-            <h3>HBAF REACT</h3>
-            <h4>바프 리액트 모바일 페이지</h4>
-            <ul class="project-title-keyword flex-container">
-              <li>#개인프로젝트</li>
-              <li>#MOBILE</li>
-              <li>#REACT</li>
-              <li>#PUBLISHING</li>
-            </ul>
-            <!-- <img src="./images/project4_Iphone mockup1.png" alt="아이폰 목업"> -->
-             </div>
-          </div>
-          </a>
-          <div class="project-title">
-            <h2>PROJECT4</h2>
-          </div>
-          <div class="project-skill flex-container">
-            <h3><span class="txt-deco miniflower"></span>React Mobile</h3>
-          </div>
-      </div>
+      <div class="project-wrapper project2"></div>
+      <div class="project-wrapper project3"></div>
+      <div class="project-wrapper project4"></div>
     </section>
 
     <div class="view-work">
