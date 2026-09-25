@@ -37,7 +37,7 @@ const PROJECTS = [
     date: '2025-09',
     title: '콜에이전시 반응형 WEB',
     desc: '반응형 웹 제작',
-    tags: ['#개인프로젝트', '#반응형', '#WEB', '#PUBLISHING'],
+    tags: ['#실무프로젝트', '#반응형', '#WEB', '#PUBLISHING'],
     skill: 'Web Design',
     img: 'content5-1.png'
   },
@@ -48,7 +48,7 @@ const PROJECTS = [
     date: '2025-10',
     title: '콜앤파트너스 반응형 WEB',
     desc: '반응형 웹 제작',
-    tags: ['#개인프로젝트', '#반응형', '#PUBLISHING', '#워드프레스'],
+    tags: ['#실무프로젝트', '#반응형', '#PUBLISHING', '#워드프레스'],
     skill: 'Web Design',
     img: 'content6-1.png'
   },
