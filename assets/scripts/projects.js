@@ -9,6 +9,17 @@
 
 const PROJECTS = [
   {
+    num: 8,
+    category: 'react',
+    listName: 'METARICH WEB',
+    date: '2026-08',
+    title: '메타리치 반응형 WEB',
+    desc: '보험 GA 기업 홈페이지 리뉴얼',
+    tags: ['#실무프로젝트', '#반응형', '#REACT', '#PUBLISHING'],
+    skill: 'React Web',
+    img: 'content8-1.png'
+  },
+  {
     num: 7,
     category: 'react',
     listName: 'LYT APP PROJECT',
