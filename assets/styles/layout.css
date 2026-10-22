@@ -276,28 +276,6 @@ footer .contact .contact-left p {
 footer .contact .contact-left p a {
   display: block;
 }
-footer .contact .contact-left p a::after{
-  content: "";
-  position: absolute;
-  bottom: 36%;
-  left: 42%;
-  background-color: #000;
-  width: 58px;
-  height: 2px;
-  transform: scale(0);
-  transition: transform 0.5s;
-}
-footer .contact .contact-left p:nth-child(3)  a::after {
-  width: 134px;
-  left: 31.5%;
-}
-footer .contact .contact-left p:nth-child(4)  a::after {
-  width: 161px;
-  left: 27.5%;
-}
-footer .contact .contact-left p a:hover::after {
-  transform: scale(1);
-}
 footer .contact .contact-left p:nth-of-type(1) {
   border-bottom: none;
 }
@@ -539,16 +517,6 @@ footer .contact .footer-info h2{
   }
   footer .contact .contact-left p:nth-of-type(even) {
     border-right: var(--border);
-  }
-  footer .contact .contact-left p a::after,
-  footer .contact .contact-left p:nth-child(3) a::after,
-  footer .contact .contact-left p:nth-child(4) a::after {
-    left: 50%;
-    bottom: 30%;
-    transform: translateX(-50%) scale(0);
-  }
-  footer .contact .contact-left p a:hover::after {
-    transform: translateX(-50%) scale(1);
   }
   footer .contact .contact-right {
     height: auto;
