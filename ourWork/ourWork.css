@@ -55,9 +55,20 @@
   border-left: none;
   border-bottom: none;
   font-size: 24px;
-  padding: 40px 60px;
   text-transform: uppercase;
   background-color: #fff;
+  cursor: pointer;
+}
+/* lift-card: hover 시 검은 바닥은 그대로, 흰 박스만 떠올라 마우스를 따라감
+   글자 칸 크기는 안쪽 face의 padding으로 잡음 (흐름 안에 둠) */
+.work .work-menu .lift-face {
+  position: relative;
+  inset: auto;
+  display: block;
+  padding: 40px 60px;
+}
+.work .work-menu li:hover {
+  color: var(--color-black);
 }
 .work .work-menu li:first-child {
   border-left: 1px solid #000;
@@ -89,7 +100,14 @@
   font-weight: 900;
   text-transform: uppercase;
   /* background-color: #fff; */
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, color 0.2s, border-color 0.2s;
+  position: relative; /* hover 채움(::before)이 이 칸 안에서만 그려지도록 기준 */
+  z-index: 0;         /* 채움(z-index:-1)이 칸 뒤로 빠지지 않고 글자 아래에 깔리게 */
+}
+/* hover: 검정 배경이 왼쪽부터 채워지고 글씨·선은 흰색으로 반전 */
+.project-list .project:hover {
+  color: var(--color-white);
+  border-color: var(--color-white);
 }
 
 .project-list .project a {
@@ -101,7 +119,10 @@
   outline-offset: -4px;
 }
 .project-list .ani-fill::before {
-background-color: antiquewhite;
+background-color: #111;
+}
+.project-list .project a:focus-visible {
+  outline-color: var(--color-white);
 }
 /* 리스트 내용 */
 .project-card {
@@ -114,10 +135,13 @@ background-color: antiquewhite;
   top: 0; left: 0;
   width: 100%;
   transition: 0.3s;
+  pointer-events: none; /* 겹쳐 있는 안 보이는 카드가 마우스·클릭을 가로채지 않게 */
 }
 
 .project-inner.active {
   opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 
@@ -207,8 +231,10 @@ background-color: antiquewhite;
   /* 필터 메뉴 */
   .work .work-menu li {
     font-size: 20px;
-    padding: 30px 40px;
     white-space: nowrap;
+  }
+  .work .work-menu .lift-face {
+    padding: 30px 40px;
   }
 
   /* 프로젝트 이름 목록 */
@@ -227,6 +253,8 @@ background-color: antiquewhite;
   }
   .work .work-menu li {
     font-size: 18px;
+  }
+  .work .work-menu .lift-face {
     padding: 24px 30px;
   }
 
@@ -245,6 +273,7 @@ background-color: antiquewhite;
   .project-inner {
     position: static;
     opacity: 1;
+    pointer-events: auto; /* 카드가 모두 펼쳐져 있으니 전부 클릭 가능 */
     margin-right: -1px; /* 옆 카드와 보더 겹침 */
   }
   .project-card .project-inner .project-container {
@@ -286,8 +315,10 @@ background-color: antiquewhite;
   .work .work-menu li {
     flex: 1 1 auto;
     font-size: 13px;
-    padding: 16px 8px;
     text-align: center;
+  }
+  .work .work-menu .lift-face {
+    padding: 16px 8px;
   }
 
   /* 카드 1열 */

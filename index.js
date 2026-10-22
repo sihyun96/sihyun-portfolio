@@ -17,14 +17,6 @@ const best = lottie.loadAnimation({
   path: lottieBase + 'best.json'
 });
 
-const smile1 = lottie.loadAnimation({
-  container: document.getElementById('smile1'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: lottieBase + 'smile1.json'
-});
-
 const smile2 = lottie.loadAnimation({
   container: document.getElementById('smile2'),
   renderer: 'svg',
@@ -264,23 +256,22 @@ let prevScroll = window.scrollY;
 const topHt = function () {
   let currentScroll = window.scrollY;
 
-  if (currentScroll === 0) {
-    // 첫 화면으로 돌아갈 때, header를 원래 위치로 복구
-    $('#header').removeClass('is-compact is-hidden');
-  } else if (prevScroll > currentScroll) {
-    // 스크롤을 올렸을 때 header가 작아진 채로 top: 0에 나타남 (크기는 layout.css .is-compact)
-    $('#header').addClass('is-compact').removeClass('is-hidden');
-  } else {
-    // 스크롤을 내렸을 때 header를 숨김
-    $('#header').addClass('is-hidden');
-    closeMenu();
-  }
+  // 첫 화면: 전체 header / 스크롤 중: 왼쪽에 [햄버거][SH]만 고정 (크기는 layout.css .is-compact)
+  $('#header').toggleClass('is-compact', currentScroll > 0);
+
+  // 스크롤을 내리면 열려 있던 메뉴 닫기
+  if (currentScroll > prevScroll) closeMenu();
   prevScroll = currentScroll;
 };
 
-// 햄버거 메뉴 (1359px 이하)
+// 햄버거 메뉴: 전체 메뉴 열기/닫기
 const closeMenu = function () {
   $('#header').removeClass('is-open');
+  // 메뉴가 닫히면 mouseleave가 안 생길 수 있어서 떠올라 있던 메뉴 칸을 직접 내림
+  $('.global-menu .lift-card').each(function () {
+    this.style.removeProperty('--face-x');
+    this.style.removeProperty('--face-y');
+  });
   $('.menu-btn').attr({ 'aria-expanded': 'false', 'aria-label': '메뉴 열기' });
 };
 
@@ -289,12 +280,18 @@ $('.menu-btn').on('click', function () {
   $(this).attr({ 'aria-expanded': String(isOpen), 'aria-label': isOpen ? '메뉴 닫기' : '메뉴 열기' });
 });
 
+// ESC로 메뉴 닫기
+$(document).on('keydown', function (e) {
+  if (e.key === 'Escape') closeMenu();
+});
 
 
-// 메뉴 이동 이벤트
+
+// 메뉴 이동 이벤트 (새로고침해서 중간 위치로 열려도 바로 맞춤)
 $(window).on('scroll', topHt);
-// 메뉴 클릭시 섹션이동
-$('.global-menu li a').on('click', function (e) {
+topHt();
+// 메뉴·로고(HOME) 클릭시 섹션이동
+$('.global-menu li a, .header-logo').on('click', function (e) {
 
   const href = $(this).attr('href');
   closeMenu();
@@ -354,31 +351,111 @@ $('.check-box').each(function (index) {
 // 마우스 이벤트
 // 태블릿·모바일(979px 이하)은 마우스 효과 없이 CSS 고정 그림자 사용
 const noMouseMq = window.matchMedia('(max-width: 979px)');
-const $movingTitles = $('.main-title,.skill-tool-title .title, .footer-title');
 
-const movingTxt = function (e) {
+// view our work 버튼 · lift-card(프로젝트 스킬 박스, contact 링크):
+// hover 시 카드가 바닥에서 떠올라 마우스를 따라 움직임
+// 기본 위치(오른쪽 위로 들림) + 카드 중심에서 마우스까지 거리의 일부만큼 이동
+// 프로젝트 카드는 projects.js가 나중에 그려서 document에 위임
+const FACE_LIFT_X = 16;
+const FACE_LIFT_Y = -16;
+const FACE_FOLLOW = 0.12;
+const LIFT_TARGETS = '.view-work-btn, .lift-card';
+
+$(document).on('mousemove', LIFT_TARGETS, function (e) {
   if (noMouseMq.matches) return;
 
-  let txtX = e.clientX;
-  let txtY = e.clientY;
+  // 바깥 칸은 제자리에 있고 안쪽 face만 움직이므로 바깥 칸 중심 기준으로 계산
+  const rect = this.getBoundingClientRect();
+  const dx = e.clientX - (rect.left + rect.width / 2);
+  const dy = e.clientY - (rect.top + rect.height / 2);
 
-  // 마우스 위치에 따라 텍스트 위치와 그림자 설정
-  $movingTitles.css({
-    left: 0 - txtX / 50,
-    top: 0 - txtY / 200,
-    textShadow: `${-22 + txtX / 100}px ${txtY / 100}px 0px #000`,
+  this.style.setProperty('--face-x', `${FACE_LIFT_X + dx * FACE_FOLLOW}px`);
+  this.style.setProperty('--face-y', `${FACE_LIFT_Y + dy * FACE_FOLLOW}px`);
+});
+
+$(document).on('mouseleave', LIFT_TARGETS, function () {
+  this.style.removeProperty('--face-x');
+  this.style.removeProperty('--face-y');
+});
+// 큰 제목 입체 그림자: 마우스에 가까운 글자일수록 위로 튀어나옴
+// 글자를 왼쪽 위로 올린 만큼 그림자를 늘려서, 그림자 바닥은 제자리에 있고 글자만 솟아오르게 보임
+// 기본 두께는 CSS(.shadow-container), 글자별 값은 여기서 inline style로 덮어씀
+const SHADOW_BASE = 6;    // 기본 두께 (CSS와 같은 값)
+const SHADOW_MAX = 18;    // 마우스 바로 위 글자의 두께
+const SHADOW_RADIUS = 350; // 이 거리(px) 안의 글자만 두꺼워짐
+const SHADOW_OUTLINE = '0 1px #000, 1px 0 #000, 0 -1px #000, -1px 0 #000';
+
+// 레이어 수를 항상 SHADOW_MAX개로 맞춰야 transition이 부드럽게 이어짐 (남는 레이어는 depth에 겹침)
+const buildShadow = function (depth) {
+  const layers = [SHADOW_OUTLINE];
+  for (let i = 1; i <= SHADOW_MAX; i++) {
+    const d = Math.min(i, depth).toFixed(1);
+    layers.push(`${d}px ${d}px #000`);
+  }
+  return layers.join(', ');
+};
+
+// 제목 텍스트를 글자별 span으로 나눔 (<br>·공백은 그대로 둠)
+const splitChars = function (el) {
+  Array.from(el.childNodes).forEach(function (node) {
+    if (node.nodeType !== Node.TEXT_NODE) return;
+    const frag = document.createDocumentFragment();
+    Array.from(node.textContent).forEach(function (ch) {
+      if (/\s/.test(ch)) {
+        frag.appendChild(document.createTextNode(ch));
+        return;
+      }
+      const span = document.createElement('span');
+      span.className = 'shadow-char';
+      span.textContent = ch;
+      frag.appendChild(span);
+    });
+    node.replaceWith(frag);
   });
 };
 
-// 태블릿 이하로 바뀌면 마우스로 바뀐 값 초기화
-noMouseMq.addEventListener('change', function () {
-  if (noMouseMq.matches) {
-    $movingTitles.css({ left: '', top: '', textShadow: '' });
-  }
+document.querySelectorAll('.shadow-container').forEach(splitChars);
+const shadowChars = Array.from(document.querySelectorAll('.shadow-char'));
+
+let shadowFrame = null;
+const updateShadow = function (mouseX, mouseY) {
+  // 위치를 먼저 다 읽고 나서 스타일을 씀 (읽기·쓰기를 섞으면 레이아웃 계산이 반복됨)
+  // 글자가 이미 올라가 있으면 그만큼 빼서 원래 자리 기준으로 거리 계산
+  const centers = shadowChars.map(function (ch) {
+    const r = ch.getBoundingClientRect();
+    const lift = parseFloat(ch.style.top) || 0;
+    return { x: r.left - lift + r.width / 2, y: r.top - lift + r.height / 2 };
+  });
+  shadowChars.forEach(function (ch, i) {
+    const dist = Math.hypot(mouseX - centers[i].x, mouseY - centers[i].y);
+    const near = Math.max(0, 1 - dist / SHADOW_RADIUS);
+    const lift = (SHADOW_MAX - SHADOW_BASE) * near;
+    ch.style.left = `${-lift}px`;
+    ch.style.top = `${-lift}px`;
+    ch.style.textShadow = buildShadow(SHADOW_BASE + lift);
+  });
+};
+
+$(document).on('mousemove', function (e) {
+  if (noMouseMq.matches) return;
+  // 한 프레임에 한 번만 계산
+  if (shadowFrame) return;
+  shadowFrame = requestAnimationFrame(function () {
+    updateShadow(e.clientX, e.clientY);
+    shadowFrame = null;
+  });
 });
 
-// 이벤트 핸들러 등록
-$(document).on('mousemove', movingTxt);
+// 태블릿 이하로 바뀌면 글자별 그림자를 지우고 CSS 고정 그림자로
+noMouseMq.addEventListener('change', function () {
+  if (noMouseMq.matches) {
+    shadowChars.forEach(function (ch) {
+      ch.style.textShadow = '';
+      ch.style.left = '';
+      ch.style.top = '';
+    });
+  }
+});
 
 // SKILLS TOOLS 박스 높이를 메인 카드 높이와 같게 (979px 이하에서 --main-card-h 사용)
 const mainCard = document.querySelector('.main');

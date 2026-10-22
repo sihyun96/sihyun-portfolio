@@ -70,22 +70,43 @@
   line-height: 98px;
 }
 
+/* view-work-btn: 제자리에 남는 바닥(hover 시 검은 그림자)
+   view-work-face: hover 시 위로 떠서 마우스를 따라 움직이는 카드 (index.js) */
 .view-work .view-work-btn {
-  border: 1px solid #000;
-  border-top: none;
+  display: block;
   width: 25%;
   height: 87px;
   position: relative;
   top: 0px;
   left: 25%;
-  padding: 0 20px;
-  justify-content: space-between;
-  background-color: #fff;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
 }
 .view-work .view-work-btn2 {
   top: 0;
   left: 75%;
+}
+.view-work .view-work-face {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  justify-content: space-between;
   border: 1px solid #000;
+  border-top: none;
+  background-color: #fff;
+  transform: translate(var(--face-x, 0px), var(--face-y, 0px));
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.view-work .view-work-btn2 .view-work-face {
+  border-top: 1px solid #000;
+}
+.view-work .view-work-btn:hover {
+  background-color: #111;
+  z-index: 2;
+}
+.view-work .view-work-btn:hover .view-work-face {
+  border-top: 1px solid #000;
 }
 .view-work .view-work-btn p {
 font-family: var(--font-main-en);

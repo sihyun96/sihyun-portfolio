@@ -54,29 +54,33 @@
   <!-- header -->
   <header class="flex-container" id="header">
     <div class="header-container flex-container">
-      <div class="menu flex-container">
-        <div class="deco-wrapper">
-          <div class="deco" id="smile1"></div>
-        </div>
-
-        <ul class="global-menu flex-container" id="gnb">
-          <li><a href="../index.html">home</a></li>
-          <!-- <li><a href="../index.html">about</a></li>
-          <li><a href="../index.html">project</a></li>
-          <li><a href="../index.html">skill&tools</a></li>
-          <li><a href="../index.html">contact</a></li> -->
-        </ul>
-        <button type="button" class="menu-btn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button type="button" class="menu-btn lift-card" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">
+        <span class="lift-face menu-face">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </span>
+      </button>
+      <a href="../index.html" class="header-logo flex-container" aria-label="HOME">
+        <img src="../assets/favicon/web-app-manifest-192x192.png" alt="SH">
+      </a>
     </div>
-    <a href="./ourWork.html" class="header-container-right flex-container ani-fill">
-      <h2> SIHYUN’S <br> PORTFOLIO</h2>
-      <div class="header-deco" id="roket"></div>
+    <a href="./ourWork.html" class="header-container-right lift-card">
+      <span class="lift-face flex-container ani-fill">
+        <h2> SIHYUN’S <br> PORTFOLIO</h2>
+        <span class="header-deco" id="roket"></span>
+      </span>
     </a>
+
+    <!-- 전체 메뉴 (햄버거 버튼으로 열림) -->
+    <nav class="global-menu" id="gnb">
+      <ul>
+        <li class="lift-card"><a class="lift-face" href="../index.html#about">about</a></li>
+        <li class="lift-card"><a class="lift-face" href="../index.html#project">project</a></li>
+        <li class="lift-card"><a class="lift-face" href="../index.html#skill">skill&tools</a></li>
+        <li class="lift-card"><a class="lift-face" href="../index.html#contact">contact</a></li>
+      </ul>
+    </nav>
   </header>
 
 
@@ -92,10 +96,10 @@
 
     <section class="work">
       <ul class="work-menu flex-container">
-        <li data-filter="all" class="active">all</li>
-        <li data-filter="web">Web Design</li>
-        <li data-filter="uiux">UI/UX Design</li>
-        <li data-filter="react">React</li>
+        <li data-filter="all" class="lift-card active"><span class="lift-face">all</span></li>
+        <li data-filter="web" class="lift-card"><span class="lift-face">Web Design</span></li>
+        <li data-filter="uiux" class="lift-card"><span class="lift-face">UI/UX Design</span></li>
+        <li data-filter="react" class="lift-card"><span class="lift-face">React</span></li>
       </ul>
 
       <div class="work-project flex-container">

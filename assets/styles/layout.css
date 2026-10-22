@@ -99,9 +99,11 @@ header .header-container-right .header-deco{
   width: 35px;
 } */
 
+/* 헤더: [햄버거][SH 로고(HOME)] ··· [SIHYUN'S PORTFOLIO]
+   햄버거를 누르면 #header.is-open → 아래로 전체 메뉴(.global-menu) 열림 (index.js) */
 #header {
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: stretch;
   width: calc(100% - var(--side-gap) * 2);
   max-width: 1440px;
   position: fixed;
@@ -110,74 +112,140 @@ header .header-container-right .header-deco{
   z-index: 9999;
   height: 87px;
   transition: 0.2s;
-  border: var(--border);
-  background-color: var(--color-black);
-  color: var(--color-white);
+  /* 테두리는 양쪽 칸에만 (가운데 위 선 없음). 아래 선은 바로 밑 main 박스 윗선을 같이 씀 */
+  background-color: transparent;
+  color: var(--color-black);
+  --header-top: 63px; /* 위 top 값 (전체 메뉴 높이 계산용) */
+  --header-h: 87px;
 }
 header .header-container {
-  flex: 1 1 auto;
-  min-width: 0;
   height: 100%;
+  border-top: var(--border);
+  border-left: var(--border);
 }
-header .header-container .menu {
+
+/* 햄버거 버튼 */
+/* lift-card: hover 시 바닥은 그대로, 줄 3개가 든 흰 박스(.menu-face)만 떠올라 마우스를 따라감 */
+.menu-btn {
+  padding: 0;
+  width: 87px; height: 100%;
+  flex-shrink: 0;
+  background-color: var(--color-white);
+  border: none;
+  border-right: var(--border);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.menu-btn .menu-face {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.menu-btn .menu-line {
+  display: block;
+  width: 32px; height: 2px;
+  background-color: var(--color-black);
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+/* SH 로고 (클릭 시 HOME) */
+header .header-logo {
+  width: 240px; height: 100%;
+  flex-shrink: 0;
+  justify-content: center;
+  background-color: var(--color-black);
+  border-right: var(--border);
+}
+header .header-logo img {
+  height: 64px; width: auto;
+  filter: invert(1); /* 검정 SH 아이콘을 흰색으로 */
+}
+
+/* 오른쪽 SIHYUN'S PORTFOLIO: lift-card (hover 시 흰 박스만 떠오름) */
+header .header-container-right {
+  width: 25%; height: 100%;
+  flex-shrink: 0;
+  border-top: var(--border);
+  border-left: var(--border);
+  border-right: var(--border);
+  background-color: var(--color-white);
+  z-index: 99;
+}
+header .header-container-right .lift-face {
+  position: relative; /* 글자 폭만큼 박스 크기를 잡도록 흐름 안에 둠 */
+  inset: auto;
   width: 100%; height: 100%;
   justify-content: space-between;
-}
-header .header-container .menu .deco-wrapper{
-  width: 87px; height: 87px;
-  flex-shrink: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* 스마일 상하 가운데 */
-}
-header .header-container .menu .deco-wrapper .deco {
-  margin: 0;
-}
-header .header-container .menu .global-menu {
-  width: 100%; height: 87px;
-  min-width: 50%;
-  justify-content: space-around;
-  text-transform: uppercase;
-  transition: 0.3s;
-}
-header .header-container .menu .global-menu.open {
-  opacity: 1;
-}
-header .header-container .menu .global-menu li:hover {
-  background-color: var(--color-white);
-  color: var(--color-black);
-}
-header .header-container .menu .global-menu li {
-  width: 20%;
-}
-header .header-container .menu .global-menu li a {
-  display: block;
-  height: 100%; 
-  line-height: 88px;
-  text-align: center;
-}
-header .header-container-left .mini {
-  width: 20px; height: 20px;
-}
-header .header-container-right {
-  background-color: var(--color-white);
-  width: 25%; height: 86px;
-  flex-shrink: 0;
-  position: relative; /* ani-fill hover 배경 기준 */
-  justify-content: space-between;
   padding: 0 20px;
-  z-index: 99;
-  border-left: 1px solid #000;
 }
 header .header-container-right h2 {
   color: var(--color-black);
   font-size: var(--font-main-title-sm);
   font-family: var(--font-main-en);
   font-weight: 800;
-  
 }
-header .header-container-right .header-deco{
+header .header-container-right .header-deco {
+  display: block;
   width: 35px;
+}
+
+/* 전체 메뉴
+   header 줄까지 덮고(그 위에 버튼·로고가 올라옴) 왼쪽 → 오른쪽으로 검게 칠해지며 열림 */
+header .header-container {
+  position: relative;
+  z-index: 1; /* 메뉴 배경 위에 햄버거·로고 */
+}
+/* 화면 전체(좌우 여백 포함)를 덮고, 안쪽 콘텐츠 폭은 header와 같게 (padding = 좌우 여백)
+   배경의 세로 그리드 선을 흰 선으로 다시 그림 (25% 간격 + 오른쪽 끝 선) */
+header .global-menu {
+  --menu-line: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: calc(-1px - var(--header-top)); /* 화면 맨 위부터 */
+  left: calc(50% - 50vw);
+  width: 100vw;
+  height: 100vh;
+  padding: 0 calc(50vw - 50%);
+  overflow-y: auto;
+  /* 선 2겹은 콘텐츠 폭 안에만, 마지막 검정 겹은 화면 전체에 */
+  background:
+    linear-gradient(to right, var(--menu-line) 1px, transparent 1px) 0 0 / 25% 100% repeat-x content-box content-box,
+    linear-gradient(to left, var(--menu-line) 1px, transparent 1px) 0 0 / 100% 100% no-repeat content-box content-box,
+    #111;
+  clip-path: inset(0 100% 0 0); /* 닫힘: 왼쪽 끝에 접혀 있음 */
+  visibility: hidden;
+  transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.18, 1), visibility 0s 0.6s;
+}
+header .global-menu ul {
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(var(--header-top) + var(--header-h)); /* 메뉴 글자는 header 아래부터 */
+  min-height: calc(100% - var(--header-top) - var(--header-h));
+}
+/* 메뉴 한 줄 = lift-card: hover 시 검은 바닥은 그대로, 흰 박스만 떠올라 마우스를 따라감 */
+/* 줄 안쪽은 배경색으로 세로 그리드 선을 가려서 한 칸으로 보이게 (바깥 테두리만 흰 선) */
+header .global-menu li {
+  height: 140px;
+  border: 1px solid var(--menu-line);
+  border-bottom: none;
+  background-color: #111;
+}
+header .global-menu li:last-child {
+  border-bottom: 1px solid var(--menu-line);
+}
+header .global-menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-main-en);
+  font-size: var(--font-main-title-xlg);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+header .global-menu li:hover a {
+  color: var(--color-black);
 }
 
 /* ***********footer */
@@ -304,77 +372,95 @@ footer .contact .footer-info h2{
 }
 
 /* ***********header 상태 (index.js topHt에서 class 토글) */
-/* 스크롤 올릴 때: 작아진 header */
-#header.is-compact {
-  top: 0;
-  height: 52px;
-  opacity: 1;
+/* 스크롤 중: 왼쪽에 [햄버거][SH] 정사각형 두 칸만 고정으로 남음
+   header 폭은 그대로 두고(전체 메뉴가 화면 폭을 쓰도록) 빈 영역은 클릭이 아래로 통과 */
+#header {
+  pointer-events: none;
 }
-#header.is-compact .header-container .menu,
-#header.is-compact .header-container .menu .deco-wrapper,
+#header .header-container,
+#header .header-container-right,
+#header .global-menu {
+  pointer-events: auto;
+}
+#header .header-logo,
+#header .header-logo img,
+#header .header-container-right {
+  transition: width 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
+}
+#header.is-compact .header-container {
+  border-bottom: var(--border); /* 아래 main 선이 없어서 자기 선을 그림 */
+}
+#header.is-compact .header-logo {
+  width: var(--header-h); /* 햄버거 칸과 같은 정사각형 */
+}
+#header.is-compact .header-logo img {
+  height: calc(var(--header-h) * 0.55);
+}
 #header.is-compact .header-container-right {
-  height: 50px;
-}
-#header.is-compact .header-container .menu .deco-wrapper .deco {
-  width: 25px; height: 25px;
-}
-#header.is-compact .header-container .menu .global-menu,
-#header.is-compact .header-container .menu .global-menu li a {
-  height: 50px;
-  line-height: 50px;
-}
-#header.is-compact .header-container-right h2 {
-  font-size: 18px;
-}
-/* 스크롤 내릴 때: 숨김 */
-#header.is-hidden {
-  transform: translateY(-400px) translateX(-50%);
   opacity: 0;
-  user-select: none;
+  visibility: hidden;
 }
-
-/* 햄버거 버튼 (1359px 이하에서 노출) */
-.menu-btn {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  width: 87px; height: 100%;
-  flex-shrink: 0;
-  margin-left: auto;
-  background: none;
-  border: none;
-  border-left: 1px solid var(--color-white);
-  cursor: pointer;
+/* 메뉴 열림: 왼쪽 → 오른쪽으로 검게 칠해지고 햄버거가 X로 */
+#header.is-open .global-menu {
+  clip-path: inset(0 0 0 0);
+  visibility: visible;
+  transition: clip-path 0.6s cubic-bezier(0.77, 0, 0.18, 1), visibility 0s;
 }
-.menu-btn span {
-  display: block;
-  width: 32px; height: 1px;
+/* 열림: header도 검정 반전 (선·글씨 흰색) */
+#header.is-open .header-container,
+#header.is-open .menu-btn,
+#header.is-open .header-logo,
+#header.is-open .header-container-right {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+#header.is-open .menu-btn,
+#header.is-open .header-logo,
+#header.is-open .header-container-right {
+  background-color: transparent;
+}
+#header.is-open .header-container-right h2 {
+  color: var(--color-white);
+}
+#header.is-open .header-container-right .header-deco {
+  filter: invert(1); /* 검정 로켓 아이콘을 흰색으로 */
+}
+/* 오른쪽 버튼은 검은 화면이 왼쪽에서 다 칠해진 뒤에 반전 (먼저 바뀌면 흰 바탕에 흰 글씨가 됨) */
+#header.is-open .header-container-right {
+  transition: width 0.3s, height 0.3s, opacity 0.3s 0.45s, visibility 0s 0.45s, background-color 0s 0.45s, border-color 0s 0.45s;
+}
+/* 스크롤 중(작은 header)이라도 메뉴가 열리면 SIHYUN'S PORTFOLIO 버튼은 보임 */
+#header.is-compact.is-open .header-container-right {
+  opacity: 1;
+  visibility: visible;
+}
+#header.is-open .header-container-right h2,
+#header.is-open .header-container-right .header-deco {
+  transition: color 0s 0.45s, filter 0s 0.45s;
+}
+/* hover로 흰 박스가 떠오르면 다시 검정 글씨 */
+#header.is-open .header-container-right:hover h2 {
+  color: var(--color-black);
+  transition-delay: 0s;
+}
+#header.is-open .header-container-right:hover .header-deco {
+  filter: none;
+  transition-delay: 0s;
+}
+#header.is-open .menu-btn .menu-line {
   background-color: var(--color-white);
-  transition: transform 0.3s, opacity 0.3s;
 }
-#header.is-open .menu-btn span:nth-child(1) {
-  transform: translateY(9px) rotate(45deg);
+/* X 상태에서도 hover 시 흰 박스가 떠오름 → X는 검정으로 */
+#header.is-open .menu-btn:hover .menu-line {
+  background-color: var(--color-black);
 }
-#header.is-open .menu-btn span:nth-child(2) {
+#header.is-open .menu-btn .menu-line:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+#header.is-open .menu-btn .menu-line:nth-child(2) {
   opacity: 0;
 }
-#header.is-open .menu-btn span:nth-child(3) {
-  transform: translateY(-9px) rotate(-45deg);
-}
-#header.is-compact .menu-btn {
-  width: 50px;
-  gap: 6px;
-}
-#header.is-compact .menu-btn span {
-  width: 24px;
-}
-#header.is-compact.is-open .menu-btn span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-#header.is-compact.is-open .menu-btn span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+#header.is-open .menu-btn .menu-line:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
 }
 
 
@@ -406,25 +492,6 @@ footer .contact .footer-info h2{
     height: 100%;
   }
 
-  /* header: 햄버거 메뉴 */
-  .menu-btn {
-    display: flex;
-  }
-  #header .header-container .menu .global-menu,
-  #header.is-compact .header-container .menu .global-menu {
-    display: none;
-    position: absolute;
-    top: 100%; left: -1px;
-    width: calc(100% + 2px);
-    height: auto;
-    flex-direction: column;
-    background-color: var(--color-black);
-    border: var(--border);
-  }
-  #header.is-open .header-container .menu .global-menu {
-    display: flex;
-  }
-
   /* footer */
   footer .contact .footer-info {
     width: fit-content; /* 글자 폭만큼, 가운데 정렬 */
@@ -432,15 +499,6 @@ footer .contact .footer-info h2{
   }
   footer .contact .contact-right #light_fff {
     right: var(--spacing-sm); top: var(--spacing-sm);
-  }
-  #header .header-container .menu .global-menu li {
-    width: 100%;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  #header .header-container .menu .global-menu li a,
-  #header.is-compact .header-container .menu .global-menu li a {
-    height: 64px;
-    line-height: 64px;
   }
 }
 
@@ -462,7 +520,9 @@ footer .contact .footer-info h2{
 
   /* 큰 제목: 마우스 그림자 효과 대신 굵은 글씨처럼 보이는 고정 그림자 */
   .shadow-container {
-    text-shadow: -5px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    text-shadow:
+      0 1px #000, 1px 0 #000, 0 -1px #000, -1px 0 #000,
+      1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000;
   }
 
   /* footer */
@@ -547,7 +607,9 @@ footer .contact .footer-info h2{
     font-size: 14px;
   }
   .shadow-container {
-    text-shadow: -3px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+    text-shadow:
+      0 1px #000, 1px 0 #000, 0 -1px #000, -1px 0 #000,
+      1px 1px #000, 2px 2px #000, 3px 3px #000;
   }
   footer .contact .deco-box .deco {
     width: 26px; height: 26px;
@@ -575,31 +637,31 @@ footer .contact .footer-info h2{
     top: 0;
     height: 60px;
   }
-  header .header-container .menu .deco-wrapper,
-  header .header-container-right {
-    height: 58px;
-  }
-  header .header-container .menu .deco-wrapper {
-    width: 60px;
-  }
-  header .header-container .menu .deco-wrapper .deco {
-    width: 32px; height: 32px;
-  }
   .menu-btn {
     width: 60px;
+  }
+  .menu-btn .menu-face {
     gap: 7px;
   }
-  .menu-btn span {
+  .menu-btn .menu-line {
     width: 26px;
   }
-  #header.is-open .menu-btn span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+  #header.is-open .menu-btn .menu-line:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
   }
-  #header.is-open .menu-btn span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+  #header.is-open .menu-btn .menu-line:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+  header .header-logo {
+    width: 100px;
+  }
+  header .header-logo img {
+    height: 44px;
   }
   header .header-container-right {
     width: auto;
+  }
+  header .header-container-right .lift-face {
     gap: var(--spacing-xsm);
     padding: 0 var(--spacing-sm);
   }
@@ -610,11 +672,24 @@ footer .contact .footer-info h2{
   header .header-container-right .header-deco {
     width: 28px;
   }
+  #header {
+    --header-top: 0px;
+    --header-h: 60px;
+  }
+  header .global-menu li {
+    height: 90px;
+  }
+  header .global-menu li a {
+    font-size: var(--font-main-title-lg);
+  }
 }
 
 /* 스몰모바일 */
 @media (max-width: 479px) {
-  header .header-container-right {
+  header .header-logo {
+    width: 72px;
+  }
+  header .header-container-right .lift-face {
     padding: 0 var(--spacing-xsm);
   }
   header .header-container-right .header-deco {

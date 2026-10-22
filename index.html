@@ -53,29 +53,33 @@
   <!-- header -->
   <header class="flex-container" id="header">
     <div class="header-container flex-container">
-      <div class="menu flex-container">
-        <div class="deco-wrapper">
-          <div class="deco" id="smile1"></div>
-        </div>
-
-        <ul class="global-menu flex-container" id="gnb">
-          <li><a href="#main">home</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="#project">project</a></li>
-          <li><a href="#skill">skill&tools</a></li>
-          <li><a href="#contact">contact</a></li>
-        </ul>
-        <button type="button" class="menu-btn" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button type="button" class="menu-btn lift-card" aria-label="메뉴 열기" aria-expanded="false" aria-controls="gnb">
+        <span class="lift-face menu-face">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </span>
+      </button>
+      <a href="#main" class="header-logo flex-container" aria-label="HOME">
+        <img src="./assets/favicon/web-app-manifest-192x192.png" alt="SH">
+      </a>
     </div>
-    <a href="./ourWork/ourWork.html" class="header-container-right flex-container ani-fill">
-      <h2> SIHYUN’S <br> PORTFOLIO</h2>
-      <div class="header-deco" id="roket"></div>
+    <a href="./ourWork/ourWork.html" class="header-container-right lift-card">
+      <span class="lift-face flex-container ani-fill">
+        <h2> SIHYUN’S <br> PORTFOLIO</h2>
+        <span class="header-deco" id="roket"></span>
+      </span>
     </a>
+
+    <!-- 전체 메뉴 (햄버거 버튼으로 열림) -->
+    <nav class="global-menu" id="gnb">
+      <ul>
+        <li class="lift-card"><a class="lift-face" href="#about">about</a></li>
+        <li class="lift-card"><a class="lift-face" href="#project">project</a></li>
+        <li class="lift-card"><a class="lift-face" href="#skill">skill&tools</a></li>
+        <li class="lift-card"><a class="lift-face" href="#contact">contact</a></li>
+      </ul>
+    </nav>
   </header>
 
 
@@ -94,9 +98,11 @@
     </section>
 
     <div class="view-work">
-      <a href="./ourWork/ourWork.html" class="view-work-btn flex-container ani-fill">
-        <p>VIEW OUR WORK</p>
-        <div class="deco light2 top"></div>
+      <a href="./ourWork/ourWork.html" class="view-work-btn">
+        <span class="view-work-face flex-container ani-fill">
+          <p>VIEW OUR WORK</p>
+          <div class="deco light2 top"></div>
+        </span>
       </a>  
     </div>
 
@@ -148,9 +154,11 @@
     </section>
 
     <div class="view-work">
-      <a href="./ourWork/ourWork.html" class="view-work-btn view-work-btn2 flex-container ani-fill">
-        <p>VIEW OUR WORK</p>
-        <div class="deco light2 top"></div>
+      <a href="./ourWork/ourWork.html" class="view-work-btn view-work-btn2">
+        <span class="view-work-face flex-container ani-fill">
+          <p>VIEW OUR WORK</p>
+          <div class="deco light2 top"></div>
+        </span>
       </a>  
     </div>
     <!-- skill&tool -->
@@ -318,9 +326,9 @@
           <div class="deco-box">
             <div class="deco" id="best"></div>
           </div>
-          <p><a href="mailto:sihyun9627@gmail.com">E-mail</a></p>
-          <p><a href="https://github.com/sihyun96/240723-.git" target="_blank">Github 공부일지</a></p>
-          <p><a href="https://github.com/sihyun96/241018-portfolio.git" target="_blank">포트폴리오 작업일지</a></p>
+          <p class="lift-card"><span class="lift-face"><a href="mailto:sihyun9627@gmail.com">E-mail</a></span></p>
+          <p class="lift-card"><span class="lift-face"><a href="https://github.com/sihyun96/240723-.git" target="_blank">Github 공부일지</a></span></p>
+          <p class="lift-card"><span class="lift-face"><a href="https://github.com/sihyun96/241018-portfolio.git" target="_blank">포트폴리오 작업일지</a></span></p>
           <p></p>
         </div>
         <div class="contact-right">

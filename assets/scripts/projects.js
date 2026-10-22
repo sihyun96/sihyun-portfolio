@@ -128,8 +128,10 @@ const projectCardHTML = function (p) {
     <div class="project-title">
       <h2>PROJECT${p.num}</h2>
     </div>
-    <div class="project-skill flex-container">
-      <h3><span class="txt-deco miniflower"></span>${p.skill}</h3>
+    <div class="project-skill flex-container lift-card">
+      <div class="lift-face flex-container">
+        <h3><span class="txt-deco miniflower"></span>${p.skill}</h3>
+      </div>
     </div>`;
 };
 
