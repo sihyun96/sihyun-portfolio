@@ -326,6 +326,9 @@ header {
   margin: 0 5px 20px;
   width: 50%;
 }
+.problems-solutions .problems-solutions-wrapper .left-solutions-img .img-mobile {
+  width: 30%;
+}
 
 /**** result */
 .result .result-wrapper {
