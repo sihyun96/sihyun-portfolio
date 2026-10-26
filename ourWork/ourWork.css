@@ -151,15 +151,50 @@ background-color: #111;
   border-left: none;
 }
 /* 카드 배경: projects.js 가 카드마다 --card-img 로 이미지 지정 */
+/* 메인 프로젝트 카드와 같은 hover 스타일
+   층: 검정 바탕(카드) < 이미지(::before) < 어두운 덮개(::after) < 글자(.txt-box)
+   카드에 직접 hover하거나, 왼쪽 리스트에 hover해서 .is-hover가 붙으면(ourWork.js)
+   덮개·글자가 사라지고 이미지가 안쪽으로 줄어 검정 테두리가 생김 + PROJECT 칸 검정 반전 */
 .project-card .project-inner .project-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), var(--card-img) no-repeat 50% / cover;
+  background-color: #111;
 }
-.project-card .project-inner .project-container:hover {
-  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), var(--card-img) no-repeat 50% / cover;
+.project-card .project-inner .project-container::before,
+.project-card .project-inner .project-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: inset 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.4s, opacity 0.3s;
 }
-.project-card .project-inner .project-container:hover > .txt-box {
+.project-card .project-inner .project-container::before {
+  background: var(--card-img) no-repeat 50% / cover;
+}
+.project-card .project-inner .project-container::after {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+.project-card .project-inner .txt-box {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+.project-card .project-inner > a:hover .project-container::before,
+.project-card .project-inner.is-hover .project-container::before {
+  inset: var(--spacing-sm);
+  border-radius: 12px;
+}
+.project-card .project-inner > a:hover .project-container::after,
+.project-card .project-inner.is-hover .project-container::after,
+.project-card .project-inner > a:hover .project-container > .txt-box,
+.project-card .project-inner.is-hover .project-container > .txt-box {
   opacity: 0;
-} 
+}
+.project-card .project-inner .project-title {
+  transition: background-color 0.3s, color 0.3s;
+}
+.project-card .project-inner > a:hover + .project-title,
+.project-card .project-inner.is-hover .project-title {
+  background-color: #111;
+  color: var(--color-white);
+}
 
 .project-card .project-inner .project-title {
   width: 100%;

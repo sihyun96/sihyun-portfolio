@@ -29,10 +29,14 @@ function initDefault() {
 initDefault();
 
 // project hover 시 대응하는 project-inner 표시
+// + 리스트에 올려둔 동안 카드에 메인과 같은 hover 스타일(.is-hover) 적용
 projects.forEach((project, index) => {
   project.addEventListener('mouseenter', () => {
-    cards.forEach(c => c.classList.remove('active'));
-    cards[index].classList.add('active');
+    cards.forEach(c => c.classList.remove('active', 'is-hover'));
+    cards[index].classList.add('active', 'is-hover');
+  });
+  project.addEventListener('mouseleave', () => {
+    cards[index].classList.remove('is-hover');
   });
 });
 
