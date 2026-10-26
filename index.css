@@ -119,74 +119,163 @@ white-space: nowrap;
 }
 
 
-/* about */
+/* about
+   왼쪽: 제목 + 프로필 카드 (고정) / 오른쪽: 스킬 띠
+   스킬 띠는 sticky라 섹션 안에서만 스크롤을 따라 내려오고, 안쪽 목록은 왼쪽으로 계속 흘러감 */
 .about {
   margin: var(--spacing-xxlg) 0;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: stretch; /* 오른쪽 칸을 섹션 높이만큼 늘려야 sticky가 그 안에서 움직임 */
 }
 
-.about .about-title {
-  text-align: center;
-  width: calc(50% + 1px);
+.about .about-profile {
+  width: 45%;
 }
 
-.about .about-title h3 {
-  font-size: var(--font-main-title-lg);
-  margin: var(--spacing-lg) 0 var(--spacing-sm);
-}
-
-.about .about-title .title-deco {
+.about .title-deco {
   position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
-.about .about-title .title-deco .light1 {
+.about .title-deco .light1 {
   position: absolute;
-  top: 0;
-  right: -30px;
+  top: -30px;
+  right: -60px;
   z-index: 1;
 }
 
-.about .about-title .title-deco .light2 {
-  position: absolute;
-  top: 0;
-  left: 50px;
-  display: none;
-}
-
-.about .about-title .about-title-profile {
+/* 프로필 카드 */
+.about .about-card {
   border: var(--border);
-  width: calc(100% - 2px);
-  height: 90px;
-  justify-content: space-between;
-  padding: 0 var(--spacing-sm);
-  margin: var(--spacing-lg) 0;
   background-color: var(--color-white);
 }
-
-.about .about-title .about-title-profile li {
-  display: flex;
-  align-items: center;
-}
-
-.about .about-img {
-  width: calc(50% - 3px);
-  aspect-ratio: 717 / 500;
-  background: url(./images/about-img.png) no-repeat 50% / contain, #fff;
-  position: relative;
-}
-
-.about .about-img #keyword {
-  position: absolute;
-  top: -20.4%; /* 500px 기준 -102px */
-  width: 100%;
-}
-
-.about .about-img img {
-  width: 445px;
-  height: 415px;
-  margin: 0 auto;
+.about .about-card-img {
+  aspect-ratio: 677 / 583;
+  background-color: #ecf4ff;
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  border-bottom: var(--border);
+}
+.about .about-card-img img {
+  width: 86%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+/* 마우스 렌즈: 커서가 원으로 바뀌고 원 안은 검정 배경 + 흰 선으로 반전
+   --lx/--ly(커서 위치)는 index.js에서 넣음 */
+.about .about-card-img {
+  position: relative;
+  --lens-r: 110px;
+}
+.about .about-card-img.is-lens {
+  cursor: none;
+}
+.about .about-card-invert {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-color: #000;
+  pointer-events: none;
+  clip-path: circle(0 at var(--lx, 50%) var(--ly, 50%));
+  transition: clip-path 0.25s ease-out;
+}
+.about .about-card-invert img {
+  filter: invert(1) grayscale(1); /* 검정 선 → 흰 선 */
+}
+.about .about-card-img.is-lens .about-card-invert {
+  clip-path: circle(var(--lens-r) at var(--lx, 50%) var(--ly, 50%));
+  transition: clip-path 0.12s ease-out; /* 따라다닐 땐 살짝만 늦게 (부드럽게) */
+}
+.about .about-lens-ring {
+  position: absolute;
+  top: var(--ly, 50%);
+  left: var(--lx, 50%);
+  width: calc(var(--lens-r) * 2);
+  height: calc(var(--lens-r) * 2);
+  border: 2px solid #000;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.25s ease-out, top 0.12s ease-out, left 0.12s ease-out; /* 반전 원과 같은 속도로 따라감 */
+  pointer-events: none;
+}
+.about .about-card-img.is-lens .about-lens-ring {
+  transform: translate(-50%, -50%) scale(1);
+}
+.about .about-card-name {
+  height: 90px;
+  line-height: 90px;
+  padding: 0 30px;
+  font-size: var(--font-main-title-md);
+  font-weight: 700;
+}
+.about .about-card-role {
+  display: inline-flex;
+  height: 78px;
+  padding: 0 30px;
+  border: var(--border);
+  border-top: none;
+  background-color: var(--color-white);
+  font-size: 18px;
+}
+.about .about-card-role .txt-deco {
+  width: 26px; height: 26px;
+  margin-right: 9px;
+}
+
+/* 스킬 띠 */
+.about .about-skill {
+  width: 40%;
+}
+.about .about-skill-box {
+  position: sticky;
+  top: 180px; /* header 아래에 걸림 */
+  display: flex;
+  height: 90px;
+  overflow: hidden;
+  border: var(--border);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.about .about-skill-track {
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  animation: about-skill-slide 25s linear infinite;
+}
+.about .about-skill-box:hover .about-skill-track {
+  animation-play-state: paused;
+}
+.about .about-skill-track li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 12px;
+  font-family: var(--font-main-en);
+  font-size: var(--font-main-title-sm);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.about .about-skill-track li::after {
+  content: "";
+  width: 24px; height: 24px;
+  background: url(./images/star4.svg) no-repeat 50% / contain;
+}
+/* 목록 2개가 나란히 있어서 한 목록 폭(100%)만큼 밀면 처음과 같은 모습 → 끊김 없이 반복 */
+@keyframes about-skill-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about .about-skill-track {
+    animation: none;
+  }
 }
 
 /* project */
@@ -240,16 +329,48 @@ white-space: nowrap;
 .project .project3 .project-container  {
   height: 637px;
 }
-/* 카드 배경: projects.js 가 카드마다 --card-img 로 이미지 지정 */
+/* 카드 배경: projects.js 가 카드마다 --card-img 로 이미지 지정
+   층: 검정 바탕(카드) < 이미지(::before) < 어두운 덮개(::after) < 글자(.txt-box)
+   hover: 덮개·글자가 사라지고 이미지가 안쪽으로 줄어들어 검정 테두리가 생김, 아래 PROJECT 칸도 검정 반전 */
 .project .project-wrapper .project-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), var(--card-img) no-repeat 50% / cover;
+  background-color: #111;
 }
-.project .project-wrapper .project-container:hover {
-  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), var(--card-img) no-repeat 50% / cover;
+.project .project-wrapper .project-container::before,
+.project .project-wrapper .project-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transition: inset 0.4s cubic-bezier(0.22, 1, 0.36, 1), border-radius 0.4s, opacity 0.3s;
 }
-.project .project-wrapper .project-container:hover > .txt-box {
+.project .project-wrapper .project-container::before {
+  background: var(--card-img) no-repeat 50% / cover;
+}
+.project .project-wrapper .project-container::after {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5));
+}
+.project .project-wrapper .txt-box {
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+.project .project-wrapper > a:hover .project-container::before {
+  inset: var(--spacing-sm);
+  border-radius: 12px;
+}
+.project .project-wrapper > a:hover .project-container::after {
   opacity: 0;
-} 
+}
+.project .project-wrapper > a:hover .project-container > .txt-box {
+  opacity: 0;
+}
+/* 카드 바로 아래 PROJECT 번호 칸 */
+.project .project-wrapper .project-title {
+  transition: background-color 0.3s, color 0.3s;
+}
+.project .project-wrapper > a:hover + .project-title {
+  background-color: #111;
+  color: var(--color-white);
+}
 .project .project-wrapper .project-container h4 {
   margin: var(--spacing-sm) 0;
   font-weight: 600;
@@ -595,16 +716,14 @@ white-space: nowrap;
   /* about */
   .about {
     flex-direction: column;
-    gap: calc(var(--spacing-xxlg) * 0.8);
+    gap: var(--spacing-lg);
   }
-  .about .about-title {
+  .about .about-profile,
+  .about .about-skill {
     width: 100%;
   }
-  .about .about-title .about-title-profile {
-    width: 100%;
-  }
-  .about .about-img {
-    width: min(717px, 100%);
+  .about .about-skill-box {
+    position: static; /* 세로로 쌓이면 따라다니지 않음 */
   }
 
   /* project: 1열 */
@@ -742,8 +861,8 @@ white-space: nowrap;
   }
 
   /* about */
-  .about .about-title .title-deco .light1 {
-    right: 0;
+  .about .title-deco .light1 {
+    right: -30px;
   }
 
   /* project */
@@ -797,13 +916,21 @@ white-space: nowrap;
   }
 
   /* about */
-  .about .about-title .about-title-profile {
-    height: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--spacing-xsm) var(--spacing-sm);
-    padding: var(--spacing-sm) var(--spacing-xsm);
-    font-size: 0.875rem;
+  .about .about-card-name {
+    height: 64px;
+    line-height: 64px;
+    padding: 0 var(--spacing-sm);
+  }
+  .about .about-card-role {
+    height: 56px;
+    padding: 0 var(--spacing-sm);
+    font-size: 14px;
+  }
+  .about .about-skill-box {
+    height: 64px;
+  }
+  .about .about-skill-track li {
+    font-size: 16px;
   }
   .txt-deco {
     width: 24px;

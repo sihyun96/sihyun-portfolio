@@ -81,14 +81,6 @@ const send = lottie.loadAnimation({
   path: lottieBase + 'send.json'
 });
 
-const keyword = lottie.loadAnimation({
-  container: document.getElementById('keyword'),
-  renderer: 'svg',
-  loop: true,
-  autoplay: true,
-  path: lottieBase + 'keyword.json'
-});
-
 const keyword_slide = lottie.loadAnimation({
   container: document.getElementById('keyword_slide'),
   renderer: 'svg',
@@ -310,42 +302,29 @@ $('.global-menu li a, .header-logo').on('click', function (e) {
 
 // skill 
 
-// check-box 클릭 이벤트
-$('.check-box').on('click', function () {
-  // 클릭된 check-box의 상태 확인
-  const isActive = $(this).hasClass('active');
+// 체크박스: SKILLS · TOOLS 그룹마다 따로 동작
+// 그룹 안에서 항상 하나가 선택돼 있고(라디오처럼), 다른 그룹 선택에는 영향 없음
+// n번째 .skill-check(체크박스 묶음) ↔ n번째 .list-box(설명 묶음)
+$('.skill-tool .skill-check').each(function (group) {
+  const $boxes = $(this).find('.check-box');
+  const $texts = $('.skill-tool .list-box').eq(group).find('.list-box-txt');
 
-  // 모든 check-box와 list-box-txt 비활성화
-  $('.check-box').removeClass('active');
+  const select = function (index) {
+    $boxes.removeClass('active').attr('aria-pressed', 'false');
+    $boxes.eq(index).addClass('active').attr('aria-pressed', 'true');
+    $boxes.siblings('p').css({ backgroundColor: 'transparent' });
+    $boxes.eq(index).siblings('p').css({ backgroundColor: '#ffcd38' });
 
-  // 현재 클릭된 요소만 활성화 (토글 동작 가능)
-  if (!isActive) {
-    $(this).addClass('active');
-  }
-});
+    $texts.removeClass('active').hide();
+    $texts.eq(index).addClass('active').show();
+  };
 
-
-// 처음에 모든 skill 리스트를 숨김
-$('.list-box-txt').hide();
-
-// HTML-CSS와 Figma 내용은 초기 상태에서 보이도록 설정
-$('.list-box-txt.HTML-CSS').show();
-$('.list-box-txt.Figma').show();
-
-// 각 체크박스 클릭 이벤트 처리
-$('.check-box').each(function (index) {
-  $(this).on('click', function () {
-    // 모든 list-box-txt 숨기기
-    $('.list-box-txt').hide();
-    $('.check-list p').css({ backgroundColor: 'transparent' });
-    // 현재 클릭한 항목의 list-box-txt만 표시
-    $('.list-box-txt').eq(index).toggle();
-    $(this).siblings('p').css({ backgroundColor: '#ffcd38' });
-
-    // 접근성: 선택 상태를 스크린리더에 알림
-    $('.check-box').attr('aria-pressed', 'false');
-    $(this).attr('aria-pressed', String($(this).hasClass('active')));
+  $boxes.each(function (index) {
+    $(this).on('click', function () { select(index); });
   });
+
+  // 처음엔 HTML에서 active인 항목(없으면 첫 번째) 선택
+  select(Math.max(0, $boxes.index($boxes.filter('.active'))));
 });
 
 // 마우스 이벤트
@@ -377,6 +356,18 @@ $(document).on('mouseleave', LIFT_TARGETS, function () {
   this.style.removeProperty('--face-x');
   this.style.removeProperty('--face-y');
 });
+// 어바웃미 이미지 렌즈: 커서 위치에 원을 띄우고 원 안만 색 반전 (모양은 index.css)
+$('.about-card-img').on('mousemove', function (e) {
+  if (noMouseMq.matches) return;
+  const rect = this.getBoundingClientRect();
+  this.style.setProperty('--lx', `${e.clientX - rect.left}px`);
+  this.style.setProperty('--ly', `${e.clientY - rect.top}px`);
+  this.classList.add('is-lens');
+});
+$('.about-card-img').on('mouseleave', function () {
+  this.classList.remove('is-lens');
+});
+
 // 큰 제목 입체 그림자: 마우스에 가까운 글자일수록 위로 튀어나옴
 // 글자를 왼쪽 위로 올린 만큼 그림자를 늘려서, 그림자 바닥은 제자리에 있고 글자만 솟아오르게 보임
 // 기본 두께는 CSS(.shadow-container), 글자별 값은 여기서 inline style로 덮어씀
